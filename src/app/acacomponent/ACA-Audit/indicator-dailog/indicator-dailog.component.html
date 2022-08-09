@@ -1,0 +1,52 @@
+<!-- <p>indicator-dailog works!</p> -->
+<div class="popup_menu">
+    <mat-grid-list cols="1">
+        <mat-dialog-content class="mat-typography">
+            <div class="popup_box">
+                <div class="close_icons">
+                    <mat-icon mat-dialog-close>close</mat-icon>
+                </div>
+
+                <h3 class="matrix_code">indicator code matrix</h3>
+
+                <div class="select_form">
+                    <p class="summary"> Enter the combination of codes that are entered on the applicable 1095-C Form to
+                        receive a summary
+                        of
+                        what these codes mean.</p>
+                    <div class="select_menu bg_color">
+                        <span>Line 14: </span>
+                        <select [(ngModel)]="selectedItems"  (change)='onOptionsSelected($event)'>
+                            <option [ngValue]="null" disabled >Select</option>
+                            <option  *ngFor="let item of dropdownList" [ngValue]="item?.line14code" > {{item?.line14code}}</option>
+                        </select>
+                   
+                    </div>
+                    <div class="select_menu ">
+                        <span>Line 16: </span>
+                        <select [(ngModel)]="selectedItems1"  >
+                            <option [ngValue]="null" disabled>Select</option>
+                            <option *ngFor="let item of dropdownList1" [ngValue]="item?.line16code" >{{item?.line16code}}</option>
+                        </select>
+                    </div>
+
+                    <div class="example-button-row see_btn">
+                        <button class="search_btn matrix" mat-flat-button  (click)="getdata()">
+                            See Summary
+                        </button>
+                    </div>
+                    <div  class="summary_content" *ngIf="SummerMessage"> 
+                        <p><b>Summary:</b> {{SummerMessage}}</p>
+                    </div>
+                </div>
+
+                <div class="sub_content">
+                    <p>*MEC means Minimum Essential Coverage</p>
+                    <p>*MV means Minimum Value</p>
+                </div>
+
+            </div>
+
+        </mat-dialog-content>
+    </mat-grid-list>
+</div>

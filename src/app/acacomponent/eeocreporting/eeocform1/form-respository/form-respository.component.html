@@ -1,0 +1,72 @@
+<div class="from">
+    <div class="heading">
+        <h3>Form Repository </h3>
+    </div>
+</div>
+<div class="heading-two">
+    <h4>UAT-100</h4>
+</div>
+<div class="p-text">
+    <p>   Users can upload play any and all documention related to EEOC reporting by using the Form Repository functionality. Select the  document you would like to upload . provide a name and document description and click the Upload Document button.Documents can be deleted by clicking on the Delete button next to the document or can be Downloaded by simply clicking the document name.  </p>
+</div>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <div class="form-main">
+        <mat-grid-tile>
+            <div class="box-parent">
+                <div class="eeo-box">
+                    <form>
+                        <div class="box-title">
+                            <h4> Upload EEO-1 Documention</h4>
+                        </div>
+                        <div class="input">
+                            <h4>Fields marked with <span>*</span> are mandatory:</h4>
+                            <div class="file">
+                                <h4>Choose File: <span>*</span></h4>
+                                <div class="choose-file">
+                                    <input type="file" value="Choose File">
+                                </div>
+                            </div>
+                            <div class="name">
+                                <h4>Document Name:<span>*</span></h4>
+                                <div class="name-input">
+                                    <input class="name-box" matInput>
+                                </div>
+                            </div>
+                            <div class=" Description">
+                                <h4> Document Description:<span>*</span></h4>
+                                <div class="Description-input">
+                                    <textarea matInput class="Description-box" maxlength="500"></textarea>
+                                </div>
+                            </div>
+                            <div class="last-text">
+                                <h4>500 characters remaining </h4>
+                            </div>
+                            <div class="btn">
+                                <button class="btn-them" mat-flat-button>Upload Document</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+           <div class="part-two">
+            <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8">
+            
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef>Documents</th>
+                    <th mat-header-cell *matHeaderCellDef>Documents Description</th>
+                    <td mat-cell *matCellDef="let element"> There are no items to display </td>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Documents Description</th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">There are no items to display</tr>
+                </table>
+           </div>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>

@@ -1,0 +1,127 @@
+::ng-deep .custom-style ::ng-deep.mat-dialog-container{
+    position:fixed;
+    width: 90%;
+    top:3%;
+    left: 5%;
+    margin: 10px auto;
+    height: auto;
+    overflow: hidden;
+    border-radius: 15px !important;
+  }
+
+  .main{
+    background-color: #fff;
+  }
+  .main-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+   
+  }
+
+  .mat-select-min-line{
+    font-size: 12px;
+  }
+  .column1{
+    width: 40%;
+    padding: 10px;
+      }
+  .column2{
+    width: 60%;
+    padding: 10px;
+    /* margin-top: -40px; */
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header{
+    
+    color: #8b8c8d ;
+    text-align: center;
+    margin-top: 1%;
+  }
+  .cdetail1{
+    display: flex;
+    margin-top: 10px;
+  }
+  .marginset{
+    margin: 0 0 6px;
+}
+
+::ng-deep .mat-dialog-content {
+  overflow-wrap: normal;
+  background-color: #cdcecf92;
+}
+.customer-col{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+
+  .customer-row{
+    padding: 1%;
+    width:90%;
+   
+}
+.cust-col{
+    padding: 0px;
+    width: 40%;
+  
+}
+.pdetailalign{
+    margin-right: 2%;
+}
+.custpart3{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.cdetail3{
+    display: flex;
+    flex-direction: row;
+}
+.dialog-content{
+    margin-bottom: 2%;
+    padding: 1%;
+   
+}
+.btn1 {
+    background: rgb(87 175 87);
+    color: white;
+    
+}
+.cust-save-btn{
+    display: flex;
+    justify-content: center;
+}
+.cust-close{
+     display: flex;
+     justify-content: flex-end;
+   
+    
+}
+.close-btn{
+    background-color:#8b8c8d8f;
+    margin-bottom: 1%;
+    margin-right: 10px;
+}
+::ng-deep .mat-checkbox-inner-container{
+    background-color: white;
+}
+.select-month label{
+    font-size: 11px;
+    padding-left: 4px;
+    width: 10%;
+}
+
+.mat-dialog-actions{
+  margin: 0 !important;
+  min-height: auto;
+}
+
+.close-btn{
+  margin-right: 20px  !important;
+  margin-bottom: 0;
+}

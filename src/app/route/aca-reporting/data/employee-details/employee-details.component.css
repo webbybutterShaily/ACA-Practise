@@ -1,0 +1,201 @@
+.year_main{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 35px 30px 0  0;
+}
+
+
+.select_employer .input_year {
+
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 150px;
+    border: none;
+    outline: none;
+  }
+.heading .details_empo{
+    color: #195696;
+    font-weight: 400;
+    text-align: center;
+    font-size: 25px;
+    margin: 20px 0 50px;
+}  
+
+.emplabel{
+    margin: 0 11px;
+    font-size: initial;
+}
+
+.emplabel span{
+    font-size: 16px;
+}
+
+.employee_profile{
+    width: 33.33%;
+    height: 400px;
+}
+
+.main_employee{
+    display: flex;
+    padding: 0 120px;
+}
+
+
+.profile_main{
+    padding: 15px 50px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 1px 0px 27px -6px rgb(0 0 0 / 75%);
+    height: 350px;
+    box-sizing: border-box;
+    max-width: 425px;
+    margin: auto;
+}
+.employee_profile:nth-child(2) .profile_main{
+    padding: 15px 50px;
+}
+.employee_profile:last-child .profile_main{
+    padding:  15px 50px;
+}
+.profile_main h3{
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: 500;
+}
+.profile_main span{
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    font-size: 12px;
+    padding-bottom: 10px;
+    max-width: 240px;
+    display: block;
+    text-align: left;
+}
+
+.current_plan h3{
+    margin-bottom: 5px !important;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.current_plan i{
+    padding-left: 15px;
+    font-size: 12px;
+}
+
+.main01{
+    padding-top: 50px;
+}
+
+.menu_btn{
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.table_main{
+    border-bottom: 4px solid #729fcf;
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+    border-top: 4px solid #729fcf;
+    padding-top: 15px;
+}
+
+.menu_btn button{
+    color: #1e67b5;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 10px !important;
+    font-size: 12px !important;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 10px;
+    font-size: 12px !important;
+
+}
+
+
+ th.mat-header-cell {
+    font-size: 16px !important;
+    color: black;
+}
+.Affordability h3{
+    margin-bottom: 40px;
+}
+.rate_of_pay{
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    padding: 15px 10px 15px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #57ad21;
+}
+.rate_of_pay:nth-child(3){
+    margin-top: 5px;
+}
+.rate_of_pay:last-child{
+    margin-top: 5px;
+}
+.rate_of_pay h2{
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+    padding-left: 5px;
+}
+.close{
+    font-size: 30px;
+    font-weight: 900;
+    height: auto;
+    width: auto;
+}
+
+
+@media (max-width:1800px){
+    .main_employee{
+        padding: 0 120px;
+    }
+}
+
+
+@media (max-width:1600px){
+    .employee_profile{
+        padding-right: 40px;
+    }
+    .main_employee{
+        padding: 0 80px;
+    }
+    .employee_profile:last-child{
+        padding: 0;
+    }
+}
+
+@media (max-width:1200px){
+    .employee_profile{
+        width: 33.33%;
+    }
+    .employee_main{
+        overflow-x: auto;
+    }
+    .main_employee{
+       max-width: 100%;
+       padding: 0 20px;
+    }
+    .employee_profile{
+        height: 500px;
+    }
+    .employee_profile:nth-child(2) .profile_main{
+        padding: 25px 20px;
+    }
+    
+}

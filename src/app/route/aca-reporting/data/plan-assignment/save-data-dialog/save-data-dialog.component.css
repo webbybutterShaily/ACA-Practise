@@ -1,0 +1,107 @@
+.btn1 {
+    margin-left: 5px;
+    background: rgb(13 125 190);
+    color: white;
+}
+
+.btn2 {
+    margin-left: 10px;
+    background: rgb(39 167 28);
+    color: white;
+}
+
+.btn3 {
+    margin-left: 10px;
+    background: rgb(230, 77, 31);
+    color: white;
+}
+
+.btn4 {
+    margin-left: 5px;
+    background: rgb(13 125 190);
+    color: white;
+}
+
+.main-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.responsive-popup {
+    margin: 24px 0px;
+}
+
+.column2 .mat-dialog-actions {
+    padding: 0px;
+    min-height: auto;
+    margin-bottom: 14px;
+    float: right;
+}
+
+.column1 h2 {
+    margin-bottom: 0px;
+}
+
+.field-data{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.field-data .label{
+    width: 30%;
+}
+
+.input_year {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+} 
+.employee-save-data .mat-form-field-appearance-outline .mat-form-field-wrapper{
+    margin: 0px;
+    padding-bottom: 0px;
+}
+
+/* tr:nth-child(odd) {
+    background-color: #7db8f468;
+}
+.mat-calendar-table tr:nth-child(odd) {
+    background-color: white;
+} */
+
+.display {
+    display: flex;
+}
+
+.employee-desc {
+    color: #056993;
+}
+.employee_data {
+    margin: 10px 0px;
+}
+.employee_data span {
+    padding-right: 5px;
+}
+
+.employee_data .input_year {
+    width: 235px;
+}
+
+
+@media (max-width: 1400px) {
+    .employee_data .input_year {
+        width: 200px;
+    }
+
+    .employee_data .input_year {
+        width: 205px;
+    }
+}
+
+input.mat-input-element {
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white;
+}

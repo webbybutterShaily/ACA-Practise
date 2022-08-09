@@ -1,0 +1,88 @@
+
+.setup-page-wrapper{
+    padding: 10px;
+}
+.setup-page-wrapper h2{
+    color: #195696;
+    font-weight: 400;
+    text-align: center;
+    font-size: 25px;
+}
+.setup-page-wrapper h3{
+    color: #195696;
+    font-weight: 500;
+    font-size: 22px;
+}
+.setup-wrapper{
+    display: flex;
+}
+.setup-page-wrapper .mat-grid-tile{
+    padding-top: 0 !important;
+}
+.setup-main{
+    /* width: 70%; */
+    width: 100%;
+    height: 100%;
+}
+.defination-wrap{
+    /* width: 30%; */
+    margin-left: 10px;
+}
+.setup-main .setup-field h4{
+    color: #195696;
+    font-weight: 500;
+    font-size: 18px;
+    border-top: 2px solid #5b9de3;
+    border-bottom: 4px solid #5b9de3;
+    padding: 6px 5px;
+    margin-bottom: 0;
+}
+.setup-main .setup-field h6{
+    background-color: #d7e8fa;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding: 6px 5px;
+}
+.emp-detail{
+    display: flex;
+    align-items: center;
+    padding: 14px 0px 14px 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.emp-detail p{
+    width: 60%;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+.emp-detail .select-month{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex{
+    background-color: transparent;
+}
+.select-month label{
+    font-size: 11px;
+    padding-left: 4px;
+}
+.defination-wrap p{
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 0;
+}
+.defination-wrap p:nth-child(even){
+    background-color: #d7e8fa;
+}
+.btn{
+   justify-content: end;
+   display: flex;
+   margin-top: 15px;
+   width: 66.66%;
+}
+.btn_them{
+    background-color: #5b9de3;
+    color: white;
+}

@@ -1,0 +1,313 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <div class="main-from">
+        <div class="part01">
+            <mat-grid-tile>
+                <div class="single_form">
+                    <h3>Single Form Assessment</h3>
+                </div>
+                <div class="main_from">
+                    <span>Form <b>1095-C</b> </span>
+                    <span>Department of the Treasury Internal Revenue Service</span>
+                </div>
+                <div class="all_month_table">
+                    <form [formGroup]="form">
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td> All 12 Months </td>
+                                <td> Jan </td>
+                                <td> Feb </td>
+                                <td> Mar </td>
+                                <td> Apr </td>
+                                <td> May </td>
+                                <td> Jun </td>
+                                <td> July </td>
+                                <td> Aug</td>
+                                <td>Sep</td>
+                                <td>Oct</td>
+                                <td> Nav</td>
+                                <td> Dec </td>
+                            </tr>
+                            <tr formGroupName="first">
+                                <td><span> <b>14</b> Offer of Coverage (enter required code)</span></td>
+                                <td>
+
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="All12Months" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+
+                                </td>
+
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Jan" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Feb" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Mar" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Apr" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="May" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Jun" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="July" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Aug" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Sep" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Oct" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Nav" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select formControlName="Dec" matNativeControl required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+
+                            <tr formGroupName="second">
+                                <td><span> <b> 15</b>Employee Share of Lowest Cost Monthly Premium, for Self-Only
+                                        Minimum
+                                        Value Coverage</span></td>
+                                <td> <input matInput formControlName="All12Months" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Jan" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Feb" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Mar" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Apr" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="May" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Jun" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="July" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Aug" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Sep" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Oct" (keypress)="number($event)"> </td>
+                                <td> <input matInput formControlName="Nav" (keypress)="number($event)"></td>
+                                <td> <input matInput formControlName="Dec" (keypress)="number($event)"></td>
+
+                            </tr>
+                            <tr formGroupName="third">
+                                <td><span> <b>16</b> Applicable Section 4980H Safe Harbor (enter code, if
+                                        applicable)</span>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="All12Months" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Jan" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Feb" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Mar" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Apr" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="May" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Jun" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="July" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Aug" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Sep" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Oct" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Nav" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl formControlName="Dec" required>
+                                            <option value="" disabled>--</option>
+                                            <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </mat-grid-tile>
+        </div>
+        <div class="part02">
+            <mat-grid-tile>
+                <div class="second_part_main">
+                    <app-customer-drop-down></app-customer-drop-down>
+                    <div class="example-button-row metrix_btn">
+                        <button class="search_btn matrix" mat-flat-button (click)="openDialog()">
+                            indicator code matrix
+                        </button>
+
+                    </div>
+                    <div class="from_assement">
+                        <h5>From Assessment:</h5>
+                        <p>Enter the information on line 14, 15 and 16 from the Form and click the 'Audit' button to see
+                            your summary</p>
+                        <div class="example-button-row audit">
+                            <button class="search_btn" mat-flat-button (click)="get()">Audit</button>
+                        </div>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </div>
+
+
+    </div>
+</mat-grid-list>

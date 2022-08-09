@@ -1,0 +1,105 @@
+<div class="preview_main">
+    <h1 class="header">Year End 1095 Forms – Review</h1>
+    <div class="heading-two">
+        <h4>UAT-100</h4>
+    </div>
+    <div class="button_main">
+        <button mat-button (click)="openindicatormatix()">
+            <fa-icon [icon]="circlecheck"></fa-icon> Indicator Code Matrix
+        </button>
+        <button mat-button (click)="openTableviewform()">
+            <fa-icon [icon]="filmIcon"></fa-icon> See Table View of Form Data
+        </button>
+    </div>
+    <div class="folowing">
+        <span>the following is the number of 1095 Forms that will be produced for you:</span>
+        <div class="data_form">
+            <div class="company">
+                <h6>
+                    Company
+                </h6>
+                <h6>
+                    1095 Count
+                </h6>
+            </div>
+            <div class="company">
+                <h6>
+                    UAT - 100
+                </h6>
+                <h6>
+                    120
+                </h6>
+            </div>
+        </div>
+        <span>the E-Filling for this reporting year has been completed and preview functionality is no longer
+            availabel</span>
+        <div class="main_button">
+            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+                matTooltip="1. Generate All Preview Documents – “By clicking this button all employee data will be processed through the solutions business logic and a PDF file will be produced, which includes a 1095-C form for any employee that should receive one. If a preview file has already been generated and the User clicks this button, it will wipe the current outputs including all ad hoc edits and re-run all 1095 logic.">
+                <span>1. Generate All Preview Documnets</span>
+            </div>
+            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+            matTooltip="2. Generate New or Added Preview Documents – “By clicking this button a PDF will be rendered for any form that has been added from ad hoc edits or any employee that has been added to the employee census since preview button #1 was clicked.">
+                <span>2. Generate new or Added Preview Documents</span>
+            </div>
+            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+            matTooltip="3. Request Preview Document with Most Recently Corrected Forms – “By clicking this button a PDF file will be rendered with the most recent forms that have been edited in the Ad Hoc Editing section of the solution.">
+                <span>3. Request Preview documents with Most Recently Corrected Forms</span>
+            </div>
+            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+            matTooltip="4. Request Preview Document with All Current Forms – “By clicking this button a PDF file will be rendered with all current 1095-C forms available for all employees, including ad hoc edits.">
+                <span>4. Request Priview Document with All Current Forms</span>
+            </div>
+        </div>
+        <div class="preview_documents">
+            <h3>Rendered Preview Documents</h3>
+            <span>These are the preview documents that have been rendered for the 2019 Tax Year</span>
+
+        </div>
+
+        <div class="breaks_table preview_table">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="filedlink">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>File Download Link</th>
+                    <td mat-cell *matCellDef="let element"> {{element.filedlink}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="previewtype">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Preview Type</th>
+                    <td mat-cell *matCellDef="let element"> {{element.previewtype}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="timestamp">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><img class="filter_image"
+                            src="../../../../../../../assets/filter.png" alt="">Time Stamp</th>
+                    <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="user">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><img class="filter_image"
+                            src="../../../../../../../assets/filter.png" alt="">User</th>
+                    <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Noofforms">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header><img class="filter_image"
+                            src="../../../../../../../assets/filter.png" alt="">Number Of Forms</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Noofforms}} </td>
+                </ng-container>
+
+                <ng-container *ngIf="dataSource">
+                    <tr class="mat-row" *matNoDataRow>
+                        <td style="border-top: 0px solid rgb(41, 161, 194); text-align: center;" class="mat-cell"
+                            colspan="12"> No
+                            Data Available</td>
+                    </tr>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator class="pagination" #paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons>
+            </mat-paginator>
+
+        </div>
+    </div>

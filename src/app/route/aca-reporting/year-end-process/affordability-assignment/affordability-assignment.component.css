@@ -1,0 +1,119 @@
+.main{
+  margin-top: 50px;
+  margin-left: -1%;
+}
+
+.header{
+    /* background-color: white; */
+    color: #1591b8;
+    text-align: center;
+  }
+  .save-btn{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .save-btn button {
+    margin: 0px 30px 30px 0px;
+    background: green;
+    color:white;
+  }
+  .safe_harbor
+  {
+    max-width: 300px;
+    margin-top: 50px;
+  }
+  .assignment{
+    color: grey;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 17px;
+}
+  .description{
+    font-size: 18px;
+    background: #f5d6d6;
+    margin: 0 230px;
+    margin-top: 15px;
+    border-radius: 4px;
+    color: #da1f1f;
+    text-align: left;
+    margin-left: 138px !important;
+    /* margin-left: 35px; */
+  }
+  .error{
+    padding-left: 18px;
+  }
+  @media(max-width:1024px){
+    .description{
+      margin: 0 130px;
+    }
+  }
+  @media(max-width:991px){
+    .description{
+      margin: 0 80px;
+    }
+  }
+  .assign{
+    margin-left: 20px;
+  }
+  .line{
+    background: rgb(14, 107, 213);;
+    height: 3px;
+    margin: 0;
+  }
+  .chech_harbor{
+    margin-left: 30px;
+    margin-top: 16px;
+
+  }
+  .title{
+    color: rgb(14, 107, 213);
+    font-size: 25px;
+
+  }
+  .chech_harbor p{
+    margin-bottom: 0;
+  }
+  .rate{
+    background-color: #dff4fa;
+  
+    padding-left: 10px;
+    font-size: 15px;
+  }
+  p{
+    padding: 13px 0;
+  }
+  .assign_button{
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .check_fpl{
+    padding-left: 10px;
+  }
+  .assign{
+    border-radius: 4px;
+    background: rgb(14, 107, 213);
+    border: none;
+    color: #fff;
+    padding: 2px 14px;
+  }
+  .check{
+    border-radius: 4px;
+    background: rgb(10, 152, 36);
+    border: none;
+    color: #fff;
+    padding: 3px 35px;
+  }
+  .remove{
+    margin-left: 20px;
+    border-radius: 4px;
+    background: #c04b4b;
+    border: none;
+    color: #fff;
+    padding: 3px 35px;
+}
+.afforad-section{
+  width: 90%;
+  margin:  auto ;
+ 
+}

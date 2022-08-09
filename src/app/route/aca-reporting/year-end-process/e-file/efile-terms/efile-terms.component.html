@@ -1,0 +1,86 @@
+<div class="data-section"> 
+   
+   <h1 class="term-header">E-File Terms</h1>
+    <table>
+        <tr>
+          <th>Term</th>
+          <th>Definition</th>
+         
+        </tr>
+        <tr>
+            <td>‘Regenerate 1094-C’ Button</td>
+            <td>By clicking this button the User re-runs the business logic and calculations that are applied in the solution to populate the 1094-C Form based on the data within the solution. <strong>*Note that by clicking this button the User will lose all edits that have been made to the Form.</strong></td>
+        </tr>
+        <tr>
+            <td>Line 17 - Reserved</td>
+            <td>This line was reserved by the IRS and may be used during a future reporting year. For the 2015 Tax reporting year this line should be greyed out and blank. </td>
+        </tr>
+        <tr>
+            <td>Line 19</td>
+            <td>This line indicates if this is the Authoritative Transmittal for the Applicable Large Employer. If it is the Authoritative Transmittal then it will report aggregate employer-level data for the employer. There must be only one Authoritative Transmittal for each employer. In certain instances there may be more than one 1094-C Form submitted to the IRS for an employer but only one of them can be the Authoritative Transmittal.</td>
+        </tr>
+          <tr>
+            <td>Line 20</td>
+            <td>This line indicates the total number of 1095-C Forms being submitted by or on behalf of the employer. In our solution this is the total number of 1095-C Forms, minus any Forms that were voided in the Ad Hoc Editing process prior to E-Filing, and adding any Form added during the Ad Hoc Editing process prior to E-Filing.</td>
+        </tr>
+        <tr>
+            <td>Line 21</td>
+            <td>This line indicates whether an employer was part of an Aggregated or Controlled Group. If the employer was setup as part of a Controlled Group within the solution then this box will be checked ‘Yes’.</td>
+        </tr>
+        <tr>
+            <td>Line 22 – Certification of Eligibility</td>
+            <td>This section contains 4 check boxes. The solution does not support the offer methods related to checkboxes A, B, or D. Checkbox C will be checked off if the User has identified that they are eligible for either:
+                <ol>
+                    <li >	2015 Section 4980H Transition Relief for ALEs with Fewer Than 100 Full-Time Employees, Including Full-Time Equivalent Employees (50-99 Transition Relief), or</li>
+                    <li>2015 Transition Relief for Calculation of Assessable Payments Under Section 4980H(a) for ALEs with 100 or More Full-Time Employees, Including Full-Time Equivalent Employees <strong>(100 or More Transition Relief).</strong></li>
+                </ol>
+              
+                </td>
+        </tr>
+        <tr>
+            <td>Part III (a) – Minimum Essential Coverage Offer Indicator</td>
+            <td>This box gets checked ‘Yes’ is the employer has met one of the following conditions:
+                <ul>
+                    <li>
+                        The employer offered minimum essential coverage (identified in the Plan Builder) to at least 95% of their full-time employees, or
+                    </li>
+                    <li>
+                        The employer offered minimum essential coverage (identified in the Plan Builder) and is eligible for 4980H Transition Relief<strong>(This is referring to employers that are eligible for 50 to 99 full-time equivalent employees transition relief or 100+ full-time equivalent employees transition relief)</strong>  as indicated on Part III (e) Section 4980H Transition Relief Indicator. Bottom line, the employer needs to have definitely offered minimum essential coverage and offered coverage to 70% of their full-time employees. It is 70% for employees who are eligible for Transition Relief because that is what is permitted for the 2015 calendar year.
+                    </li>
+                </ul>
+               
+                
+                </td>
+        </tr>
+        <tr>
+            <td>Part III (b) – Full-Time Employee Count for ALE Member</td>
+            <td>Waiting Period under the Look-Back Measurement Method:
+                <ul>
+                    <li>Initial Measurement Period and Associated Administrative Period under the Look-Back Measurement Method</li>
+                    <li>Period Following Change in Status that Occurs During Initial Measurement Period Under the Look-Back Measurement Method</li>
+                    <li>First Calendar Month of Employment
+                        For more detailed information regarding limited non-assessment periods please visit the IRS’s website by clicking the following link:</li>
+                        <a href=" https://www.irs.gov/instructions/i109495c/ar01.html#d0e624" target="_blank">https://www.irs.gov/instructions/i109495c/ar01.html#d0e624</a>
+                </ul>
+               
+                
+                </td>
+        </tr>
+        <tr>
+            <td>Part III (c) – Total Employee Count for ALE Member</td>
+            <td>This indicates the total number of all of an employer’s employees, including full-time employees and non-full-time employees and employees in a Limited Non-Assessment Period, for each calendar month. An employer must choose to use one of the following days of the month to determine the number of employees per month and must use that day for all months of the year: (1) the first day of each month; (2) the last day of each month; (3) the 12th day of each month; (4) the first day of the first payroll period that starts during each month; or (5) the last day of the first payroll period that starts during each month (provided that for each month that last day falls within the calendar month in which the payroll period starts).<strong>*The solution uses (1) the first day of each month for this calculation.</strong> </td>
+        </tr>
+        <tr>
+            <td>Part III (d) – Aggregated Group Indicator</td>
+            <td>This box indicates if an employer was eligible for Transition Relief based on their number full-time equivalent employees in the preceding year. If the employer certifies by selecting box C on line 22 of the Form, that it is eligible for Section 4980H Transition Relief and is eligible for the 50 to 99 Relief, code A will apply. If the employer certifies by selecting box C on line 22 of the Form, that it is eligible for Section 4980H Transition Relief and is eligible for the 100 or More Relief, code B will apply.</td>
+        </tr>
+        <tr>
+            <td>Part III (e) – Section 4980H Transition Relief Indicator</td>
+            <td>This box indicates if an employer was eligible for Transition Relief based on their number full-time equivalent employees in the preceding year. If the employer certifies by selecting box C on line 22 of the Form, that it is eligible for Section 4980H Transition Relief and is eligible for the 50 to 99 Relief, code A will apply. If the employer certifies by selecting box C on line 22 of the Form, that it is eligible for Section 4980H Transition Relief and is eligible for the 100 or More Relief, code B will apply.</td>
+        </tr>
+        <tr>
+            <td>Part IV – Other ALE Members of Aggregated ALE Group</td>
+            <td>If the ‘Yes’ box was checked in Line 21 of the Form then this section should be completed. If the employer was a member of an Aggregated or Controlled ALE Group for any month of the calendar year, the name(s) and EIN of up to 30 of the other Aggregated or Controlled ALE Group members will be entered in this section. When there are more than 30 members of the Aggregated or Controlled ALE Group, the 30 ALE Members with the highest monthly average number of full-time employees will be reported in descending order based on their size.</td>
+        </tr>
+      </table>
+</div>

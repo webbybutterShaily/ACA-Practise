@@ -1,0 +1,308 @@
+<div class="select_main main_select" >
+  <div>
+    <h1 class="header"  >All Employees</h1>
+  </div>
+    <div><app-customer-drop-down></app-customer-drop-down></div>
+    
+</div>
+
+<!-- <div class="select_main main_select">
+    <h1 class="header" style="margin-right: 55%;">All Employees</h1>
+    <div >
+      <div class="year_main">
+        
+        <app-customer-drop-down></app-customer-drop-down>
+      </div>
+      
+    </div>
+  </div> -->
+
+
+<div class="maindiv">
+    <h3>{{companyname}}</h3>
+
+    <div class="subdiv1">
+        
+        <div style="display: flex; "> 
+              <button class="basic-btn" mat-button>Update Basic Info from payroll Data</button>
+              <button class="basic-btn" mat-button>Export Basic Template</button>
+        </div>
+        <app-knowledge-base-button></app-knowledge-base-button>
+    </div>
+    <div class="subdiv2">
+        <p>*All files being imported through this portal must be formatted as <b>.CSV </b> or <b>.XLS
+            file.</b> Files formatted as <b>.XLSX</b> will fail the import
+           process. Please note that this import page is used only to import Reporting Essentials Files
+           including: Employee Census Import, Plan
+            Builder Import, and the Offers of Coverage Import.
+        </p>
+        <span>File to Upload: * <input type="file"></span>
+        <button class="file_choose" mat-button>Upload</button>
+    </div>
+    <div class="subdiv3">
+       <div>
+        <button class="basic-btn" mat-button (click)="openDialog()">Create New Employees</button>
+       </div>
+       <div>
+        <p>*Note: The table displays terminated and inactive employees that have
+            a
+            termination date within
+            that past 18 months. In order to see all employees, including those terminated more than 18
+            months ago, click the “Show All Employees” button.
+        </p>
+       </div>
+       <div>
+        <button class="listbtn" mat-button (click)="navigatelist()">List Dependents</button>
+       </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="main_employees">
+    <div class="all_employees">
+
+        <mat-grid-list cols="4" rowHeight="2:1">
+            <div class="employees_main">
+                <mat-grid-tile colspan="2">
+                    <div class="part1">
+                        <h3>{{companyname}}</h3>
+                        <span>
+                            <button class="basic-btn" mat-button>Update Basic Info from payroll Data</button>
+                            <button class="basic-btn" mat-button>Export Basic Template</button>
+                            
+                        </span>
+                        <p>*All files being imported through this portal must be formatted as <b>.CSV </b> or <b>.XLS
+                                file.</b> Files formatted as <b>.XLSX</b> will fail the import
+                            process. Please note that this import page is used only to import Reporting Essentials Files
+                            including: Employee Census Import, Plan
+                            Builder Import, and the Offers of Coverage Import.
+                        </p>
+                        <span>File to Upload: * <input type="file"></span>
+                        <button class="file_choose" mat-button>Upload</button>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <div class="part2">
+                        <app-knowledge-base-button></app-knowledge-base-button>
+                        
+                    </div>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+
+        <mat-grid-list cols="4" rowHeight="2:1">
+            <div class="employees_main">
+                <mat-grid-tile colspan="2">
+                    <div class="employees_data">
+                        <button class="basic-btn" mat-button (click)="openDialog()">Create New Employees</button>
+                        <span class="note_content">*Note: The table displays terminated and inactive employees that have
+                            a
+                            termination date within
+                            that past 18 months. In order to see all employees, including those terminated more than 18
+                            months ago, click the “Show All Employees” button.</span>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <div class="employees_data list_btn">
+                        <span>
+                            <button class="basic-btn" mat-button (click)="navigatelist()">List Dependents</button>
+                        </span>
+                    </div>
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+    </div>
+</div> -->
+
+<div class="shoowww" >
+    <div class="check_remove">
+        <ul (click)="showActiveEmployee()">Show Active Employee Only </ul>
+        <ul (click)="showAllEmployee()">show All Employee</ul>
+
+ </div>
+</div>
+
+<div class="demo-table mat-elevation-z8">
+    
+    <table mat-table [dataSource]="dataSource" matSort  class="">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+          (click)="onRemoveCheckAll($event)"
+            (change)="$event ? toggleAllRows() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()"
+            [aria-label]="checkboxLabel()"
+          >
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox
+          
+            (click)="$event.stopPropagation()"
+            (change)="getSelectedEmpIdd($event, row)"
+            [checked]="selection.isSelected(row)"
+            [aria-label]="checkboxLabel(row)"
+          >
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="remove">
+        <th mat-header-cell *matHeaderCellDef>
+          <button (click)=" removeSelectedRows()" mat-raised-button  style="color: white;
+          background-color: rgb(159, 65, 65); font-size: 12px; padding: 0;">Remove</button>
+        </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let row"><button mat-raised-button class="editbtn">Edit</button> </td>
+      </ng-container>
+     
+
+      <ng-container matColumnDef="employeeid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Id</th>
+        <td mat-cell *matCellDef="let element">{{element.employeeid}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeename">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</th>
+        <td mat-cell *matCellDef="let element">{{element.employeename}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dependentName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dependent Name</th>
+        <td mat-cell *matCellDef="let element">{{element.dependentName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dependent First Name</th>
+        <td mat-cell *matCellDef="let element">{{element.firstname}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="middlename">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Dependent Middle Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.middlename}}</td>
+      </ng-container>
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dependent Last Name</th>
+        <td mat-cell *matCellDef="let element">{{element.lastname}}</td>
+      </ng-container>
+      <ng-container matColumnDef="relationship">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Relationship            </th>
+        <td mat-cell *matCellDef="let element">{{element.relationship}}</td>
+      </ng-container>
+      <ng-container matColumnDef="ssn">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dependent SSN</th>
+        <td mat-cell *matCellDef="let element">{{element.ssn}}</td>
+      </ng-container>
+      <ng-container matColumnDef="effectiveDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Effective Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.effectiveDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="hireDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Hire Date</th>
+        <td mat-cell *matCellDef="let element">{{element.hireDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="terminationDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Term Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.terminationDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="employeestatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let element">{{element.employeestatus}}</td>
+      </ng-container>
+      <ng-container matColumnDef="employeetype">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+        <td mat-cell *matCellDef="let element">{{element.employeetype}}</td>
+      </ng-container>
+      <ng-container matColumnDef="paytype">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Pay Type</th>
+        <td mat-cell *matCellDef="let element">{{element.paytype}}</td>
+      </ng-container>
+      <ng-container matColumnDef="addressline1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+        <td mat-cell *matCellDef="let element">{{element.addressline1}}</td>
+      </ng-container>
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+        <td mat-cell *matCellDef="let element">{{element.city}}</td>
+      </ng-container>
+      <ng-container matColumnDef="statecode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
+        <td mat-cell *matCellDef="let element">{{element.statecode}}</td>
+      </ng-container>
+      <ng-container matColumnDef="homedepartment">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Department</th>
+        <td mat-cell *matCellDef="let element">{{element.homedepartment}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateOfBirth">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
+        <td mat-cell *matCellDef="let element">{{element.dateOfBirth}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeemail">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let element">{{element.employeeemail}}</td>
+      </ng-container>
+      <ng-container matColumnDef="primaryworksitezipcode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Primary Worksite Zipcode</th>
+        <td mat-cell *matCellDef="let element">{{element.primaryworksitezipcode}}</td>
+      </ng-container>
+      <ng-container matColumnDef="countyofworksite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Country of Worksite</th>
+        <td mat-cell *matCellDef="let element">{{element.countyofworksite}}</td>
+      </ng-container>
+      <ng-container matColumnDef="countyofresidence">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Country of Residence</th>
+        <td mat-cell *matCellDef="let element">{{element.dateOfBirth}}</td>
+      </ng-container>
+      <ng-container matColumnDef="miscellaneous">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Miscellaneous</th>
+        <td mat-cell *matCellDef="let element">{{element.miscellaneous}}</td>
+      </ng-container>
+      <ng-container matColumnDef="isElectronicallyConsented">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>IsElectronically Consented</th>
+        <td mat-cell *matCellDef="let element">{{element.isElectronicallyConsented}}</td>
+      </ng-container>
+
+      <tr  class="table-header"  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  class="table-row" mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td
+          style="
+            border-top: 3px solid rgb(41, 161, 194);
+            background-color: #7db8f468;
+            text-align: center;
+          "
+          class="mat-cell"
+          colspan="20"
+        >
+          No Data Available
+        </td>
+      </tr>
+      
+    </table>
+
+  </div>
+<div class="paginatordiv">
+    <mat-paginator  [pageSizeOptions]="[5, 10]"
+    showFirstLastButtons  [pageSize]="5"
+      aria-label="Select Plans ">
+        </mat-paginator>
+</div>
+  

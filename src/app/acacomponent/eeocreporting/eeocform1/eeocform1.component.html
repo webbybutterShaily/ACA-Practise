@@ -1,0 +1,853 @@
+<div class="data-section">
+    <div class="header">
+        <h1 style="font-weight: bold;">Form</h1>
+        <h4 style="font-weight: bold;">Company Name</h4>
+    </div>
+    <p style="text-align: justify;">
+        Users can click the ‘Populate Form’ button to populate a current version of the EEO-1 Form in html format. The form will populate using all current data available in the Employee Data Management and Employer Data pages. Users can also download a PDF and CSV version of the form. *Note that the CSV version of the form is provided in the EEOC required format for uploads. Edits can be made to the form and must be saved by clicking the ‘Save’ button on the bottom of the page.
+    </p>
+    <div class="main-row" >
+        <div  class="column1">
+            <button mat-raised-button style="background: green;color:white" class="form-btn">Edit From Current Data </button>
+            <button mat-raised-button style="background: green;color:white" class="form-btn">Populate Form </button>
+        </div>
+       
+        <div class="column2">
+            <button mat-raised-button style="background: blue;color:white" class="form-btn">Download PDF  </button>
+            <button mat-raised-button style="background: blue;color:white" class="form-btn">Download CSV</button>
+            <button mat-raised-button style="background: blue;color:white" class="form-btn">Download Text File </button>
+           
+        </div>
+        
+    </div>
+    <p style="margin-right: 12px;margin-left: 53.6rem;">Ready to file with the EEOC? <a href="" style="text-decoration: none;color:blue;">Click here</a>
+    </p>
+
+
+    <div class="data-section">
+        <div class="header">
+           
+            <h3 style="font-weight: bold;">SECTION A - TYPE OF REPORT</h3>
+        </div>
+
+     </div>
+     <table class="table" >
+         <tr>
+             <td>
+                <div>1. Indicate by marking in the appropriate box the type of reporting unit for which this copy of the form is submitted (MARK ONLY ONE BOX).
+                </div>
+           <div class="main-row">
+               <div class="column1">
+                 <mat-checkbox class="example-margin">Single-establishment Employer Report</mat-checkbox>
+               </div>
+               <div  class="column3">
+ <div>Multi-establishment Employer:</div><div><mat-checkbox class="example-margin">Consolidation Report (Required)</mat-checkbox></div>
+ <div><mat-checkbox class="example-margin">Headquarters Unit Report (Required)</mat-checkbox></div>
+ <div><mat-checkbox class="example-margin">Individual Establishment Report</mat-checkbox></div>
+               </div>
+           </div>
+             </td>
+            
+          </tr>
+          <tr>
+              <td>
+                  <p> 2. Total number of reports being filed by this Company (Answer on Consolidated Report only): </p>
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="">
+                </mat-form-field>
+               
+              </td>
+            </tr>
+            <tr></tr>
+     </table>
+
+
+     <div class="data-section">
+        <div class="header">
+           
+            <h3 style="font-weight: bold;">SECTION B - COMPANY IDENTIFICATION</h3>
+        </div>
+
+     </div>
+     <table class="table" >
+        <tr>
+        <td>
+                <div>1. Name of the Parent Company that owns or controls establishment in item 2 below (omit if same name as above):
+                </div>
+        <p>a. Parent Company:</p>
+        <mat-form-field appearance="outline" style="width: 800px;">
+            <input matInput placeholder="">
+        </mat-form-field>
+        <div class="main-row">
+            <div class="cl1"><p>Address (Number and Street): </p>
+                <mat-form-field appearance="outline" style="width: 430px;">
+                    <input matInput placeholder="">
+                </mat-form-field></div>
+            <div class="cl2">
+                <p>Address Line 2: </p>
+        <mat-form-field appearance="outline" style="width: 430px;">
+            <input matInput placeholder="">
+        </mat-form-field>
+            </div>
+        </div>
+        
+        <div class="main-row">
+            <div style="width: 33%;
+            padding: 10px;">
+            <p>City to Town:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+            <div style="width: 33%;
+            padding: 10px;"><p>State:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+            <div style="width: 33%;
+            padding: 10px;"><p>Zip Code:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+        </div>
+        </td>
+        </tr>
+        <tr>
+              <td>
+                <div>2. Establishment for which this report is filed (omit if same as above):
+                </div>
+        <p>a. Name Of Establishment:</p>
+        <mat-form-field appearance="outline" style="width: 800px;">
+            <input matInput placeholder="">
+        </mat-form-field>
+        <div class="main-row">
+            <div class="cl1"><p>Address (Number and Street): </p>
+                <mat-form-field appearance="outline" style="width: 430px;">
+                    <input matInput placeholder="">
+                </mat-form-field></div>
+            <div class="cl2">
+                <p>Address Line 2: </p>
+        <mat-form-field appearance="outline" style="width: 430px;">
+            <input matInput placeholder="">
+        </mat-form-field>
+            </div>
+        </div>
+        
+        <div class="main-row">
+            <div style="width: 25%;
+            padding: 10px;">
+            <p>City to Town:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+            <div style="width: 25%;
+            padding: 10px;"><p>Country:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+            <div style="width: 25%;
+            padding: 10px;"><p>State:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+            <div style="width: 25%;
+            padding: 10px;"><p>Zip Code:</p>
+            <mat-form-field appearance="outline"  style="width: 250px;">
+                <input matInput placeholder="">
+            </mat-form-field></div>
+        </div>
+       
+    
+    </td>
+        </tr>
+         <tr><td>
+            <p>b. Employer identification No. (IRS 9-DIGIT TAX NUMBER):</p>
+            <mat-form-field appearance="outline" style="width: 800px;">
+                <input matInput placeholder="">
+            </mat-form-field>
+         </td></tr>   
+         <tr><td>
+            <p>c. Was an EEO-1 report filed for this establishment last year?</p>
+            <p>
+                <mat-checkbox class="example-margin">Yes</mat-checkbox>&nbsp;&nbsp;<mat-checkbox
+                    class="example-margin">
+                    No</mat-checkbox>
+            </p>
+         </td></tr>
+     </table>
+
+     <div class="data-section">
+        <div class="header">
+           
+            <h3 style="font-weight: bold;">SECTION C - EMPLOYERS WHO ARE REQUIRED TO FILE</h3>
+        </div>
+
+     </div>
+<table >
+    <tr>
+        <td>
+            <p>1. Does the entire company have at least 100 employees in the payroll period for which you are reporting?</p>
+            <p>
+                <mat-checkbox class="example-margin">Yes</mat-checkbox>&nbsp;&nbsp;<mat-checkbox
+                    class="example-margin">
+                    No</mat-checkbox>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>2. Is your company affiliated through common ownership and/or centralized management with other entities in an enterprise with a total employment of 100 or more?</p>
+            <p>
+                <mat-checkbox class="example-margin">Yes</mat-checkbox>&nbsp;&nbsp;<mat-checkbox
+                    class="example-margin">
+                    No</mat-checkbox>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>3. Does the company or any of its establishments (a) have 50 or more employees AND (b) is not exempt as provided by 41 CFR 60-1.5, AND either (1) is a prime government contractor or first-tier subcontactor, and has a contract, subcontract, or purchase order amounting to $50,000 or more, or (2) serves as a depository of Government funds in any amount or is a financial institution which is an issuing and paying agent for U.S. Savings Bonds and Savings Notes?</p>
+            <p>
+                <mat-checkbox class="example-margin">Yes</mat-checkbox>&nbsp;&nbsp;<mat-checkbox
+                    class="example-margin">
+                    No</mat-checkbox>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>4. If the response to the above question (C - 3) is Yes, please enter your Dun and Bradstreet identification number (if you have one):</p>
+            <mat-form-field appearance="outline" style="width: 800px;">
+                <input matInput placeholder="">
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr style="background-color: white;">
+        <td><h3 style="color: rgb(21, 72, 191);">
+            NOTE: If an answer to questions 1, 2 or 3 of Section C is "Yes", complete the entire form, otherwise skip to Section G.
+        </h3></td>
+        
+
+    </tr>
+</table>
+<div class="data-section">
+    <div class="header">
+       
+        <h3 style="font-weight: bold;">SECTION D - EMPLOYMENT DATA</h3>
+    </div>
+
+ </div>
+ <table><tr>
+     <td >
+         <p>Employment at this establishment - Report all permanent full- and part-time employees including apprentices and on-the-job trainees unless specifically excluded as set forth in the instructions. Enter the appropriate figures on all lines and in all columns. Blank spaces will be considered as zeros.</p>
+         <table >
+             <tr  >
+                    <td class="section-d" colspan="2" rowspan="6"> Job Categories</td>
+                    <td class="section-d" colspan="15" style="text-align: center;">Number of Employees<br>
+                        (Report employees in only one category)
+                         </td>
+             </tr>
+             <tr>
+<td colspan="14" class="section-d" style="text-align: center;">Race/Ethnicity</td>
+<td class="section-d" rowspan="4">Total Col A-N</td>
+             </tr>
+             <tr>
+                 <td colspan="2" rowspan="2" class="section-d">
+                    Hispanic or Latino
+                 </td>
+                 <td colspan="12" class="section-d" style="text-align: center;">
+                    Non/Hispanic or Latino
+                 </td>
+             </tr>
+             <tr>
+                 <td colspan="6" class="section-d" style="text-align: center;">Male</td>
+                 <td colspan="6" class="section-d" style="text-align: center;">Female</td>
+             </tr>
+             <tr>
+                 <td  class="section-d" >Male</td>
+                 <td  class="section-d" >Female</td>
+                 <td  class="section-d" >White</td>
+                 <td  class="section-d" >Black or<br> African<br> American</td>
+                 <td  class="section-d" >Native <br>Hawaiian or<br> Pacific <br>Islander</td>
+                 <td  class="section-d" > Asian</td>
+                 <td  class="section-d" >Native American or Alaska Native</td>
+                 <td  class="section-d" >Two or More races</td>
+                 <td  class="section-d" >White</td>
+                 <td  class="section-d" >Black or African American</td>
+                 <td  class="section-d" >Native Hawaiian or Pacific Islander</td>
+                 <td  class="section-d" >Asian</td>
+                 <td  class="section-d" >Native American or Alaska Native</td>
+                 <td  class="section-d" >Two or More races</td>
+                
+             </tr>
+             <tr>
+                 <td  class="section-d">A</td>
+                 <td  class="section-d">B</td>
+                 <td  class="section-d">C</td>
+                 <td  class="section-d">D</td>
+                 <td  class="section-d">E</td>
+                 <td  class="section-d">F</td>
+                 <td  class="section-d">G</td>
+                 <td  class="section-d">H</td>
+                 <td  class="section-d">I</td>
+                 <td  class="section-d">J</td>
+                 <td  class="section-d">K</td>
+                 <td  class="section-d">L</td>
+                 <td  class="section-d">M</td>
+                 <td  class="section-d">N</td>
+                 <td  class="section-d">O</td>
+             </tr>
+             <tr style="word-wrap: break-word">
+                 <td class="section-d" colspan="2">Executive/Senior Level Officials and Managers 1.1</td>
+               
+                 <td class="section-d"  #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"> </td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d"#el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                 <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+             </tr>
+             <tr>
+                <td class="section-d" colspan="2">First/ Mid-Level Officials and Managers 1.2</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Professionals 2</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Technicians 3</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Sales Workers 4</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d"#el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Adminstrative Support Workers 5</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Craft Workers 6</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Operatives 7</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Laborers and Helpers 8</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Service Workers 9</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Total 10</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+            <tr>
+                <td class="section-d" colspan="2">Previous Year Total 11</td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+                <td class="section-d" #el  contenteditable="true" (onchange)="fun(el.innerText)" style=" min-width: 50px;
+                 word-break: break-all;"></td>
+            </tr>
+         </table>
+     </td>
+
+ </tr>
+<tr>
+    <td>
+        <p>
+            Date(s) of payroll period used : (Omit on the Consolidated Report)
+        </p>
+        <mat-form-field appearance="outline"  style="width: 1000px;">
+            <input matInput placeholder="">
+        </mat-form-field>
+    </td>
+</tr></table>
+<div class="data-section">
+    <div class="header">
+       
+        <h3 style="font-weight: bold;">SECTION E -ESTABLISHMENT INFORMATION</h3>
+        <h4>(Omit on the Consolidated Report)</h4>
+    </div>
+
+ </div>
+<table>
+    <tr style="background-color: white;">
+        <td>
+            <p>
+                What is the major activity of this establishment? (Be specific, i.e., manufacturing steel castings, retail grocer, wholesale plumbing supplies, title insurance, etc. Include the specific type of product or type of service provided, as well as the principal business or industrial activity.)
+            </p>
+            <mat-form-field appearance="outline" style="width: 1000px;height: 120px;">
+               
+                <textarea matInput placeholder="Corn Farming"></textarea>
+              </mat-form-field>
+        </td>
+    </tr>
+</table>
+<div class="data-section">
+    <div class="header">
+       
+        <h3 style="font-weight: bold;">SECTION F - REMARKS</h3>
+        
+    </div>
+
+ </div>
+<table>
+    <tr style="background-color: white;">
+        <td>
+            <p>
+                Use this item to give any identification data appearing on the last EE0-1 report which differs from that given above, explain major changes in composition of reporting units and other pertinent information.
+            </p>
+            <mat-form-field appearance="outline" style="width: 1000px;height: 120px;">
+               
+                <textarea matInput placeholder=""></textarea>
+              </mat-form-field>
+        </td>
+    </tr>
+</table>
+<div class="data-section">
+    <div class="header">
+       
+        <h3 style="font-weight: bold;">SECTION G - REMARKS</h3>
+        
+    </div>
+
+ </div>
+<table>
+    <tr style="background-color: white;">
+        <td>
+            <p>
+                Check One:
+            </p>
+            <div>
+                <mat-checkbox class="example-margin">1. All reports are accurate and were prepared in accordance with instructions. (Check on Consolidated Report Only.)
+                        
+                </mat-checkbox>
+            </div>
+            <div>
+                <mat-checkbox class="example-margin">2. This report is accurate and was prepared in accordance with the instructions.
+                        
+                </mat-checkbox>
+            </div>
+            <div class="main-row">
+                <div style="width: 29%;
+                padding: 10px;"><p>Name of Certifying Official</p>
+                    <mat-form-field appearance="outline" style="width: 279px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 17%;
+                padding: 10px;"><p>Title</p>
+                    <mat-form-field appearance="outline" style="width: 177px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 17%;
+                padding: 10px;"><p>Signature</p>
+                    <mat-form-field appearance="outline" style="width: 177px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 36%;
+                padding: 10px;"><p>Date</p>
+                    <mat-form-field appearance="outline" style="width: 279px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+            </div>
+            <div class="main-row">
+                <div style="width: 27%;
+                padding: 10px;"><p>Name of Person to contact regarding this report</p>
+                    <mat-form-field appearance="outline" style="width: 279px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 16%;
+                padding: 10px;"><p>Title</p>
+                    <mat-form-field appearance="outline" style="width: 177px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 46%;
+                padding: 10px;"><p>Address (Number and Street) </p>
+                    <mat-form-field appearance="outline" style="width: 518px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+            </div>
+            <div class="main-row">
+                <div style="width: 29%;
+                padding: 10px;"><p>City and State</p>
+                    <mat-form-field appearance="outline" style="width: 279px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 17%;
+                padding: 10px;"><p>Zip Code</p>
+                    <mat-form-field appearance="outline" style="width: 177px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 17%;
+                padding: 10px;"><p>Email Address</p>
+                    <mat-form-field appearance="outline" style="width: 177px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+                <div style="width: 36%;
+                padding: 10px;"><p>
+Telephone No. (including Area code and Extension) 
+
+</p>
+                    <mat-form-field appearance="outline" style="width: 279px;">
+                        <input matInput placeholder="">
+                    </mat-form-field></div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div style="margin-top:20px ;">
+    <p>All reports and information obtained from individual reports will be kept confidential as required by Section709(e) of Title VII.WILLFULLY FALSE STATEMENTS ON THIS REPORT ARE PUNISHABLE BY LAW, U.S. CODE, TITLE 18, SECTION 1001
+        </p>
+        <div class="save-btn">
+            <button mat-raised-button >Save</button>
+        </div>
+</div>
+</div>
+ 
+

@@ -1,0 +1,136 @@
+.header {
+  /* background-color: white; */
+  color: #1591b8;
+  text-align: center;
+}
+.save-btn {
+  display: flex;
+  justify-content: center;
+}
+.save-btn button {
+  margin: 0px 30px 30px 0px;
+  background: green;
+  color: white;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--check-primary, #61d345);
+  position: relative;
+  transform: rotate(45deg);
+}
+.checkmark::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-color: var(--check-secondary, #fff);
+  bottom: 6px;
+  left: 6px;
+  height: 10px;
+  width: 6px;
+}
+
+/* below styles are only for representation purpose */
+.container {
+  margin: 150px 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Affordability {
+  margin: 2%;
+}
+
+.redContent {
+  color: #da1f1f;
+  background: #f5d6d6;
+  width: 80%;
+  margin: 1%;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.check-note {
+  border-style: solid;
+  border-radius: 5px;
+  border-color: rgba(12, 141, 240, 0.596);
+  padding: 7px;
+  background-color: rgb(12 141 240 / 10%);
+  margin: 1%;
+
+}
+.btn {
+  border-radius: 4px;
+  background: rgb(10, 152, 36);
+  border: none;
+  color: #fff;
+  /* padding: 3px 35px; */
+}
+.d-btn {
+  display: flex;
+  justify-content: end;
+  /* margin-top: 20px; */
+  margin: 2%;
+}
+
+.PieDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin: 2%;
+}
+.PieDiv h3 {
+  text-align: center;
+}
+
+.seeallbtn {
+  border-radius: 4px;
+  background: #034f79;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: #1591b8;
+}
+h2 {
+  text-align: center;
+  color: #1591b8;
+}
+.alignbtn {
+  text-align: center;
+  margin: 10px;
+}
+
+.blueCircle {
+  background-color: rgb(14, 107, 213);
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  margin: 2px;
+}
+.redCircle {
+  background-color: rgb(242, 34, 34);
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  margin: 2px;
+}
+.h3head {
+  color: grey;
+}
+.noData {
+  height: 350px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}

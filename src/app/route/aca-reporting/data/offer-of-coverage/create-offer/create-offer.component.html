@@ -1,0 +1,150 @@
+<form #formdata="ngForm">
+
+    <div class="responsive-popup">
+
+        <div class="main-row">
+            <div class="column1" style="color: #056993;padding-left: 24px;">
+                <h2 mat-dialog-title>Manage Employee's Offer of Coverage</h2>
+            </div>
+            <div class="column2" style="padding-right: 24px">
+                <mat-dialog-actions>
+                    <button mat-button mat-dialog-close class="btn1">Back</button>
+                    <button mat-button mat-dialog-close  (click)="saveoffer(formdata.value)" class="btn2">Save</button>
+                    <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="btn3">Close</button>
+                </mat-dialog-actions>
+            </div>
+        </div>
+        <hr style="border: 0;border-top: 1px solid #d0c6c6;">
+        <mat-dialog-content class="mat-typography" style="margin: 0px;">
+            <div>
+                <div class="employee-desc">
+                    <h3 style="font-weight: 500; margin-bottom: 0px;">
+                        Employee: {{data.empName}}
+                    </h3>
+                    <div>
+                        Hire Date: {{data.empHireDate}}
+                    </div>
+                    <div>
+                        Termination Date: {{data.empTerminationDate}}
+                    </div>
+                </div>
+    
+                <div class="employee_data">
+    
+    
+                    <span>Add a new offer to this employee</span>
+                    <mat-form-field appearance="fill" class="input_year">
+                        <select matNativeControl required>
+                            <option value="">Please Choose plan</option>
+    
+                            <option value='plan2021'>
+                                Plan 2021
+                            </option>
+                        </select>
+                    </mat-form-field>
+    
+                    <button mat-raised-button class="btn4">Add</button>
+                </div>
+                <!-- table -->
+    
+                <div>
+                    <table>
+                        <thead style="border-bottom: 2px solid rgb(41, 161, 194);border-top:3px solid rgb(41, 161, 194) ;">
+    
+                            <th>Plan Name</th>
+                            <th>Plan Renewal Date</th>
+                            <th>Date of offer </th>
+                            <th> Outcome </th>
+                            <th> Enrollment Date </th>
+                            <th> Disenrollment Date </th>
+    
+    
+    
+                        </thead>
+                        <tbody>
+    
+                            <tr style="border-top: 3px solid rgb(41, 161, 194);">
+    
+                                <td >{{data.planData.p_planName}}</td>
+    
+                                <td >{{data.planData.planRenewalDate}}</td>
+                                <td>
+                                    <div class="date-class">
+                                        <mat-form-field appearance="outline" >
+                                            <input matInput placeholder="6/13/2017"
+                                          
+                                                [matDatepicker]="datepicker1" [max]="md"  name="dateOfOffer" ngModel>
+                                            <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                                            <mat-datepicker #datepicker1></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                              
+                                </td>
+                                <td>
+                                    <div class="employee_data">
+                                        <mat-form-field appearance="fill" class="input_year" style="width: 100%;">
+                                            <select matNativeControl required name="outcomeOfOffer" ngModel>
+                        
+                                                <option value='offered'>
+                                                    Offered
+                                                </option>
+                                                <option value='elected'>
+                                                    Elected
+                                                </option>
+                                                <option value='union'>
+                                                    Union
+                                                </option>
+                                                <option value='waived'>
+                                                    Waived
+                                                </option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-class">
+                                        <mat-form-field appearance="outline" >
+                                            <input matInput placeholder="6/13/2017"
+                                                [matDatepicker]="datepicker2" [max]="md"  name="enrollmentDate" ngModel>
+                                            <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #datepicker2></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="date-class">
+                                        <mat-form-field appearance="outline" >
+                                            <input matInput placeholder="6/13/2017"
+                                                [matDatepicker]="datepicker3" [max]="md"  name="disenrollmentDate" ngModel>
+                                            <mat-datepicker-toggle matSuffix [for]="datepicker3"></mat-datepicker-toggle>
+                                            <mat-datepicker #datepicker3></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+    
+                                <td>
+                                    <button mat-button [mat-dialog-close]="true" class="btn3">Remove</button> <br>
+                                    <button mat-button mat-dialog-close class="btn2">Dependents</button> <br>
+    
+    
+                                </td>
+    
+    
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+    
+    
+            </div>
+    
+    
+    
+    
+    
+    
+        </mat-dialog-content>
+    
+    </div>
+</form>

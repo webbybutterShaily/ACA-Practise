@@ -1,0 +1,426 @@
+<div class="table_view_main">
+    <h2>Edit 1095 Forms </h2>
+    <div class="current_data">
+        <h6>UAT - 100 Current Form 1095 Data </h6>
+        <span (click)="back()">
+            <fa-icon class="rotate" [icon]="rotatedicone"></fa-icon>Back
+        </span>
+    </div>
+
+    
+    <button class="export_btn" mat-button> <fa-icon [icon]="faFileExcel" class="data_icons"></fa-icon>Export Tax Data</button>
+<div class="pagination">
+    <div class="current_form1095">
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+            <ng-container matColumnDef="Empid">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Id</th>
+                <td mat-cell *matCellDef="let element"> {{element.Empid}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Emp_name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.Emp_name}} </td>
+            </ng-container>
+            <div>
+                <ng-container matColumnDef="Fname">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Fname}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Mname">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Middle Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Mname}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Lname">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Lname}} </td>
+                </ng-container>
+                <ng-container matColumnDef="ssn">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>SSN</th>
+                    <td mat-cell *matCellDef="let element"> {{element.ssn}} </td>
+                </ng-container>
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Address1</th>
+                    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                </ng-container>
+                <ng-container matColumnDef="City">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+                    <td mat-cell *matCellDef="let element"> {{element.City}} </td>
+                </ng-container>
+                <ng-container matColumnDef="state">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
+                    <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+                </ng-container>
+                <ng-container matColumnDef="zipcode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Zipcode</th>
+                    <td mat-cell *matCellDef="let element"> {{element.zipcode}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Allmonth">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>All 12 Months</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Allmonth}} </td>
+                </ng-container>
+                <ng-container matColumnDef="jan">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jan</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jan}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="feb">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Feb</th>
+                    <td mat-cell *matCellDef="let element"> {{element.feb}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="mar">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Mar</th>
+                    <td mat-cell *matCellDef="let element"> {{element.mar}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="apr">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Apr</th>
+                    <td mat-cell *matCellDef="let element"> {{element.apr}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="may">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>May</th>
+                    <td mat-cell *matCellDef="let element"> {{element.may}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jun">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jun</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jun}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jul">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jul</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jul}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aug">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Aug</th>
+                    <td mat-cell *matCellDef="let element"> {{element.aug}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="sep">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Sep</th>
+                    <td mat-cell *matCellDef="let element"> {{element.sep}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="oct">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Oct</th>
+                    <td mat-cell *matCellDef="let element"> {{element.oct}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nov">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nov</th>
+                    <td mat-cell *matCellDef="let element"> {{element.nov}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="dec">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Dec</th>
+                    <td mat-cell *matCellDef="let element"> {{element.dec}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Allmonth15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>All 12 Months</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Allmonth15}} </td>
+                </ng-container>
+                <ng-container matColumnDef="jan15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jan</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jan15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="feb15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Feb</th>
+                    <td mat-cell *matCellDef="let element"> {{element.feb15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="mar15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Mar</th>
+                    <td mat-cell *matCellDef="let element"> {{element.mar15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="apr15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Apr</th>
+                    <td mat-cell *matCellDef="let element"> {{element.apr15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="may15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>May</th>
+                    <td mat-cell *matCellDef="let element"> {{element.may15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jun15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jun</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jun15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jul15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jul</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jul15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aug15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Aug</th>
+                    <td mat-cell *matCellDef="let element"> {{element.aug15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="sep15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Sep</th>
+                    <td mat-cell *matCellDef="let element"> {{element.sep15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="oct15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Oct</th>
+                    <td mat-cell *matCellDef="let element"> {{element.oct15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nov15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nov</th>
+                    <td mat-cell *matCellDef="let element"> {{element.nov15}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="dec15">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Dec</th>
+                    <td mat-cell *matCellDef="let element"> {{element.dec15}} </td>
+                </ng-container>
+
+
+
+                <ng-container matColumnDef="Allmonth16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>All 12 16Months</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Allmonth16}} </td>
+                </ng-container>
+                <ng-container matColumnDef="jan16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jan</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jan16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="feb16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Feb</th>
+                    <td mat-cell *matCellDef="let element"> {{element.feb16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="mar16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Mar</th>
+                    <td mat-cell *matCellDef="let element"> {{element.mar16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="apr16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Apr</th>
+                    <td mat-cell *matCellDef="let element"> {{element.apr16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="may16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>May</th>
+                    <td mat-cell *matCellDef="let element"> {{element.may16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jun16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jun</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jun16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jul16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jul</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jul16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aug16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Aug</th>
+                    <td mat-cell *matCellDef="let element"> {{element.aug16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="sep16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Sep</th>
+                    <td mat-cell *matCellDef="let element"> {{element.sep16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="oct16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Oct</th>
+                    <td mat-cell *matCellDef="let element"> {{element.oct16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nov16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nov</th>
+                    <td mat-cell *matCellDef="let element"> {{element.nov16}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="dec16">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Dec</th>
+                    <td mat-cell *matCellDef="let element"> {{element.dec16}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="siCoverage">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>SI Coverage</th>
+                    <td mat-cell *matCellDef="let element"> {{element.siCoverage}} </td>
+                </ng-container>
+
+
+
+
+                <ng-container matColumnDef="Corrected">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Corrected </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Corrected}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Voided">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Voided</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Voided}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Line_number">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Line_number}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Middle Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="First_name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element.First_name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Middle_name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>SSN</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Middle_name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Last_name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Address1</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Last_name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="SSNpart3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+                    <td mat-cell *matCellDef="let element"> {{element.SSNpart3}} </td>
+                </ng-container>
+                <ng-container matColumnDef="DOB">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
+                    <td mat-cell *matCellDef="let element"> {{element.DOB}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Allmonth_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>All 12 Months</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Allmonth_part3}} </td>
+                </ng-container>
+                <ng-container matColumnDef="jan_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jan</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jan_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="feb_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Feb</th>
+                    <td mat-cell *matCellDef="let element"> {{element.feb_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="mar_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Mar</th>
+                    <td mat-cell *matCellDef="let element"> {{element.mar_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="apr_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Apr</th>
+                    <td mat-cell *matCellDef="let element"> {{element.apr_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="may_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>May</th>
+                    <td mat-cell *matCellDef="let element"> {{element.may_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jun_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jun</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jun_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="jul_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Jul</th>
+                    <td mat-cell *matCellDef="let element"> {{element.jul_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aug_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Aug</th>
+                    <td mat-cell *matCellDef="let element"> {{element.aug_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="sep_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Sep</th>
+                    <td mat-cell *matCellDef="let element"> {{element.sep_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="oct_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Oct</th>
+                    <td mat-cell *matCellDef="let element"> {{element.oct_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nov_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nov</th>
+                    <td mat-cell *matCellDef="let element"> {{element.nov_part3}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="dec_part3">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Dec</th>
+                    <td mat-cell *matCellDef="let element"> {{element.dec_part3}} </td>
+                </ng-container>
+
+            </div>
+            <ng-container matColumnDef="header-row-first-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">
+                    Employee Census information
+                </th>
+            </ng-container>
+            <!-- Header row second group -->
+            <ng-container matColumnDef="header-row-second-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="8"> Employee Census information</th>
+            </ng-container>
+            <ng-container matColumnDef="header-row-third-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="13">Line 14 - Offer of Coverage
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="header-row-four-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="13">Line 15 - Employee Required Lowest Cost
+                    Contribution
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="header-row-fifth-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="13">Box 16 - Safe Harbors
+                </th>
+            </ng-container>
+
+            <ng-container matColumnDef="header-row-self-group">
+                <th mat-header-cell *matHeaderCellDef>Self Insured
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="header-row-admin-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">Admin
+                </th>
+            </ng-container>
+            <ng-container matColumnDef="header-row-Individiuals-group">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="20">Part III - Covered Individiuals
+                </th>
+            </ng-container>
+
+            <ng-container *ngIf="dataSource">
+                <tr class="mat-row" *matNoDataRow>
+                    <td style="text-align: center;" class="mat-cell" colspan="72"> No Data Available</td>
+                </tr>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="[
+            'header-row-first-group', 'header-row-second-group',
+            'header-row-third-group', 'header-row-four-group', 
+            'header-row-fifth-group','header-row-self-group',
+            'header-row-admin-group','header-row-Individiuals-group']"></tr>
+
+            <!-- <ng-container matColumnDef="breakEndDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Box 16 - Safe Harbors</th>
+            <td mat-cell *matCellDef="let element"> {{element.breakEndDate}} </td>
+          </ng-container> -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       
+        </table>
+    </div>
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

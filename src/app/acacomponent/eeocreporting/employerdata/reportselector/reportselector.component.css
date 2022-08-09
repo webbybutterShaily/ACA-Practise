@@ -1,0 +1,27 @@
+::ng-deep .mat-dialog-container{
+    background-color: rgba(211, 223, 239, 1);
+    overflow: hidden;
+  }
+  .col1{
+    width: 50%;
+    padding: 10px;
+  }
+  .col2{
+    width: 50%;
+    padding: 10px;
+  }
+  .main-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .close{
+    background-color: #c90d0dba;
+    color: white;
+   
+
+  }
+
+  .dialogcontent{
+    padding: 2%;
+  }

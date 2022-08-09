@@ -1,0 +1,6 @@
+.year_main{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin:30px  30px  0px 0;
+}

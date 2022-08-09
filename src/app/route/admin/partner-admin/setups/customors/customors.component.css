@@ -1,0 +1,262 @@
+/* .header {
+    
+    color: #1591b8;
+    text-align: center;
+}*/
+
+
+
+
+
+.btn1 {
+    background: rgb(87 175 87);
+    color: white;
+}
+
+.btn4 {
+    background: rgb(192, 74, 38);
+    color: white;
+    margin-top: 2%;
+}
+.btn2 {
+    margin-left: 20px;
+    background: rgb(6 117 186);
+    color: white;
+}
+.btn3 {
+   
+    background: rgb(6 117 186);
+    color: white;
+    margin-left: 5px;
+}
+.heading2 {
+    color: #005593;
+    margin-top: 1%;
+   
+}
+
+.CompanyDetailForm {
+    margin-left: 2%;
+    width: 80%;
+}
+
+.tblRow1 {
+    width: 30%;
+}
+
+.selectcustomer {
+    width: 15%;
+    
+    margin-top: 7px;
+    float: left;
+} 
+.header{
+    background-color: white;
+    color: #1591b8;
+    text-align: center;
+    margin-top: 1%;
+  }
+  .data-section{
+    width: 90%;
+    margin: 10px auto;
+  }
+  .cdetail1{
+    display: flex;
+    margin-top: 10px;
+  
+  }
+
+  .cdetail2 p{
+      font-size: 12px;
+  }
+  .cdetail2{
+    border: 1px solid black;
+    flex-direction: column;
+    height: 162px;
+    overflow-y: auto;
+  }
+  .customer-col{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .mat-input-element{
+      font-size: 12px;
+  }
+
+  .cust-row{
+    display: flex;
+    margin-top: 0px;
+    flex-direction: row;
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color:white;
+    border-radius: 5px;
+   
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 6px 0px;
+  border-top: 4px solid transparent;
+}
+/* ::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+    transform: translateY(0%) !important;
+  } */
+  .select-month label{
+    font-size: 11px;
+    padding-left: 4px;
+    width: 10%;
+}
+
+::ng-deep .select-month .mat-form-field-appearance-fill .mat-form-field-flex {
+    width: 65%;
+}
+
+.producttype_main{
+    border: 1px solid black;
+    height: 528px;
+    margin-right: 40px;
+
+}
+
+.customer-row{
+    padding: 10px;
+    width:90%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+
+.product_type{
+    height: 505px;
+    overflow-y: auto;
+}
+
+.cust-col{
+    padding: 0px;
+    width: 35%;
+}
+.customer_part{
+    display: flex;
+}
+/* .cust-col1{
+    padding: 10px;
+    width: 30%;
+  
+} */
+/* .cust-col2{
+    padding: 10px;
+    width: 28%;
+} */
+.marginset{
+    margin: 0 0 6px;
+    font-weight: 500;
+}
+.pdetailalign{
+    margin-right: 2%;
+}
+
+
+.ulist{
+    margin-top: 100%;
+    display: flex;
+   
+}
+.custpart3{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.cdetail3{
+    display: flex;
+    flex-direction: row;
+}
+.ptype{
+    margin: 4px auto;
+    width: 90%;
+}
+
+
+
+.arrowpopup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    }
+    .arrowpopup .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    padding: 9px ;
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    margin-left: -85px;
+    }
+    .arrowpopup .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 19%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(12, 12, 12) transparent transparent transparent;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+    .arrowpopup:hover .tooltiptext  {
+    visibility: visible;
+    }
+
+ 
+  
+    .search_btn{
+        background-color: green;
+        padding: 3px 13px;
+        color: #fff;
+    }
+    
+    .search_btn .example-button-row{
+        position: absolute;
+        top: 50px;
+        right: 30px;
+    }
+    
+    
+    .second_part_main .select_main{
+        display: flex;
+        justify-content: end;
+        margin: 0px 20px;
+    }
+    
+    .selectcustomer{
+        width: 11%;
+    }
+
+    .heading2{
+        font-weight: 500;
+    }
+    
+
+    @media (max-width:1200px){
+    .selectcustomer{
+        width: 15%;
+    }
+    .customer_part{
+        display: block;
+    }
+    .cust-col{
+        padding: 0px;
+        width: 50%;
+    }
+    .ulist{
+        margin-top: 20%;
+    }
+    }

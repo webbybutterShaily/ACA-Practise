@@ -1,0 +1,9 @@
+<!-- <div style="display: flex; flex-direction: column;justify-content: center;">
+    <div>{{i}}</div>
+    <div><input type="text" style="width: 60px;" [disabled]="false" value="{{j}}"></div>
+    <p>{{visible}}</p>
+</div> -->
+<div style="display: flex; flex-direction: column;justify-content: center;margin-left:15px">
+    <div>{{month}}</div>
+    <div><input type="number" style="width: 7rem;" [disabled]="visible" value="{{contributionValue}}" [(ngModel)]="monthContribution" (focusout)="showVal()"  placeholder="$0.00"></div>
+</div>

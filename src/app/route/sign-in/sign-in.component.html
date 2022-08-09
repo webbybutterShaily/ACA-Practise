@@ -1,0 +1,139 @@
+<!-- <div class="sign_out">
+  <form (ngSubmit)="f.form.valid && signIn()" class="sign-in-form" name="form" #f="ngForm" novalidate>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>login</mat-icon>
+        Sign-In
+      </mat-card-title>
+      <mat-card-subtitle>Please sign-in to continue.</mat-card-subtitle>
+      <mat-card-content>
+  
+        <mat-form-field fxFlexFill color="accent">
+          <input matInput [disabled]="loading"
+                 [(ngModel)]="user.email"
+                 name="emailAddress"
+                 placeholder="Email Address"
+                 type="email"
+                 required
+                 #emailAddress="ngModel" />
+          <mat-error>You must provide your email address.</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlexFill color="accent">
+          <input matInput [disabled]="loading" [type]="(user.showPassword ? 'text' : 'password')"
+                 [(ngModel)]="user.password"
+                 name="password"
+                 placeholder="Password"
+                 type="password"
+                 required #password="ngModel" />
+          <mat-icon matSuffix (click)="user.showPassword = !user.showPassword">{{ (user.showPassword ? 'visibility_off' : 'visibility') }}</mat-icon>
+          <mat-error>You must provide your password.</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button   mat-raised-button [routerLink]="'/forget-password'"><mat-icon>login</mat-icon>Forgot-password</button>
+        <button mat-raised-button [disabled]="(f.form.invalid || loading)">
+          <mat-icon>login</mat-icon> Sign-In
+        </button>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </form>
+</div> -->
+
+<div class="sign_out">
+  <form
+    (ngSubmit)="f.form.valid && signIn()"
+    class="sign-in-form"
+    name="form"
+    #f="ngForm"
+    novalidate
+  >
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>login</mat-icon>
+        Sign-In
+      </mat-card-title>
+      <mat-card-subtitle>Please sign-in to continue.</mat-card-subtitle>
+      <mat-card-content>
+        <div *ngIf="!isShown">
+          <mat-form-field fxFlexFill color="accent">
+            <input
+              matInput
+              [disabled]="loading"
+              [(ngModel)]="user.email"
+              name="emailAddress"
+              placeholder="Email Address"
+              type="email"
+              required
+              #emailAddress="ngModel"
+            />
+            <mat-error>You must provide your email address.</mat-error>
+          </mat-form-field>
+          <div class="nxt-btn">
+            <button
+              class="btn1"
+              mat-raised-button
+              [disabled]="f.form.invalid || loading"
+              (click)="toggleShow()"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <div *ngIf="isShown">
+          <mat-form-field fxFlexFill color="accent">
+            <input
+              matInput
+              [disabled]="loading"
+              [type]="user.showPassword ? 'text' : 'password'"
+              [(ngModel)]="user.password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              required
+              #password="ngModel"
+            />
+            <mat-icon
+              matSuffix
+              (click)="user.showPassword = !user.showPassword"
+              >{{
+                user.showPassword ? "visibility_off" : "visibility"
+              }}</mat-icon
+            >
+            <mat-error>You must provide your password.</mat-error>
+          </mat-form-field>
+
+          <mat-card-actions style="display: flex; justify-content:end">
+
+            <div style="display: flex; align-items: center;">
+              <mat-icon style="color: #034f79">login</mat-icon>
+              <a  style="text-decoration: none; color: #034f79 ;" [routerLink]="'/forget-password'">
+                Forgot-password</a
+              >
+            </div>
+
+            <button
+              class="btn1"
+              mat-raised-button
+              [disabled]="f.form.invalid || loading"
+            >
+              Sign-In
+            </button>
+          </mat-card-actions>
+          
+        </div>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <mat-progress-bar
+          mode="indeterminate"
+          *ngIf="loading"
+        ></mat-progress-bar>
+        <p>{{ msg }}</p>
+      </mat-card-footer>
+    </mat-card>
+  </form>
+</div>

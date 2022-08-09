@@ -1,0 +1,49 @@
+
+
+
+<p style="display:inline"><span style="color:blue">Location#{{i}}:</span>Does the location/establishment employ 50 or more employee as the Workforce Snapshot date selected? 
+    <mat-form-field appearance="outline" >
+            <mat-select  [(value)]="selectedvalue2">
+             
+                <mat-option value="Yes">Yes</mat-option>
+                <mat-option value="No">No</mat-option>
+            </mat-select>
+        
+    </mat-form-field> </p>
+    <div>
+        <p style="display:inline">Is the location 'headquarters' of business? 
+            <mat-form-field appearance="outline" >
+                    <mat-select  [(value)]="selectedvalue3">
+                     
+                        <mat-option value="Yes">Yes</mat-option>
+                        <mat-option value="No">No</mat-option>
+                    </mat-select>
+                
+            </mat-form-field> </p>
+    </div>
+
+
+    <div *ngIf="selectedvalue2=='Yes' && selectedvalue3=='No' " style="margin-top:2px">
+        <div class="main-row">
+            <div class="col1"><p >Do you need to file? <span style="color:green"> Yes</span></p></div>
+            <div class="col2"><p>Report Type : <span style="color:green"> Individual Establishment Report (Type 4)</span></p></div>
+            
+        </div>
+
+    </div>
+    <div *ngIf="selectedvalue2=='No' && selectedvalue3=='No' " style="margin-top:2px">
+        <div class="main-row">
+            <div class="col1"><p >Do you need to file? <span style="color:green"> Yes</span></p></div>
+            <div class="col2"><p>Report Type : <span style="color:green"> Individual Establishment Report (Type 8)</span></p></div>
+            
+        </div>
+
+    </div>
+    <div *ngIf="selectedvalue2=='Yes' && selectedvalue3=='Yes' " style="margin-top:2px">
+        <div class="main-row">
+            <div class="col1"><p >Do you need to file? <span style="color:green"> Yes</span></p></div>
+            <div class="col2"><p>Report Type : <span style="color:green"> Headquarters Unit and Consolidation Report</span></p></div>
+            
+        </div>
+
+    </div>

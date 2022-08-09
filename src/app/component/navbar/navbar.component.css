@@ -1,0 +1,176 @@
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	.dropdown-menu li {
+		position: relative;
+	}
+
+	.nav-item .submenu {
+		display: none;
+		position: absolute;
+		left: 100%;
+		top: -7px;
+	}
+
+	.nav-item .submenu-left {
+		right: 100%;
+		left: auto;
+	}
+
+	.dropdown-menu>li:hover {
+		background-color: #f1f1f1
+	}
+
+	.dropdown-menu>li:hover>.submenu {
+		display: block;
+	}
+}
+
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+	.dropdown-menu .dropdown-menu {
+		margin-left: 0.7rem;
+		margin-right: 0.7rem;
+		margin-bottom: .5rem;
+	}
+}
+
+/* ============ small devices .end// ============ */
+p {
+	/* text-align: center; */
+	font-weight: 500;
+	margin: 10px;
+}
+
+.mainMenu {
+	z-index: 999;
+	position: relative;
+}
+
+.mainMenu:hover .matMenus {
+	display: block !important;
+}
+
+.accountIcon {
+	padding: 15px 0px;
+}
+
+.matMenus {
+	text-align: center;
+	font-weight: 500;
+	cursor: pointer;
+	position: absolute;
+	width: 150px;
+	right: -9px;
+	top: 78%;
+	height: auto;
+	background: white;
+	color: #000;
+	font-size: 11px;
+	display: none !important;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	transition: .6s;
+	border-radius: 4px;
+}
+
+/* .matMenu p:hover{
+	background-color: #3f51b5;
+	color: #fff;
+} */
+.border {
+	border-top: 1px solid black;
+}
+
+.hover_text {
+	text-align: center;
+	justify-content: center;
+	font-weight: 500;
+}
+
+.navigation .nav-italic {
+	font-style: italic;
+	font-weight: 700;
+}
+
+.nav-italic2 {
+	font-style: italic;
+	font-weight: 700;
+}
+
+/*  */
+/* .mat-toolbar.mat-primary{
+	background-color: #2a6099 !important;
+} */
+.mat-menu-item {
+	margin: -8px 0 !important;
+	transition: .3s;
+}
+
+/* .mat-menu-item:hover{
+	background-color: #2a6099 !important;
+	color: white;
+} */
+
+
+.mat-menu-item {
+	line-height: 32px !important;;
+	height: 32px !important;;
+	margin: 0 !important;
+}
+
+.mat-menu-panel {
+	margin-top: -3px !important;
+}
+
+
+
+/*  */
+
+
+
+
+
+.mat-menu-item:hover {
+	background-color: var(--agcol, #25b10b) !important;
+	color: white !important;
+}
+
+.mat-menu-item {
+	color: var(--agcol, black) !important;
+}
+
+/* Group Demo-1 Styles*/
+
+.demo1 .mat-toolbar.mat-primary {
+	background-color: #2a6099 !important;
+	color: white;
+}
+
+
+
+/* Group Demo-2 Styles*/
+
+.demo2 .mat-toolbar.mat-primary {
+	background-color: white !important;
+	color: #2a6099;
+}
+
+
+
+/* Group Demo-3 Styles*/
+
+.demo3 .mat-toolbar.mat-primary {
+	background-color: white !important;
+	color: #25b10b;
+}
+
+
+
+
+/* Group Demo-4 Styles*/
+
+.demo4 .mat-toolbar.mat-primary {
+	background-color: white !important;
+	color: gray;
+}

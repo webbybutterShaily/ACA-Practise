@@ -1,0 +1,23 @@
+<div class="summary_table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="filedlink">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Summary of Employee 1095 Fulfillment</th>
+            <td mat-cell *matCellDef="let element"> <span>{{element.filedlink}}</span><span> {{element.printtype}}</span> </td>
+         
+        </ng-container>
+        <!-- <ng-container matColumnDef="printtype">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element" > {{element.printtype}}{{element.printtype}}  </td>
+        </ng-container> -->
+  
+        <ng-container *ngIf="dataSource">
+            <tr class="mat-row" *matNoDataRow>
+                <td style="border-top: 0px solid rgb(41, 161, 194); text-align: center;" class="mat-cell"
+                    colspan="12"> No
+                    Data Available</td>
+            </tr>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

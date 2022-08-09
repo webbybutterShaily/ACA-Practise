@@ -1,0 +1,167 @@
+<div class="Affordability">
+  <h1>Affordability Safe Harbor Breakdown</h1>
+  <h2>{{ custname }}</h2>
+  <h3 class="redContent">
+    *Each Employee that was offered coverage only needs to pass ONE Safe Harbor.
+  </h3>
+  
+
+  <div class="check-note">
+    <mat-checkbox class="example-margin"></mat-checkbox>
+    We are not offering insurance to our employees and we therefore do not need to apply Affordability calculations
+    <button mat-raised-button class="btn">Apply</button>
+  </div>
+
+
+
+
+
+  <div class="check-note">
+    <mat-checkbox class="example-margin"></mat-checkbox>
+    {{ custname }} recognizes that the insurance plan/plans being offered is not
+    affordable under any safe harbor allowed by the ACA regulations. We would
+    like to move forward with the yearend process for reporting.
+    <button mat-raised-button class="btn">Apply</button>
+  </div>
+
+  <div class="d-btn">
+    <button mat-raised-button class="btn">
+      Recalculate Affordability for Current Year
+    </button>
+  </div>
+
+  <div class="PieDiv">
+    <div>
+      <h3 class="h3head">W-2 Safe Harbor</h3>
+      <!-- <canvas
+        baseChart
+        
+        [labels]="doughnutChartLabels"
+        [datasets]="doughnutChartDatasets"
+        [options]="doughnutChartOptions"
+        [legend]="false"
+        [type]="'doughnut'"
+      >
+      </canvas> -->
+      <!-- <div *ngIf="">
+        No Data Available
+      </div>
+       -->
+      
+      
+      
+        <canvas id="canvas">
+          {{ chart }}
+        </canvas>
+      
+      
+      
+      <!-- <app-doughnut-chart  [doughnutChartLabels]="doughnutChartLabelsW2" [doughnutChartData]="doughnutDataW2" ></app-doughnut-chart> -->
+      <div style="display: flex; margin-top: 5px">
+        <div style="display: flex">
+          <div class="blueCircle"></div>
+          <p>Passed Safe Harbor</p>
+        </div>
+
+        <div style="display: flex; margin-left: 6px">
+          <div class="redCircle"></div>
+          <p>Failed Safe Harbor</p>
+        </div>
+      </div>
+      <div class="alignbtn">
+        <div>
+          <button
+            mat-raised-button
+            class="seeallbtn"
+            (click)="navigatew2safe()"
+          >
+            <fa-icon style="margin-right: 3px" [icon]="faTable"></fa-icon> See
+            All Results
+          </button>
+        </div>
+      </div>
+      <div class="alignbtn">
+        <div>
+          <button mat-raised-button class="seeallbtn" (click)="updatew2safe()">
+            <fa-icon style="margin-right: 3px" [icon]="faPen"></fa-icon> Update
+            W2 Wages
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="h3head">Rate of Pay Safe Harbor</h3>
+
+      <div class="noData" *ngIf="!showPie">{{ value }}</div>
+      <div *ngIf="showPie">
+        <canvas id="canvas2">
+          {{ chart2 }}
+        </canvas>
+        <div style="display: flex; margin-top: 5px">
+          <div style="display: flex">
+            <div class="blueCircle"></div>
+            <p>Passed Safe Harbor</p>
+          </div>
+
+          <div style="display: flex; margin-left: 6px">
+            <div class="redCircle"></div>
+            <p>Failed Safe Harbor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="alignbtn">
+        <div>
+          <button mat-raised-button class="seeallbtn" (click)="navigateRop()">
+            <fa-icon style="margin-right: 3px" [icon]="faTable"></fa-icon> See
+            All Results
+          </button>
+        </div>
+      </div>
+      <div class="alignbtn">
+        <div>
+          <button mat-raised-button class="seeallbtn" (click)="updateropsafe()">
+            <fa-icon style="margin-right: 3px" [icon]="faPen"></fa-icon> Update
+            Rate of Pay
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="h3head">Federal Poverty Line Safe Harbor</h3>
+      <!-- <canvas
+        baseChart
+        [labels]="doughnutChartLabels2"
+        [datasets]="doughnutChartDatasets2"
+        [options]="doughnutChartOptions2"
+        [legend]="false"
+        [type]="'doughnut'"
+      >
+      </canvas> -->
+
+      <canvas id="canvas3">
+        {{ chart3 }}
+      </canvas>
+
+      <div style="display: flex; margin-top: 5px">
+        <div style="display: flex">
+          <div class="blueCircle"></div>
+          <p>Passed Safe Harbor</p>
+        </div>
+
+        <div style="display: flex; margin-left: 6px">
+          <div class="redCircle"></div>
+          <p>Failed Safe Harbor</p>
+        </div>
+      </div>
+      <div class="alignbtn">
+        <div>
+          <button mat-raised-button class="seeallbtn" (click)="navigateFpl()">
+            <fa-icon style="margin-right: 3px" [icon]="faTable"></fa-icon> See
+            All Results
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

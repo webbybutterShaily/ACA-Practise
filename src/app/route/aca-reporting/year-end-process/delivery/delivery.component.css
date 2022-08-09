@@ -1,0 +1,127 @@
+.header{
+  color: #1591b8;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.save-btn{
+  display: flex;
+  justify-content: center;
+  
+}
+.save-btn button {
+  margin: 0px 30px 30px 0px;
+  background: green;
+  color:white;
+}
+
+.delivery_table table{
+  width: 90%;
+  margin: auto;
+  border-bottom: 2px solid rgb(41, 161, 194);
+  border-top: 2px solid rgb(41, 161, 194);
+}
+
+.delivery_table table tr th{
+  width: auto !important;
+  border-bottom: 2px solid rgb(41, 161, 194);
+  border-left: none;
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.delivery_table table tr td{
+  font-size: 12px;
+}
+
+.delivery_table table tr:nth-child(odd) td{
+  background-color: #c8e2f9;
+}
+.delivery_table table tr:nth-child(even) td{
+  background-color: #fff;
+}
+
+
+.email_template_main{
+    margin: 50px auto 0;
+   width: 90%;
+}
+.email_template{
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  max-width: 460px;
+}
+
+.templates{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#c8e2f9 ;
+  padding: 10px;
+}
+
+.templates h3{
+  margin: 0;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+}
+
+.templates button{
+  background-color: #078cd3;
+  color: #fff;
+  font-size: 16px;
+}
+
+.email_template span{
+  padding: 10px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+
+.email_table{
+  margin: 20px 0 0;
+
+}
+.email_table table{
+  width: 100%;
+  margin: auto;
+  box-shadow: none;
+  border-bottom: 2px solid rgb(41, 161, 194);
+  border-top: 2px solid rgb(41, 161, 194);
+}
+
+.email_table table tr th{
+  border-bottom: 2px solid rgb(41, 161, 194);
+  border-left: none;
+}
+.email_table{
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.email_table table tr td{
+  font-size: 12px;
+}
+
+.email_table table tr th{
+  font-size: 12px;
+  color: black;
+  font-weight: 400;
+}
+
+.filter_image{
+  width: 12px;
+  padding-left: 10px;
+}
+
+.email_table table tr:first-child th:nth-child(2) , tr:first-child th:nth-child(6){
+  width: auto;
+}
+
+.email_table table tr:first-child th:nth-child(4){
+  width: 15%;
+}
+
+.email_table table tr:nth-child(odd) td{
+  background-color: #c8e2f9;
+}

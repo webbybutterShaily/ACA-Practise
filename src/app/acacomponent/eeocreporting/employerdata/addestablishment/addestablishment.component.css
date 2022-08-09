@@ -1,0 +1,64 @@
+.column1{
+  width: 33.3%;
+  padding: 10px;
+  }
+  .column2{
+    width: 33.3%;
+    padding: 10px;
+  }
+  .column3{
+    width: 33.3%;
+    padding: 10px;
+  }
+  .main-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  ::ng-deep .mat-button .mat-dialog-close{
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 5px;
+  }
+  .close{
+    background-color: #c90d0dba;
+    color: white;
+  }
+  .dialogcontent{
+    padding: 2%;
+  }
+  ::ng-deep .mat-dialog-container{
+   
+    overflow: hidden;
+  }
+  .save{
+    background: green;
+    color:white;
+  }
+  /* mat-icon {
+    vertical-align: middle;
+} */
+/* v-align-middle { 
+  vertical-align: middle;
+} */
+
+.heading{
+  padding: 20px;
+  color: #056993;
+}
+
+.close1{
+  position: absolute;
+  right: 20%;
+  padding: 10px;
+  line-height: 18px;
+  min-width: auto;
+  color: rgb(135, 133, 133);
+  border: 0;
+  background-color: 0;
+}
+
+.cdk-overlay-pane.my-dialog {
+  position: relative!important;
+}

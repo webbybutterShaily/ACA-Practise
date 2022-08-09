@@ -1,0 +1,472 @@
+<h1 class="header">Year End Data</h1>
+
+<div class="data-section">
+    <mat-accordion class="example-headers-align" multi>
+        <div style="margin-bottom: 20px;">
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header style="background-color: #0870c2;" (click)="addCustomerdetails()">
+                    <mat-panel-title style="color:white;font-weight:bold">
+                        Employer Information
+                    </mat-panel-title>
+                    <mat-panel-description>
+
+                        <mat-icon>add</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div style="margin-top: 20px;">
+                    <p style="color: #0786d6">Please verify the following pieces of data are correct. If they are not,
+                        please edit them to reflect accurate information. This information must be correct as it will be
+                        populated onto official IRS documents.</p>
+                    <div class="main-row">
+                        <div style="width: 50%;">
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <input hidden matInput placeholder="UAT - 100" [(ngModel)]="taxyear">
+                                <p style="display:inline">Company Name : <mat-form-field appearance="outline"
+                                        style="width:300px;">
+                                        <input matInput placeholder="UAT - 100" [(ngModel)]="Companyname">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">Company EIN : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="45-4546611" [(ngModel)]="employerEIN">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">Employer Contact Person : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="Arthur Tacchino" [(ngModel)]="contactName">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">Company Address : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="1 Main Street" [(ngModel)]="addressLine1">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">City: <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="Springfield" [(ngModel)]="cityName">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+
+
+                        </div>
+                        <div style="width: 50%;">
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">State : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="PA" [(ngModel)]="usState">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">Zip Code : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="12133" [(ngModel)]="usZip">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">Company Contact Number : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="877-291-9256" [(ngModel)]="contactPhone">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:inline">Contact Email Address : <mat-form-field appearance="outline"
+                                        style="width:300px">
+                                        <input matInput placeholder="arthurt@sync-stream.com"
+                                            [(ngModel)]="contactEmail">
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <div style="display: flex;
+                    justify-content: flex-end;">
+                                <p style="display:flex; align-items: center; margin-right: 96px;">Mask SSN on Printing :
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="maskSSN" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="save-btn">
+                    <button mat-raised-button (click)="saveEmployeeInformation()">Save Changes</button>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header style="background-color: #0870c2;">
+                    <mat-panel-title style="color:white;font-weight:bold">
+                        ALE Status and Coverage Detail
+                    </mat-panel-title>
+                    <mat-panel-description>
+
+                        <mat-icon>add</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div style="margin-top: 20px;">
+
+
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> The employer is an Applicable Large Employer for the 2020 calendar
+                                    year</td>
+                                <td class="tbld" class="tbld-align">
+                                   
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="isALE" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                       
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I have indicated that one or more plans being offered by the employer
+                                    meets Minimum Value Coverage requirements? </td>
+                                <td class="tbld" class="tbld-align">
+                              
+
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="minValueCoverage" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I have indicated that one or more plans being offered by the employer
+                                    meets Minimum Essential Coverage requirements?</td>
+                                <td class="tbld" class="tbld-align">
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="minEssentialCoverage" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I have indicated that I am eligible for Multi-Employer Welfare
+                                    Arrangement (MEWA) Relief?</td>
+                                <td class="tbld" class="tbld-align">
+                             
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="mewa" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I verify that the Federal Poverty Affordability Safe Harbor has been
+                                    applied to some or all of my applicable employees? </td>
+                                <td class="tbld" class="tbld-align">
+                              
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="fedPovertySafeHarbor" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+
+                                <td class="tbld">I verify that the W-2 Affordability Safe Harbor has been applied to
+                                    some or all of my applicable employees? </td>
+                                <td class="tbld" class="tbld-align">
+                               
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="w2SafeHarbor" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I verify that the Rate of Pay Affordability Safe Harbor has been
+                                    applied to some or all of my applicable employees? </td>
+                                <td class="tbld" class="tbld-align">
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="rateOfPaySafeHarbor" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="save-btn">
+                        <button mat-raised-button (click)="SaveAleStatus()">Save Changes</button>
+                    </div>
+                    <div style="color: #0786d6">
+                        Control Group Information
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> You are in fact an Applicable Large Employer (ALE) Member of a
+                                    Controlled Group. ** Note that if you change this value, you should save and re-load
+                                    this page in order to generate a list of all Controlled Group members.</td>
+                                <td class="tbld" class="tbld-align">
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="aleMemberOfControlledGroup" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld">Below is an accurate list of all ALE Members in the Controlled Group
+                                    and their correct EIN: </td>
+                                <td class="tbld" class="tbld-align">
+                                  
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="verifiedListOfCompaniesForCG" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table style="width: 80%;" class="tbl-border">
+                            <tr class="tbl-border">
+                                <th class="tbl-border">Company</th>
+                                <th>EIN</th>
+                            </tr>
+                            <tr class="tbl-border">
+                                <td style="text-align: center;" class="tbl-border">UAT - 100</td>
+                                <td style="text-align: center;" class="tbl-border">45-4546611</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="save-btn" style="margin-top: 10px;">
+                    <button mat-raised-button (click)="SaveControlGroupInff()">Save Changes</button>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header style="background-color: #0870c2;">
+                    <mat-panel-title style="color:white;font-weight:bold">
+                        Year End Checklist
+                    </mat-panel-title>
+                    <mat-panel-description>
+
+                        <mat-icon>add</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div style="margin-top: 20px;">
+                    <div style="color: #0786d6">Instructions: Please go through the following checklist and identify
+                        that you have taken all applicable steps in order to move forward in the End of Year Validation
+                        process. All steps MUST be completed in order to move forward. If steps are not completed it may
+                        lead to inaccurate reporting!</div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld">
+                                    I have uploaded all employer-sponsored healthcare plan information related to the
+                                    2020 calendar year?</td>
+                                <td class="tbld" class="tbld-align">
+                                   
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="uploadedPlanInfo" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I have correctly identified that I am offering either fully insured
+                                    healthcare coverage or self-insured healthcare coverage?
+                                    *If you are offering self-insured coverage then you will be required to report on
+                                    covered individuals such as dependents and this will drive what data must be
+                                    imported into the system</td>
+                                <td class="tbld" class="tbld-align">
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="verifiedSelfInsured" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I have uploaded all historical and current employee eligibility and
+                                    offers of coverage data related to the 2020 calendar year?
+                                    *This includes data regarding which employees were offered coverage and if that
+                                    offer of coverage was waived or elected by the employee</td>
+                                <td class="tbld" class="tbld-align">
+        
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="uploadedOffers" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld"> I have uploaded and updated all Census information including social
+                                    security numbers and employee addresses as needed as well as the additional
+                                    information for self-insured healthcare coverage?
+                                    *This data will be used directly for 1095-C Form reporting purposes so it is
+                                    extremely important that it is accurate</td>
+                                <td class="tbld" class="tbld-align">
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="uploadedCensus" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="tbld">I have reviewed the information in my solution and am prepared to move
+                                    forward in the end of year validation process?</td>
+                                <td class="tbld" class="tbld-align">
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="reviewedInformation" required>
+                                            <option value="true">YES</option>
+                                            <option value="false">NO</option>>
+
+                                        </select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="save-btn" style="margin-top: 10px;">
+                        <button mat-raised-button (click)="Saveyearlist()">Save Changes</button>
+                    </div>
+                </div>
+
+
+            </mat-expansion-panel>
+        </div>
+
+    </mat-accordion>
+</div>

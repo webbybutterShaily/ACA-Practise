@@ -1,0 +1,68 @@
+<div class="breaks_in" >
+  <div class="service">
+    <h3>Breaks In Service</h3>
+    <app-customer-drop-down></app-customer-drop-down>
+  </div>
+  <h4 class="demo_public">{{customername}}</h4>
+  <div class="button_main">
+    <div class="break_button">
+      <button mat-button color="primary" (click)=" openDialog()">Add New breaks</button>
+      <button mat-button color="primary" (click)="OpenAssignbreak()"> Assign breaks</button>
+      <button mat-button color="primary" (click)="OpenListAssig()">List breaks Assignments</button>
+    </div>
+    <div class="knowledge_button">
+      <button mat-button color="primary">knowledge base</button>
+    </div>
+  </div>
+  <div class="breaks_table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="breakName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Breaks Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.breakName}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="taxYear">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
+        <td mat-cell *matCellDef="let element"> {{element.taxYear}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="breakStartDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.breakStartDate}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="breakEndDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>End Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.breakEndDate}} </td>
+      </ng-container>
+      <ng-container matColumnDef="editdelete">
+        <th mat-header-cell *matHeaderCellDef>Edit/Delete</th>
+        <td mat-cell *matCellDef="let element">
+          <!-- <button mat-button class="edit_btn">Edit</button> -->
+          <button mat-button class="delete_btn" (click)="RemoveBreaks(element.breakName,element.taxYear)">Remove</button>
+        </td>
+      </ng-container>
+      <ng-container *ngIf="dataSource">
+        <tr class="mat-row" *matNoDataRow>
+          <td style="border-top: 0px solid rgb(41, 161, 194); text-align: center;" class="mat-cell" colspan="12"> No
+            Data Available</td>
+        </tr>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="pagination" #paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+
+  </div>
+</div>
+
+

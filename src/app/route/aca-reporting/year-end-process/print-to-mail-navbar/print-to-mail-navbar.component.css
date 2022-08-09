@@ -1,0 +1,179 @@
+  .clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+  }
+  
+  .container {
+    font-family: 'Lato', sans-serif;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .wrapper {
+    display: table-cell;
+    /* height: 400px; */
+    vertical-align: middle;
+  }
+  
+  .nav {
+    margin-top: 40px;
+  }
+  
+  .pull-right {
+    float: right;
+  }
+  
+  a,
+  a:active {
+    color: rgb(70, 69, 69);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #999;
+  }
+  
+  /* Breadcrups CSS */
+  
+  .arrow-steps .step {
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+    cursor: default;
+    margin: 0 3px;
+    padding: 10px 10px 10px 30px;
+    min-width: 40px;
+    float: left;
+    position: relative;
+    background-color: gray;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    margin-left: -3px;
+  }
+  
+  #dnt:after {
+    border-left: 17px solid var(--check-primary, gray);
+    ;
+  }
+  
+  #dnt50:after {
+    border-left: 17px solid var(--check-primary50, gray);
+    ;
+  }
+  
+  #dnt51:after {
+    border-left: 17px solid var(--check-primary51, gray);
+    ;
+  }
+  
+  #dnt52:after {
+    border-left: 17px solid var(--check-primary52, gray);
+    ;
+  }
+  
+  .arrow-steps .step:after,
+  .arrow-steps .step:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -17px;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 17px solid gray;
+    z-index: 2;
+    transition: border-color 0.2s ease;
+  
+  }
+  
+  
+  .arrow-steps .step:before {
+    right: auto;
+    left: 0;
+    border-left: 17px solid #fff;
+    z-index: 0;
+  }
+  
+  .arrow-steps .step:first-child:before {
+    border: none;
+  }
+  
+  .arrow-steps .step:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  
+  .arrow-steps .step span {
+    position: relative;
+  }
+  
+  .arrow-steps .step span:before {
+    opacity: 0;
+    content: "✔";
+    position: absolute;
+    top: -2px;
+    left: -20px;
+  }
+  
+  .arrow-steps .step.done span:before {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease 0.5s;
+    -moz-transition: opacity 0.3s ease 0.5s;
+    -ms-transition: opacity 0.3s ease 0.5s;
+    transition: opacity 0.3s ease 0.5s;
+  }
+  
+  .arrow-steps .step.current {
+    color: #fff;
+    background-color: #23468c;
+  }
+  
+  .arrow-steps .step.current:after {
+    border-left: 17px solid #23468c;
+  }
+  
+  .data-section {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  ::ng-deep .mat-tab-label {
+    min-width: 40px;
+  }
+  
+  
+  .input_opation select {
+    font-size: 15px;
+  }
+  .heading{
+    text-align: center;
+    font-size: 16px;
+    color: #39a3ee;
+    font-weight: 600;
+    margin: 0;
+}
+.company_name h2{
+  text-align: center;
+  font-size: 16px;
+  color: gray;
+  font-weight: 600;
+  margin: 0;
+}
+
+.btn_indicator{
+  text-align: end;
+}
+
+.indicator{
+margin-right: 30px;
+background: rgb(8, 82, 125);
+color: white;
+}

@@ -1,0 +1,70 @@
+.year_main{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+  .year_main .input_year .mat-form-field-flex {
+    /* border: 1px solid grey!important; */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 8px 10px;
+    margin: 10px 1px;
+}
+ .input_year {
+    border: 1px solid grey ;
+    display: flex ;
+    justify-content: end ;
+    align-items: center ;
+    padding: 1px 14px;
+    margin: -2px 1px;
+    height: 37.39px;
+    width: 50%;
+}
+
+.multiselect-dropdown[_ngcontent-dkv-c191] .dropdown-btn[_ngcontent-dkv-c191] .dropdown-down[_ngcontent-dkv-c191] {
+    display: inline-block;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid #adadad;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
+.reporting_year{
+    padding-right: 10px;
+}
+
+
+
+/* ng multi select */
+.search_btn{
+    background-color: green;
+    padding: 3px 13px;
+    color: #fff;
+}
+
+.search_btn .example-button-row{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+
+.second_part_main .select_main{
+    display: flex;
+    
+    /* margin: 0px 10px; */
+}
+
+
+::ng-deep .mat-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    /* width: auto !important; */
+}

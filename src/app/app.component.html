@@ -1,0 +1,14 @@
+<!-- <div class="wrapper" *ngIf="isAuthenticated"> -->
+<div class="wrapper" >
+  <app-navbar></app-navbar>
+</div>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<footer class="footer" fxLayoutAlign="end center">
+  <app-footer></app-footer>
+</footer>

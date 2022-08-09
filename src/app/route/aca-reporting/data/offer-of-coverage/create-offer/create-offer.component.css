@@ -1,0 +1,121 @@
+.btn1 {
+  margin-left: 5px;
+  background: rgb(13 125 190);
+  color: white;
+}
+
+.btn2 {
+  margin-left: 10px;
+  background: rgb(39 167 28);
+  color: white;
+
+}
+
+.btn3 {
+  margin-left: 10px;
+  background: rgb(230, 77, 31);
+  color: white;
+
+}
+
+.btn4 {
+  margin-left: 5px;
+  background: rgb(13 125 190);
+  color: white;
+}
+
+.main-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.responsive-popup {
+  margin: 24px 0px;
+}
+
+.column2 .mat-dialog-actions {
+  padding: 0px;
+  min-height: auto;
+  margin-bottom: 0px;
+}
+
+.column1 h2 {
+  margin-bottom: 0px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+.input_year {
+
+  margin-right: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 110px;
+  border: none;
+  outline: none;
+}
+
+
+tr:nth-child(odd) {
+  background-color: #7db8f468;
+}
+.mat-calendar-table tr:nth-child(odd){
+  background-color: white;
+} 
+
+.display {
+  display: flex;
+
+}
+
+.employee-desc {
+  color: #056993;
+}
+.employee_data{
+  margin: 10px 0px;
+}
+.employee_data span {
+  padding-right: 5px;
+}
+
+.employee_data .input_year {
+  width: 235px;
+}
+
+.date-class .mat-form-field {
+  width: 90%;
+  margin-left: 0px;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+
+@media (max-width:1400px) {
+  .employee_data .input_year {
+    width: 200px;
+  }
+
+  .employee_data .input_year {
+    width: 205px;
+  }
+}
+
+input.mat-input-element {
+  margin-top: -0.0625em;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: white;
+}

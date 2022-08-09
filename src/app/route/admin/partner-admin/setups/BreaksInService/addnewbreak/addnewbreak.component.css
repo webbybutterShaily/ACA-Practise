@@ -1,0 +1,108 @@
+.calculator_main {
+    width: 800px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+
+.close_icons {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid #1d5ea3ba;
+}
+
+.close_icons h5 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+}
+
+.close_icons .icons {
+    color: #d3d0d0;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.check_section {
+    padding: 20px 20px;
+}
+.below{
+    max-width: 650px;
+}
+.check_section h4 {
+    margin: 0;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.check_box {
+    padding: 12px 0;
+}
+
+.bulk {
+    padding-left: 10px;
+}
+
+.select_button {
+    text-align: end;
+    background-color: whitesmoke;
+    padding: 20px 20px;
+    border-top: 2px solid lightgrey;
+}
+.button_grp{
+    text-align: end;
+    background-color: whitesmoke;
+    padding: 20px 20px;
+    border-top: 2px solid lightgrey;
+}
+
+.remove{
+    background: #bf1d0bf7!important;
+    font-size: 18px;
+    padding: 2px 17px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #fff;
+    box-sizing: border-box;
+
+}
+
+.select_button{
+    background: #0bb50b;
+    color: #fff;
+    font-size: 18px;
+    padding: 2px 17px;
+    text-transform: capitalize;
+    margin-left: 10px;
+    box-sizing: border-box;
+
+}
+
+.year{
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.year span{
+    width: 42%;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.break_form{
+    margin: 40px 0 80px;
+}
+
+.break_input{
+    width: 50%;
+}
+
+.break_input .year_input{
+    border: 2px solid grey;
+    width: 45%;
+    border-radius: 5px;
+    padding: 5px 10px;
+}

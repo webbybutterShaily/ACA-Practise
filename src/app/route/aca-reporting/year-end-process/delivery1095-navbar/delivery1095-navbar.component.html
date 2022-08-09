@@ -1,0 +1,16 @@
+<div class="data-section">
+  <div class="wrapper">
+    <div class="arrow-steps clearfix">
+
+      <div class="step current"> <a [routerLink]="'/aca-reporting/year-end-process/Delivery'"
+          style="color: white;"><span>Electronic Delivery</span></a> </div>
+
+      <div class="step" ng-class="step:true" id="dnt" [style]="{'--color':col}" (click)="onClick()"><a
+          [routerLink]="'/aca-reporting/year-end-process/deliver-navabar-process/print-to-mail'"
+          style="color: white"><span>Print to Mail</span> </a></div>
+
+      <div class="step" [style]="{'--color1':col1}" id="dnt1" (click)="onClick1()"> <a
+          [routerLink]="'/aca-reporting/year-end-process/deliver-navabar-process/summary'" style="color: white;"><span>
+            Summary</span> </a></div>
+    </div>
+  </div>

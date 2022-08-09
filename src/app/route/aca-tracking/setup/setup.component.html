@@ -1,0 +1,263 @@
+<!-- <div class="demo">
+    <div class="setup">
+        <div class="title">
+            <h3>Satup</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit, fugiat, ducimus rerum voluptatem
+                modi expedita accusantium minima voluptate ea ratione, molestias saepe natus. Odio repellendus
+                recusandae corporis labore unde.</p>
+            <div class="setup_list">
+                <h3>Satup</h3>
+            </div>
+            <div class="empoloyees">
+                <h4>Ongoing Salaried Employees</h4>
+            </div>
+        </div>
+        <div class="month">
+            <div class="line_one">
+                <h4>Length of Measurement Period for Ongoing Salaried Employees</h4>
+            </div>
+            <div class="select_month">
+                <div class="select_month">
+                    <select name="month" id="">
+                        <option value="">3 month</option>
+                        <option value="">3 month</option>
+                        <option value="">3 month</option>
+                        <option value="">3 month</option>
+                    </select>
+                </div>
+                <div class="period">
+                    (Satbillity period is 6 Month)
+
+                </div>
+            </div>
+        </div>
+        <div class="date">
+            <div class="line_one">
+                <h4>Length of Measurement Period for Ongoing Salaried Employees</h4>
+            </div>
+           <div class="date">
+
+           </div>
+        </div>
+    </div>
+    <div class="definitions">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo exercitationem quis illo blanditiis! Sunt,
+            rerum error labore corrupti quas maiores qui necessitatibus expedita similique unde ullam eius, deserunt
+            exercitationem veniam?</p>
+    </div>
+
+</div> -->
+<app-customer-drop-down></app-customer-drop-down>
+<form></form>
+<div class="setup-page-wrapper">
+    <!-- <h2>Demo- Pope's EEOC</h2> -->
+    <h2>Tracking Setup</h2>
+    <div>
+        <h3>{{companyname}}</h3>
+    </div>
+
+    <p>Select the Measurement,Administrative,and stability Periods for the following classification of employees,if
+        applicable:</p>
+    <!-- <div class="setup-wrapper">
+            
+            
+        </div> -->
+    <mat-grid-list cols="3" class="setup-main">
+        <div style="display: flex;">
+            <mat-grid-tile colspan="2">
+                <div class="setup-main">
+                    <div class="setup-field">
+                        <h4>Steps</h4>
+                        <div>
+                            <h6>Ongoing Salaried Employees</h6>
+                            <div class="emp-detail">
+                                <p>Length of Measurement Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="Hourlyselecte1" [disabled]="isDisabled3">
+                                            <option value="3">3 month</option>
+                                            <option value="4">4 month</option>
+                                            <option value="5">5 month</option>
+                                            <option value="6">6 month</option>
+                                            <option value="7">7 month</option>
+                                            <option value="8">8 month</option>
+                                            <option value="9">9 month</option>
+                                            <option value="10">10 month</option>
+                                            <option value="11">11 month</option>
+                                            <option value="12">12 month</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                    <label>(stability Period is 6 months)</label>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>Start date of Standard Measurement Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                            [matDatepicker]="picker1" [disabled]="isDisabled3">
+                                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>Length of Administrative Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="0" value="0" [min]="0" [max]="90"
+                                            [(ngModel)]="value1" [maxlength]="2" [disabled]="isDisabled3"
+                                            (ngModelChange)="validateValue1($event)" (keypress)="numberOnly($event)">
+                                    </mat-form-field>
+                                    <label>(0–90 Days)</label>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>
+                                    <mat-checkbox (click)="edit()" [(ngModel)]="Usesalaried" class="example-margin"></mat-checkbox>Use salaried
+                                    employee settings for
+                                    hourly employees
+                                </p>
+                            </div>
+                            <div class="emp-detail">
+                            </div>
+                        </div>
+                        <div>
+                            <h6>Ongoing Hourly Employees</h6>
+                            <div class="emp-detail">
+                                <p>Length of Measurement Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl [(ngModel)]="Hourlyselecte2" required
+                                            [disabled]="isDisabled || isDisabled3">
+                                            <option value="3">3 month</option>
+                                            <option value="4">4 month</option>
+                                            <option value="5">5 month</option>
+                                            <option value="6">6 month</option>
+                                            <option value="7">7 month</option>
+                                            <option value="8">8 month</option>
+                                            <option value="9">9 month</option>
+                                            <option value="10">10 month</option>
+                                            <option value="11">11 month</option>
+                                            <option value="12">12 month</option>
+
+                                        </select>
+                                    </mat-form-field>
+                                    <label>(stability Period is 6 months)</label>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>Start date of Standard Measurement Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="6/13/2017" [(ngModel)]="HourlyDatea"
+                                            [matDatepicker]="picker2" [disabled]="isDisabled || isDisabled3">
+                                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker2></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>Length of Administrative Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="0" value="0" [min]="0" [max]="90"
+                                            [(ngModel)]="Hourlyvalue2" [maxlength]="2"
+                                            (ngModelChange)="validateValue2($event)" (keypress)="numberOnly($event)"
+                                            [disabled]="isDisabled || isDisabled3">
+                                    </mat-form-field>
+                                    <label>(0–90 Days)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h6>New Variable Hour Employees</h6>
+                            <div class="emp-detail">
+                                <p>Length of Measurement Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field appearance="fill">
+                                        <select matNativeControl required [(ngModel)]="Hourlyselecte3" [disabled]="isDisabled3">
+                                            <option value="3">3 month</option>
+                                            <option value="4">4 month</option>
+                                            <option value="5">5 month</option>
+                                            <option value="6">6 month</option>
+                                            <option value="7">7 month</option>
+                                            <option value="8">8 month</option>
+                                            <option value="9">9 month</option>
+                                            <option value="10">10 month</option>
+                                            <option value="11">11 month</option>
+                                            <option value="12">12 month</option>
+                                        </select>
+                                    </mat-form-field>
+                                    <label>(stability Period is 6 months)</label>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>Start date of Standard Measurement Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+
+                                        <select matNativeControl required [(ngModel)]="startdate" [disabled]="isDisabled3">
+                                            <option value="Employee’s start date">Employee’s start date </option>
+                                            <option
+                                                value="The first day of the first month after employee’s start date">The
+                                                first day of the first month after employee’s start date</option>
+                                        </select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="emp-detail">
+                                <p>Length of Administrative Period for Ongoing Salaried Employees</p>
+                                <div class="select-month">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="0" value="0" [min]="0" [max]="90"
+                                            [(ngModel)]="value3" [maxlength]="2" [disabled]="isDisabled3"
+                                            (ngModelChange)="validateValue3($event)" (keypress)="numberOnly($event)">
+                                    </mat-form-field>
+                                    <label>(0–90 Days)</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="defination-wrap setup-main">
+                    <div class="setup-field">
+                        <h4>Definitions</h4>
+                        <p><b>Measurement Period</b> A Period of time, chosen by the employer, that is between 3 and 12
+                            months in length during which the employer will keep track of the average weekly hours
+                            worked by their Ongoing Salary, Ongoing Hourly and New Variable Hour Employees.</p>
+                        <p><b>Administrative Period</b> A Period of time, chosen by the employer, which is between 0 and
+                            90 days in length and immediately follows the Measurement Period, during which the employer
+                            can take actions, such as: determine average weekly hours worked during the Measurement
+                            Period, determine coverage eligibility, and begin enrollment for Full-Time employees.</p>
+                        <p><b>Stability Period</b> The Stability Period begins at the end of the Measurement Period (and
+                            any Administrative Period, if the employer elects to have one). The look-forward period for
+                            which an employee’s status (Calculated and determined during the Measurement Period as
+                            Full-Time or Non-Full-Time) is locked in, regardless of the employee’s actual hours during
+                            this Stability Period (provided that the employee continues to be an employee during this
+                            Period). The length of the Stability Period will be dictated by the length of the
+                            Measurement Period (chosen by the employer). The Stability Period will be the longer of: 6
+                            months or the length of the Measurement Period chosen by the employer.</p>
+                        <p><b>Ongoing Employee</b> An employee that has been employed for the length of at least one
+                            full Measurement Period (as chosen by the employer).</p>
+                        <p><b>New Variable Hour Employee</b> An employee who cannot be determined on the employee’s
+                            start date whether they are reasonably expected to work an average of at least 30 hours per
+                            week during the initial measurement period (based on the facts and circumstances on the
+                            employee’s start date).</p>
+                        <p><b>Full-time Employee</b> An employee who works an average of at least 30 hours per week, or
+                            130 or more hours in a calendar month (so Non-Full-Time would be less than 30 hours per
+                            week).</p>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+    <div class="btn">
+        <button mat-button class="btn_them" (click)="SaveTrackingData()">Save Tracking Setup</button>
+    </div>
+</div>

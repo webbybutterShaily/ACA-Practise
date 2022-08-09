@@ -1,0 +1,35 @@
+.filter{
+    height: 15px;
+    /* margin-left: 2px; */
+    cursor: pointer;
+    /* width: 5px; */
+  }
+  
+  .pop{
+    
+    position: absolute;
+    background: rgb(255, 255, 255);
+    height: auto;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    top: 50px;
+    
+  }
+
+  .p-relative{
+    position: relative !important;
+  }
+  .drop-menu{
+    top: 5px;
+    width: 200px;
+    right: 0;
+    left: auto;
+    position: absolute;
+    z-index: 100;
+    margin-top: 2px;
+    list-style: none;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-clip: padding-box;
+  }

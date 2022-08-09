@@ -1,0 +1,14 @@
+<!-- <p>delete-confomation works!</p> -->
+<div class="calculator_main" >
+    <div class="close_icons">
+        <h5>Confirmation of School Break Removal.</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <div class="check_section">
+        <h4>School Break <b>{{Break_Name}}</b> going to be deleted Permanently, Please press YES if you are ok</h4>
+    </div>
+    <div class="button_grp">
+        <button mat-raised-button class="remove" [mat-dialog-close]="true">CANCLE</button>
+        <button mat-button class="select_button" (click)=" RemoveSchoolBreaks()">YES</button>
+    </div>
+  </div>

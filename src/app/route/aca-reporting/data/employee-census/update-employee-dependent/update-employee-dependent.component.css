@@ -1,0 +1,60 @@
+.dependent_deatils{
+    width: 1200px;
+    padding:  20px 30px;
+}
+
+.dependent_deatils  h5 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #8f8d8d;
+}
+.close_icons {
+   display: flex;
+   justify-content: space-between;
+}
+ .close_icons .icons {
+       font-size: 18px;
+    color: grey;
+    font-weight: 700;
+}
+
+.dependent_form{
+    padding: 0 20px;
+}
+
+
+.dependent_name{
+    font-size: 18px;
+    color: rgba(0,0,0,0.6);
+    width: 280px;
+    display: inline-block;
+}
+
+.dependent_form input{
+    font-size: 17px;
+}
+
+.self_btn button{
+    background-color:  rgba(17, 145, 17, 0.975);
+    color: #fff;
+    font-size: 17px;
+}
+
+
+@media (max-width:1400px){
+    .dependent_deatils{
+        width: 1050px;
+    }
+    
+}
+@media (max-width:1200px){
+    .dependent_deatils{
+        width: 900px;
+    }
+    .dependent_name{
+        width: 230px;
+    }
+    
+}

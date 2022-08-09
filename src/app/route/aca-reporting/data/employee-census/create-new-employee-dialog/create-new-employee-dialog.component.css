@@ -1,0 +1,127 @@
+
+/* .new_employee_data{
+    width: 1100px;
+} */
+
+.employees_details{
+    margin-left: 10%;
+    width: 100%;
+    overflow-y: scroll;
+    height: 515px;
+}
+
+
+.details_data{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 20px 20px 0;
+}
+
+.employye_details{
+    font-size: 20px;
+    color: #2a6099;
+    font-weight: 500;
+
+   
+}
+.input_name{
+    display: block;
+}
+.data_form{
+    display: flex;
+    margin-bottom: 20px;
+}
+.data_form span{
+    width: 300px;
+    text-align: end;
+    font-size: 14px;
+}
+.data_form .input_field{
+    margin-left: 20px;
+}
+.data_form .input_name{
+    text-align: start;
+    margin: 20px 0 0 20px;
+    display: flex;
+    width: auto;
+}
+.data_form .input_name input{
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 0px 5px 10px;
+    width: 120px;
+    margin-right: 5px;
+    color: grey;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.date_birth input{
+   border: none !important;
+}
+.data_form .input_field input.mat-input-element{
+    margin: 0 !important;
+}
+.data_form .input_field input{
+    margin-left: 25px !important;
+    width: 240px;
+    padding: 5px 0px 5px 10px;
+    font-size: 12px;
+    color: grey;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    border-radius: 5px;
+}
+.data_form:nth-child(3) .input_field input , .data_form:nth-child(4) .input_field input, .data_form:nth-child(5) .input_field input , .data_form:nth-child(6) .input_field input , .data_form:nth-child(13) .input_field input{
+    width: 100px;
+}
+.data_form .input_field select{
+    width: 200px;
+    padding: 5px 0px 5px 10px;
+    font-size: 12px;
+    color: grey;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    border-radius: 5px;
+}
+.data_form:nth-child(10) .name_main .input_name input:nth-child(1){
+    width: 240px;
+} 
+.data_form:nth-child(10) .name_main .input_name input:nth-child(2){
+    width: 70px;
+} 
+.data_form:nth-child(10) .name_main .input_name input:nth-child(3){
+    width: 100px;
+} 
+
+.data_form:nth-child(10) .name_main .input_field:nth-child(2){
+    margin-top: 20px;
+}
+
+.edit_button{
+    padding: 0 0 20px 20px;
+}
+.basic-btn{
+    background-color: #2a6099;
+    margin-right: 15px;
+    color: #fff;
+    font-weight: 400;
+    padding:  5px 14px;
+    font-size: 14px;
+    margin-top: 20px;
+    line-height: 20px;
+}
+.save_btn{
+    background: rgb(4, 152, 4);
+    color: #fff;
+    font-size: 16px;
+    line-height: 34px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 0 29px 0;
+}
+.close_btn{
+    background-color: #e92727;
+    margin-left: 10px;
+}
+

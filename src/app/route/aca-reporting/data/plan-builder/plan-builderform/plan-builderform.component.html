@@ -1,0 +1,360 @@
+<div class="responsive-popup">
+    <div class="main-row">
+        <div class="column1" style="color: #056993 ;">
+            <h2 mat-dialog-title>Plan Builder</h2>
+        </div>
+        <div class="column2">
+            <mat-dialog-actions>
+                <button mat-button mat-dialog-close (click)="show()" class="btn1">Save</button>
+                <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="btn2">Close</button>
+            </mat-dialog-actions>
+        </div>
+    </div>
+
+    <mat-dialog-content class="mat-typography" >
+        <table style="overflow-x:auto;">
+            <tr>
+                <td class="txtalign">Enter the name of the plan being offered. The plan name MUST be unique.<span
+                        style="color: red;">*</span></td>
+
+                <td>
+                    <div style="width: 100px">
+                        <mat-form-field appearance="outline" style="width:350px;margin-left: 30px;">
+                            <input [(ngModel)]="newPlan" matInput placeholder="New Plan" >
+                        </mat-form-field>
+                    </div>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td class="txtalign">Enter the date that the plan renews or becomes effective.<span
+                        style="color: red;">*</span></td>
+                <td>
+                    <div style="width: 100px;">
+                        <mat-form-field appearance="outline" style="width:150px;margin-left: 30px;">
+                            <!-- <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                            [matDatepicker]="picker1" #el (onchange)="fun(el.innerText)">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker> -->
+                            <!-- <input matInput [matDatepicker]="datepicker" placeholder="6/13/2017" [(ngModel)]="currentDate" > -->
+                        <input matInput [matDatepicker]="datepicker" placeholder="6/13/2017" [(ngModel)]="currentDate" (ngModelChange)="funs1(currentDate,currentDate1)">
+
+
+                            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                            <!-- <mat-datepicker #datepicker > -->
+                                <mat-datepicker #datepicker (change)="funs1(currentDate,currentDate1)">
+
+                            </mat-datepicker>
+                        </mat-form-field>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="txtalign">Enter the date the plan ends.<span style="color: red;">*</span></td>
+                <td>
+                    <div style="width: 100px;">
+                        <mat-form-field appearance="outline" style="width:150px;margin-left: 30px;">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1" (ngModelChange)="funs1(currentDate,currentDate1)"
+                                [matDatepicker]="picker1">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </td>
+            </tr>
+           
+            
+          
+            <tr>
+                <td class="txtalign">Is this an Individual Coverage Health Reimbursement Arrangement(ICHRA)?</td>
+                <td>
+                    <mat-form-field appearance="outline" class="select-employee" style="margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="selectedvalue">
+                            <mat-option value=false>Not Set</mat-option>
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                </td>
+            </tr>
+            <tr *ngIf="selectedvalue=='true'">
+                <td class="txtalign">Are you using the employee residence zip code? </td>
+                <td>
+                    <mat-form-field appearance="outline" class="select-employee" style="margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="selectedvalue1">
+                            <mat-option value=false>Not Set</mat-option>
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                </td>
+            </tr>
+            <tr *ngIf="selectedvalue=='true'">
+                <td class="txtalign">Are you using the employee worksite zip code? </td>
+                <td>
+                    <mat-form-field appearance="outline" class="select-employee" style="margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="selectedvalue2">
+                            <mat-option value=false>Not Set</mat-option>
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                </td>
+            </tr>
+            <tr *ngIf="selectedvalue=='true'">
+                <td class="txtalign">Zip Code </td>
+                <td>
+                    <div style="width: 100px;">
+                        <mat-form-field appearance="outline" style="width:350px;margin-left: 30px;">
+                            <input [(ngModel)]="zippy" matInput placeholder="">
+                        </mat-form-field>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="selectedvalue=='true'">
+                <td class="txtalign">Enter the name of the Carrier or Plan Sponsor </td>
+                <td>
+                    <div style="width: 100px;">
+                        <mat-form-field appearance="outline" style="width:350px;margin-left: 30px;">
+                            <input [(ngModel)]="cpsponser" matInput placeholder="">
+                        </mat-form-field>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="txtalign">Enter the name of the Carrier or Plan Sponsor</td>
+                <td>
+                    <div style="width: 100px;">
+                        <mat-form-field appearance="outline" style="width:350px;margin-left: 30px;">
+                            <input [(ngModel)]="planSponser" matInput placeholder="">
+                        </mat-form-field>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="txtalign">Does this plan meet minimum essential coverage requirements?<mat-icon
+                        matTooltipClass="example-tooltip-black"
+                        matTooltip="The term minimum essential coverage includes any coverage under an eligible employer-sponsored plan. This is a term that means a group health plan or group health insurance coverage offered by an employer to an employee that is (a) a governmental plan, or (b) any other plan or coverage offered in a state's small or large group market. IRS regulations clarify that self-insured employer coverage qualifies as an eligible employer-sponsored plan. Most plans will meet this requirement, but it is the employer’s responsibility to determine if their plan meets the minimum essential coverage requirement.,"
+                        style="font-size: 12px;">help</mat-icon>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" class="select-employee" style="margin-left: 30px;">
+                        <mat-select placeholder=""[(value)]="select">
+                            <mat-option value=false>Not Set</mat-option>
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="txtalign">Does this plan meet minimum value requirements?<mat-icon
+                        matTooltipClass="example-tooltip-black"
+                        matTooltip="An employer-sponsored plan provides minimum value if the plan's share of the total allowed cost of benefits provided to an employee (the minimum value percentage) is at least 60%. Employers are responsible to determine if their plan meets these minimum value requirements. The IRS has created a Minimum Value Calculator that will help determine if these standards are being met. Also, most carriers will be able to verify if these standards are met."
+                        style="font-size: 12px;">help</mat-icon>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" class="select-employee" style="margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="select1">
+                            <mat-option value=false>Not Set</mat-option>
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="txtalign">Is this self-funded coverage?<mat-icon matTooltipClass="example-tooltip-black"
+                        matTooltip="Setting this field to yes indicates that this plan is a self-insured plan."
+                        style="font-size: 12px;">help</mat-icon>
+                </td>
+                <td>
+
+                    <mat-form-field appearance="outline" class="select-employee" style="margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="select2">
+                            <mat-option value=false>Not Set</mat-option>
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <p>Enter the Waiting Period guidelines associated with this plan. This information is directly related to IRS
+            reporting and must be accurately entered in the Plan Builder.? <mat-icon
+                matTooltipClass="example-tooltip-black"
+                matTooltip="  Waiting period information is directly related to IRS reporting. When an employee is in a permitted waiting period they will not count towards any potential penalty under the Employer-Shared Responsibility Tax. An employee in a waiting period is also considered to be in a ‘non-limited assessment period’ for purposes of IRS reporting."
+                style="font-size: 12px;">help</mat-icon>
+        </p>
+        <div class="main-row1">
+            <div style="width: 25%;">
+                <p class="dataalign"> Waiting Period Type</p>
+                <div class="dataalign">
+                    <mat-form-field appearance="outline" style="width: 154px;margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="waitselect">
+                            <mat-option value="Day">Days</mat-option>
+                            <mat-option value="Months">Months</mat-option>
+                            <mat-option value="Weeks">Weeks</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="width: 20%">
+                <p class="dataalign">Waiting Period</p>
+                <div class="dataalign">
+                    <mat-form-field appearance="outline" style="width:100px;margin-left: 30px;">
+                        <input [(ngModel)]="waitp" type="number" matInput placeholder="0">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="width: 44%;">
+                <p class="dataalign">Waiting Period Begins on Following Calendar Month </p>
+                <div class="dataalign">
+                    <mat-form-field appearance="outline" style="width: 90px;margin-left: 30px;">
+                        <mat-select placeholder="" [(value)]="waitcal">
+                            <mat-option value=true>Yes</mat-option>
+                            <mat-option value=false>No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- <div class="main-row"  style="overflow-x:auto;">
+        <div style="width:40%;padding: 4px;text-align: right;" >Select all the tiers of coverage that are being offered within the plan. The tiers of coverage that are offered are directly related to IRS reporting and must be accurately entered in the Plan Builder.<span style="color: red;">*</span></div>
+        <div style="width: 30%;padding: 4px;"><mat-form-field appearance="outline" style="margin-left: 30px;">
+            <mat-select placeholder="" >
+                
+                <mat-option value="A">Employee Only</mat-option>
+                <mat-option value="B">Employee Plus Conditional Offer to Spouse</mat-option>
+                <mat-option value="C">Employee Plus Dependent</mat-option>
+                <mat-option value="A">Employee Plus Dependents and Conditional Offer to Spouse</mat-option>
+                <mat-option value="B">Employee Plus  Spouse</mat-option>
+                <mat-option value="C">Family Coverage</mat-option>
+                <mat-option value="A">N/A</mat-option>
+                <mat-option value="B">Employee and Dependent(s) (NOT SPOUSE)</mat-option>
+                <mat-option value="C">Employee Plus  Spouse and Dependents</mat-option>
+            </mat-select>
+        </mat-form-field>
+          </div>
+        <div style="width: 20%;padding: 4px;"class="dataalign"><span style="color: red;">**To select multiple plan tiers<br> please hold CTRL key<br> and click selections.</span>
+        </div>
+       
+    </div> -->
+        <table style="overflow-x:auto;">
+            <tr>
+                <td class="txtalign">
+                    Select all the tiers of coverage that are being offered within the plan. The tiers of coverage that
+                    are offered are directly related to IRS reporting and must be accurately entered in the Plan
+                    Builder.<span style="color: red;">*</span>
+                </td>
+                <td>
+                    <div style="display: flex;">
+                        <div>
+                            <!-- <mat-form-field appearance="outline" style="width:100%;margin-left: 30px;"> -->
+                            <!-- <select placeholder=""  multiple>
+                        <option value="A">Employee Only<option>
+                        <option value="B">Employee Plus Conditional Offer to Spouse<option>
+                        <option value="C">Employee Plus Dependent<option>
+                        <option value="D">Employee Plus Dependents and Conditional Offer to Spouse</option>
+                        <option value="E">Employee Plus  Spouse<option>
+                        <option value="F">Family Coverage<option>
+                        <option value="G">N/A<option>
+                        <option value="H">Employee and Dependent(s) (NOT SPOUSE)<option>
+                        <option value="E">Employee Plus  Spouse and Dependents<option>
+                    </select> -->
+                            <!-- </mat-form-field> -->
+                            <select width=300 style="width: 350px;margin-left: 30px" size="4" multiple [(value)]="empselect">
+                                <option value="A">Employee Only</option>
+                                <option value="B">Employee Plus Conditional Offer to Spouse</option>
+                                <option value="C">Employee Plus Dependent</option>
+                                <option value="D">Employee Plus Dependents and Conditional Offer to Spouse</option>
+                                <option value="E">Employee Plus Spouse</option>
+                                <option value="F">Family Coverage</option>
+                                <option value="G">N/A</option>
+                                <option value="H">Employee and Dependent(s) (NOT SPOUSE)</option>
+                                <option value="E">Employee Plus Spouse and Dependents</option>
+                            </select>
+                        </div>
+                        <div style="margin-left: 1rem;">
+                            <span style="color: red;">**To select multiple plan tiers<br> please hold CTRL key<br> and
+                                click selections.</span>
+                        </div>
+                    </div>
+
+
+
+                </td>
+            </tr>
+        </table>
+        <table style="overflow-x:auto;">
+            <tr>
+                <td class="txtalign">This is an open field where you can enter any eligibility requirements that are
+                    associated with the plan.</td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 550px;height: 60px;margin-left: 30px;">
+                        <textarea matInput placeholder="" [(ngModel)]="textarea"></textarea>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="txtalign">Enter the total annual cost of the self-only coverage which includes both the
+                    employer and employee contribution.<mat-icon matTooltipClass="example-tooltip-black"
+                        matTooltip="This is not a required field, and this information is not part of the IRS Reporting, however it may be used for future calculations and future internal user reports."
+                        style="font-size: 12px;">help</mat-icon>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width:150px;margin-left: 30px;">
+                        <input [(ngModel)]="money" type="number" matInput placeholder="$0.00">
+                    </mat-form-field>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td class="txtalign">If the required employee contribution for self-only coverage is the same for each
+                    calendar month throughout the year, please enter if it here and DO NOT fill out the required
+                    contribution month by month.</td>
+                <td>
+                    <mat-form-field appearance="outline" style="width:150px;margin-left: 30px;">
+                        <input type="number" matInput placeholder="$0.00" [(ngModel)]="n" (ngModelChange)="funs2(n)" (focusout)="onFocusOutEvent(n)" (focus)="onFocusEvent(n)">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <p>Enter the required employee contribution for self-only coverage for each of the following months</p>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <div id="outer">
+                            <div *ngFor="let user of months" class="div" >
+                                <!-- <div style="display: flex; flex-direction: column;justify-content: center;margin-left:15px">
+                                    <div>{{user}}</div>
+                                    <div><input type="number" style="width: 7rem;" [disabled]="visible" value="{{contributionValue}}" (change)="showmonth(months,contributionValue)"  placeholder="$0.00"></div>
+                                   
+                                </div> -->
+                                <app-monthcontribution [month]="user" [visible]="visible" [contributionValue] = "contributionValue" (getValues)="getMonthlyValues($event)"></app-monthcontribution>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+           
+        </table>
+        
+    </mat-dialog-content>
+
+</div>

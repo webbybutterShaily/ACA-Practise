@@ -1,0 +1,426 @@
+<h1 class="header">Edit 1095 Forms</h1>
+<h2 class="header">UAT-100</h2>
+<div class="data-section">
+    <h3 class="dis">DISCLAIMER: The data displayed in the End User Ad Hoc Editing module is based on the business analytics of the system run against the data that you or your agents entered in the system. Users can override the information by editing what is displayed, however this will alter the data populated on the 1095-C Forms. If you alter the data incorrectly, this could lead to inaccurate reporting and potential employer penalties. Always be aware that the IRS requires you to examine these returns and affirm, under penalties of perjury, that to the best of your knowledge and belief, the returns are true, correct and complete. 
+    </h3>
+    <h3 class="dis" style="margin-top: 5px;">Important Notes:</h3>
+    <ul>
+        <li>The User must complete the Self-Attestation Page of the Year End Workflow in order to edit forms</li>
+        <li>Any and all edits made to an Employee’s 1095-C Form will be incorporated in the data that is sent to Fulfillment</li>
+        <li>If the User restarts their Year End Workflow they will lose any edits made to the final stage of the Forms</li>
+    </ul>
+    <div  >
+        Please select an employee to edit
+        <mat-form-field appearance="outline" class="select-employee">
+            <mat-select placeholder="" >
+                <mat-option value="A">ALEXANDRE,GUERLINE</mat-option>
+                <mat-option value="B">ALEXANDRE,GUERLINE</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+            <button mat-raised-button class="btn1">See all edits</button>
+            <button mat-raised-button class="btn2" (click)=" openDialog()" >Apply Edits in Bulk</button>
+    </div>
+    <div  >
+        Please select an employee to add 
+        <mat-form-field appearance="outline" class="select-employee">
+            <mat-select placeholder="" >
+                <mat-option value="A">Alfonse susan </mat-option>
+                <mat-option value="B">Alfonse susan </mat-option>
+            </mat-select>
+        </mat-form-field>
+            <button mat-raised-button class="btn3">Add Employee </button>
+            <button mat-raised-button class="btn2" (click)=" opendialog()">Indicator Code Matrix</button>
+            <button mat-raised-button class="btn4">See Table View of Form Data</button>
+    </div>
+    <div>
+      <p style="font-weight: bold;font-size:large;color:#056993">Current Status of New</p>
+        <table style="width:100%;overflow-x: scroll;">
+           
+            <tr>
+                <td rowspan='3' colspan='3' >Form <span style="font-weight:bold;font-size:x-large;">1095-C </span><br>Department of the<br> Treasury Internal <br>Revenue Service<br></td>
+                <td rowspan='3' colspan='10' ><span style="margin-left: 40px;font-weight:bold;font-size:medium">Employer-Provided Health Insurance Offer and Coverage</span><br>
+                    <span style="display: flex;justify-content:flex-end"><mat-checkbox class="example-margin">VOID</mat-checkbox></span>
+                    <span style="display: flex;justify-content:flex-end"><mat-checkbox class="example-margin">CORRECTED</mat-checkbox></span><br>
+                    <p style="margin-left: 40px;">▶ Information about Form 1095-C and its separate insructions is at<a style="color: #1b8ebd;text-decoration:none;margin-left: 2px;font-weight: bold;">www.irs.gov/form1095c</a></p>
+</td>
+                <td rowspan='2' colspan='2' style="height: 18px;">   </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' ><span style="font-weight: bold;font-size:x-large;text-align: center;">2018</span></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='8' ><b><span style="background-color: black;color:white">Part |</span>  Employee</b></td>
+                <td rowspan='1' colspan='7' style="text-align: center;"><b>Applicable Large Employer Member(Employer)</b></td>
+            </tr>
+            <tr>
+                <td rowspan='2' colspan='6' ><b>1</b> Name of Employee
+                  <div style="width: 100%;display:flex">
+                     <div style="width: 30%;">First Name
+                        <mat-form-field appearance="outline" style="width:100px">
+                        <input matInput placeholder="GUERLINE">
+                    </mat-form-field></div>
+                     <div style="width: 30%;">Middle Name
+                        <mat-form-field appearance="outline" style="width:100px">
+                            <input matInput placeholder="">
+                        </mat-form-field></div>
+                     <div style="width: 30%;">Last Name
+                        <mat-form-field appearance="outline" style="width:100px">
+                            <input matInput placeholder="ALEXANDRE">
+                        </mat-form-field></div>     
+                 </div>
+                </td>
+                <td rowspan='2' colspan='2' > 
+                    <div style="width: 178px;"> <b>2</b> Social Security Number(SSN)
+                        <mat-form-field appearance="outline" style="width:120px">
+                        <input matInput placeholder="142-23-1952">
+                    </mat-form-field></div></td>
+                <td rowspan='2' colspan='5' ><b>7</b> Name of Employer <b>UAT - 100</b></td>
+                <td rowspan='2' colspan='2' ><b>8</b> Employer Identification Number(EIN) <b>23 - 1234567</b></td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='8' ><b>3</b> Street address (including apartment no.)
+                    <mat-form-field appearance="outline" style="width:300px">
+                        <input matInput placeholder="396 EAST 9TH AVE 396 EAST 9TH AVE">
+                    </mat-form-field>
+                </td>
+                <td rowspan='1' colspan='5' ><b>9</b> 3 Street address (including room or suite no.) <b>1 Main Street</b></td>
+                <td rowspan='1' colspan='2' ><b>10</b> Contact telephone number <b>877-291--9256</b></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='3' ><b>4</b> City or town 
+                    <mat-form-field appearance="outline"  style="width:120px">
+                        <input matInput placeholder="ROSELLE">
+                    </mat-form-field>
+                </td>
+                <td rowspan='1' colspan='3' ><b>5</b> State or province <mat-form-field appearance="outline"  style="width:120px" >
+                    <input matInput placeholder="NJ">
+                </mat-form-field></td>
+                <td rowspan='1' colspan='2' ><b>6</b> Country and ZIP or foreign postal code<br>
+                    <mat-form-field appearance="outline" style="width:120px">
+                        <input matInput placeholder="07203">
+                    </mat-form-field></td>
+                <td rowspan='1' colspan='2' ><b>11</b> City or town <b>Springfield</b></td>
+                <td rowspan='1' colspan='3' ><b>12</b> State or province <b>PA</b></td>
+                <td rowspan='1' colspan='2' ><b>13</b> Country and ZIP or foreign postal code <b>12133</b></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='8' ><b><span style="background-color: black;color:white">Part ||</span> Employee Offer and Coverage</b></td>
+                <td rowspan='1' colspan='7' ><b>Plan Start Month</b>(Enter 2-digit number:) <mat-form-field appearance="outline" style="width: 60px;">
+                    <mat-select placeholder="" >
+                        <mat-option value="" disabled>--</mat-option>
+                        <mat-option >any</mat-option>
+                    </mat-select>
+                </mat-form-field></td>
+            </tr>
+            <tr>
+                <td rowspan='2' colspan='2' ><span> <b>14</b> Offer of Coverage (enter required code)</span></td>
+                <td style="text-align: center;">All 12 Month</td>
+                <td style="text-align: center;">Jan</td>
+                <td style="text-align: center;">Feb</td>
+                <td style="text-align: center;">Mar</td>
+                <td style="text-align: center;">Apr</td>
+                <td style="text-align: center;">May</td>
+                <td style="text-align: center;">June</td>
+                <td style="text-align: center;">July</td>
+                <td style="text-align: center;">Aug</td>
+                <td style="text-align: center;">Sept</td>
+                <td style="text-align: center;">Oct</td>
+                <td style="text-align: center;">Nov</td>
+                <td style="text-align: center;">Dec</td>
+            </tr>
+            <tr>
+                <td>
+                   
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                   
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                     <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let a of array1" [value]="a">{{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan='2' colspan='2' ><span> <b> 15 </b>Employee Share of Lowest Cost Monthly Premium, for Self-Only
+                    Minimum
+                    Value Coverage</span></td>
+                <td rowspan='2' colspan='1' > <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field></td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+                <td rowspan='2' colspan='1' >
+                    <mat-form-field appearance="outline" style="width:60px">
+                    <input matInput placeholder="">
+                </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' ><span> <b>16</b> Applicable Section 4980H Safe Harbor (enter code, if
+                    applicable)</span></td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" style="width: 60px;">
+                        <mat-select placeholder="" >
+                            <mat-option value="" disabled>--</mat-option>
+                            <mat-option *ngFor="let b of array2" [value]="b">{{b}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+           
+            </table>
+    </div>
+  
+</div>

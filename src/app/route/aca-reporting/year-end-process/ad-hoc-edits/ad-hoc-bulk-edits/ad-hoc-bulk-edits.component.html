@@ -1,0 +1,1266 @@
+<div>
+    <div class="ac_hot">
+        <div class="apply_edits">
+            <h3>Apply Edits in Bulk</h3>
+            <h5>Choose the edits you want to apply:</h5>
+        </div>
+        <div class="check_id">
+            <div class="void">
+                <span>Void</span>
+                <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <div class="check_yes">
+                <div class="yes">
+                    <mat-checkbox class="example-margin"></mat-checkbox>
+                    <span>Yes</span>
+                </div>
+                <div class="no">
+                    <mat-checkbox class="example-margin"></mat-checkbox>
+                    <span>No</span>
+                </div>
+            </div>
+        </div>
+        <mat-grid-list cols="1" rowHeight="2:1">
+            <mat-grid-tile>
+                <div class="all_month_table all_table">
+                    <form [formGroup]="form">
+                        <table>
+                            <tr>
+                                <td></td>
+                                <td> All 12 Months </td>
+                                <td> Jan </td>
+                                <td> Feb </td>
+                                <td> Mar </td>
+                                <td> Apr </td>
+                                <td> May </td>
+                                <td> Jun </td>
+                                <td> July </td>
+                                <td> Aug</td>
+                                <td>Sep</td>
+                                <td>Oct</td>
+                                <td> Nav</td>
+                                <td> Dec </td>
+                            </tr>
+                            <tr formGroupName="first">
+                                <td>
+                                    <span>
+                                        <b> Line 14</b>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="All12Months" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Jan" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Feb" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Mar" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Apr" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="May" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Jun" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="July" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Aug" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Sep" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Oct" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Nav" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select formControlName="Dec" matNativeControl required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr formGroupName="second">
+                                <td>
+                                    <span>
+                                        <b> Line 15</b>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </span>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox>
+                                    <input matInput formControlName="All12Months" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox>
+                                    <input matInput formControlName="Jan" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Feb" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Mar" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Apr" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="May" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Jun" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="July" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Aug" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Sep" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Oct" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Nav" (keypress)="number($event)">
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"></mat-checkbox><input matInput
+                                        formControlName="Dec" (keypress)="number($event)">
+                                </td>
+
+                            </tr>
+                            <tr formGroupName="third">
+                                <td>
+                                    <span>
+                                        <b> Line 14</b>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="All12Months" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Jan" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Feb" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Mar" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Apr" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="May" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Jun" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="July" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Aug" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Sep" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Oct" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Nav" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table_part">
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                        <mat-form-field appearance="fill">
+                                            <select matNativeControl formControlName="Dec" required>
+                                                <option value="" disabled>--</option>
+                                                <option *ngFor="let b of array2" [value]="b"> {{b}}</option>
+
+                                            </select>
+                                        </mat-form-field>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <div class="filter_select">
+            <span>Filter Employees By Issue:</span>
+            <mat-form-field appearance="fill">
+                <select matNativeControl required>
+                    <option value="value">--NO Filter--</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="apply_edits">
+            <h5>Choose the forms you want to apply the edits to:</h5>
+            <span>"Users are limited to editing 50 or fewer forms at a time. Larger bulk edits must be done through an
+                iSync
+                import.</span>
+        </div>
+        <div class="employer_data_table">
+            <mat-grid-list cols="1" rowHeight="2:1">
+                <mat-grid-tile>
+                    <div class="employee_data_forms">
+                        <form [formGroup]="form">
+                            <table>
+                                <tr>
+                                    <td>1</td>
+                                    <td colspan="7">Employee census Information</td>
+                                    <td colspan="13">Line 14 - offer of coverage</td>
+                                    <td colspan="13">Line 15 - Employee Required Lowest Cost Contribution</td>
+                                    <td colspan="13">Box 16 - Safe Harbors</td>
+                                    <td>Self Insured</td>
+                                    <td colspan="2">Admin</td>
+                                    <td colspan="17">Part III - Covered Individuals</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Employee Id</span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Employee Name</span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>SSN</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Address 1</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>City</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>State</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Zipcode</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+
+
+                                    <td>
+                                        <div class="e_id">
+                                            <span>All 12 Months </span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jan </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Feb</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Mar</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Apr</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>May</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jun </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>July </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Aug</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Sep</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Oct</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Nav</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Dec </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+
+
+
+                                    <td>
+                                        <div class="e_id">
+                                            <span>All 12 Months </span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jan </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Feb</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Mar</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Apr</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>May</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jun </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>July </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Aug</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Sep</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Oct</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Nav</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Dec </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+
+
+
+
+                                    <td>
+                                        <div class="e_id">
+                                            <span>All 12 Months </span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jan </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Feb</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Mar</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Apr</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>May</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jun </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>July </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Aug</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Sep</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Oct</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Nav</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Dec </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+
+
+
+
+                                    <td>
+                                        <div class="e_id">
+                                            <span> SI Coverage</span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Corrected</span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Voided</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Line Number</span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Name</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>SSN</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>DOB</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+
+
+
+                                    <td>
+                                        <div class="e_id">
+                                            <span>All 12 Months </span><img src="../../../../../../assets/filter.png"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jan </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Feb</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Mar</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Apr</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>May</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Jun </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>July </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Aug</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Sep</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Oct</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span>Nav</span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e_id">
+                                            <span> Dec </span><img src="../../../../../../assets/filter.png" alt="">
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </td>
+                                    <td>201256378</td>
+                                    <td>MARICELA PINEDO ALCALA</td>
+                                    <td>201-25-6378</td>
+                                    <td>1540 KING STREET</td>
+                                    <td>DENVER</td>
+                                    <td>CO</td>
+                                    <td>80204</td>
+
+
+                                    <td></td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </td>
+                                    <td>399018808</td>
+                                    <td>SOLEDAD CABALLERO</td>
+                                    <td>399-01-8808</td>
+                                    <td>475 E. RUSSELL BLVD,UNIT 4-C</td>
+                                    <td>THORNTON</td>
+                                    <td>CO</td>
+                                    <td>80229</td>
+
+
+
+                                    <td>1H</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </td>
+                                    <td>437561791</td>
+                                    <td>MARITZA VELAZQUEZ</td>
+                                    <td>437-56-1791</td>
+                                    <td>10025 E GIRARD AVE,27E 108</td>
+                                    <td>DENVER</td>
+                                    <td>CO</td>
+                                    <td>80231</td>
+
+
+                                    <td></td>
+                                    <td>1E</td>
+                                    <td>1E</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1E</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+                                    <td>1H</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </td>
+                                    <td>502966099</td>
+                                    <td>JO LYNN R HOOD</td>
+                                    <td>502-96-6099</td>
+                                    <td>2905 S. RALEIGH ST.</td>
+                                    <td>DENVER</td>
+                                    <td>CO</td>
+                                    <td>80236</td>
+
+
+
+                                    <td>1H</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-checkbox class="example-margin"></mat-checkbox>
+                                    </td>
+                                    <td>502966099</td>
+                                    <td>JO LYNN R HOOD</td>
+                                    <td>502-96-6099</td>
+                                    <td>2905 S. RALEIGH ST.</td>
+                                    <td>DENVER</td>
+                                    <td>CO</td>
+                                    <td>80236</td>
+
+
+
+                                    <td>1H</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </div>
+    </div>
+    <div class="button_click">
+        <button mat-button>Apply Edits</button>
+        <button mat-button mat-dialog-close>close</button>
+    </div>
+</div>
+
+
+
+<!-- end table one -->
+
+
+
+
+<!-- start tsble two -->

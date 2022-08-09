@@ -1,0 +1,242 @@
+
+/* start select box  */
+
+.main-from{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+
+
+.part01{
+    width: 77%;
+}
+
+
+.part02{
+    width: 23%;
+}
+
+.select_main{
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.search_btn{
+    background-color: green;
+    padding: 3px 13px;
+    color: #fff;
+}
+.matrix{
+    background-color: #2a6099 !important;
+    padding: 0px 20px
+}
+
+/* .select_main   .mat-form-field-wrapper{
+    padding: 0px !important;
+    background-color: red;
+} */
+
+.single_form{
+    padding: 6% 20% 0 0;
+}
+.single_form h3{
+    text-align: end;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: rgb(62, 131, 223);
+}
+
+.code_metrix{
+    text-align: end;
+}
+
+.metrix_btn{
+    margin: 25px 85px 0 20px;
+    text-align: end;
+}
+
+.main_from span{
+    font-size: 15px;
+    max-width: 140px;
+    display: block;
+    padding-bottom: 10px;
+    line-height: 25px;
+}
+.main_from span b {
+    font-size: 30px;
+}
+
+.select_main .example-button-row{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+}
+
+
+.from_assement{
+    background-color: #c8c7c7;
+    border: 5px solid  #2a6099;
+    padding: 25px 20px;
+    margin: 113px 0 0 20px;
+    border-radius: 25px;
+}
+.from_assement h5{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.from_assement p{
+    padding: 20px 0;
+}
+
+.audit{
+    text-align: end;
+    margin-right: 20px;
+}
+
+
+
+
+/* table */
+
+/* 
+
+.all_month_table{
+    display: flex;
+    justify-content: space-between;
+} */
+
+.all_month_table table{
+    width: 100%;
+    border-top: 4px solid #545454;
+    border-spacing: 0 !important;
+}
+
+.all_month_table table td{
+    width: 110px;
+    text-align: center;
+    border-left: 2px solid  #898989;
+    border-bottom: 2px solid  #898989;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.all_month_table table td:first-child{
+    text-align: start;
+    font-size: 12px;
+}
+
+.all_month_table table tr{
+    border-top: 3px solid grey;
+}
+.all_month_table table tr:nth-child(1) {
+    height: 50px;
+}
+.all_month_table table tr:nth-child(3) {
+    height: 150px;
+}
+.all_month_table table tr:nth-child(2) , .all_month_table table tr:nth-child(4) {
+    height: 115px;
+}
+
+
+.all_month_table table tr:first-child td:first-child{
+    border: none;
+}
+.all_month_table table tr:nth-child(2) td:first-child ,   .all_month_table table tr:nth-child(3) td:first-child , .all_month_table table tr:nth-child(4) td:first-child{
+    border-left: none;
+}
+
+.all_month_table table td input{
+    border: 1px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-radius: 4px;
+    height: 45px;
+    width: 75px;
+}
+
+.all_month_table table tr td:nth-child(5){
+    border-left: 3px solid  #4f4f4f;
+    border-right: 3px solid  #4f4f4f;
+}
+.all_month_table table tr td:nth-child(6){
+    border-left: none !important;
+}
+.all_month_table table tr td:nth-child(11) , .all_month_table table tr td:nth-child(14){
+    border-left: 3px solid #4f4f4f;
+}
+
+.all_month_table table tr:first-child td:nth-child(2){
+    text-align: start;
+}
+
+.all_month_table table tr:nth-child(1) td:nth-child(2){
+    padding-left: 15px;
+}
+
+
+
+@media (max-width:1799px){
+    .main-from{
+        padding: 0 15px;
+    }
+    .all_month_table table td{
+        width: 87px;
+        padding: 0;
+       }
+     .all_month_table table td input{
+        height: 35px;
+        width: 64px;
+        margin: auto;
+     }
+     .from_assement{
+        margin: 106px 0 0 10px;
+    }
+    .all_month_table table tr:nth-child(2) ,  .all_month_table table tr:nth-child(4) {
+        height: 100px;
+    }
+    .all_month_table table tr:nth-child(3) {
+        height: 130px;
+    }
+}
+
+@media (max-width:1600px){
+    .part01{
+        width: 75%;
+    }
+    
+    .part02{
+        width: 25%;
+    }
+    .from_assement{
+        margin: 96px 0 0 10px;
+    }
+    .all_month_table table td:first-child{
+        font-size: 10px;
+    }
+}
+
+@media (max-width:1260px){
+    .main-from{
+        display: block;
+    }
+    .part01 {
+        width: 100%;
+    }
+    .part02 {
+        width: 50%;
+    }
+}
+
+
+

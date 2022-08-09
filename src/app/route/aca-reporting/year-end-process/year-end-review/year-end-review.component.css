@@ -1,0 +1,83 @@
+.header{
+    /* background-color: white; */
+    color: #1591b8;
+    text-align: center;
+  }
+  .save-btn{
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .save-btn button {
+    margin: 0px 30px 30px 0px;
+    background: rgb(8, 82, 125);
+    color:white;
+  }
+  
+  
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .data-section{
+    width: 90%;
+    margin: 10px auto;
+   
+  }
+  .main-row{
+    width: 97%;
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+   
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 6px 0px;
+  border-top: 4px solid transparent;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+  transform: translateY(0%) !important;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgb(7, 7, 7);
+}
+.tbl-border{
+  border: 2px solid #d0cdcd;
+  border-collapse: collapse;
+}
+th, td,tr {
+
+  padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.tbld{
+  background-color: white;
+}
+.tbl{
+  border:0px;
+}
+.tbld-align{
+  text-align: right;
+  background-color: white;
+}

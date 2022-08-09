@@ -1,0 +1,2064 @@
+<!-- <form  [formGroup]="formdetails" (ngSubmit)="getdata()"> -->
+
+<h1 class="header">Maintain Customers</h1>
+<div class="data-section">
+    <div>
+        <div class="selectcustomer">Select A Customer</div>
+        <div style="float:left;margin-top: 0px;" class="selectbtn">
+
+            <div class="second_part_main">
+                <!-- <div class="select_main select_btn">
+                    <ng-multiselect-dropdown [data]="dropdownList" (onSelect)="onItemSelect($event)"
+                        [(ngModel)]="selectedItems" [settings]="dropdownSettings">
+                    </ng-multiselect-dropdown>
+                    <div class="example-button-row">
+                        <button class="search_btn" mat-flat-button>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div style="float:left;">
+            <button mat-raised-button class="btn1">Advance Search...</button>
+        </div>
+        <div>
+            <!-- <button mat-raised-button class="btn2" (click)="getdata(formdata.value)">New Customer</button> -->
+            <button mat-raised-button class="btn2" (click)="NewCustomer()">New Customer</button>
+        </div>
+        <h1 class="heading2">Customer Details</h1>
+        <hr style="height:2px; width:99%; border-width:0; color:#6CA6D9; background-color:#6CA6D9">
+    </div>
+    <div class="cdetail1">
+        <div style="width: 15%;">Company Id <div class="arrowpopup">
+                <mat-icon style="font-size: 12px;">help</mat-icon>
+                <span class="tooltiptext" id="tooltipdemo">This is the internal number assigned to this customer.
+                </span>
+            </div>
+        </div>
+        <mat-form-field appearance="outline" style="width:140px">
+            <input matInput placeholder="154678" name="customerId" [(ngModel)]="customerDetails.customerId" [disabled]="customerDetails.customerId">
+        </mat-form-field>
+
+    </div>
+    <div class="cdetail1">
+        <div style="width: 15%;">Company Name <div class="arrowpopup">
+                <mat-icon style="font-size: 12px;">help</mat-icon>
+                <span class="tooltiptext" id="tooltipdemo">This is the name that will be displayed in the system
+                    after a User logs in.
+                </span>
+            </div>
+        </div>
+
+        <div style="width: 20%">
+            <mat-form-field appearance="outline" style="width:500px">
+                <input matInput placeholder="UAT-100" name="customerName" [(ngModel)]="customerDetails.customerName">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 15%;">Legal Name <div class="arrowpopup">
+                <mat-icon style="font-size: 12px;">help</mat-icon>
+                <span class="tooltiptext" id="tooltipdemo">If the Company Name is the same as the Legal Name, then
+                    simply leave this field blank. If the Company Name is a D.B.A., then enter the companies Legal
+                    Name.
+                </span>
+            </div>
+        </div>
+        <div style="width: 20%;">
+            <mat-form-field appearance="outline" style="width:500px">
+                <input matInput placeholder="UAT-100" name="legalName" [(ngModel)]="customerDetails.legalName">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 20%;">
+            <p>EIN</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="EIN" [(ngModel)]="customerDetails.EIN">
+            </mat-form-field>
+        </div>
+        <div style="width: 20%;">
+            <div class="marginset">Active
+                <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Make sure to set this to ‘Yes’ otherwise the company
+                        is considered Inactive and will encounter a message stating as such when they login.
+                    </span>
+                </div>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="isActive" [(ngModel)]="customerDetails.isActive">
+                    <mat-option [value]=true>Yes</mat-option>
+                    <mat-option [value]=false>No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="width: 40%;">
+            <p>Allow Temporary Access:</p>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="tempAccessStatus" [disabled]="customerDetails.isActive === true && isTemporary === false "
+                    [(ngModel)]="customerDetails.tempAccessStatus">
+                    <mat-option [value]=true>Yes</mat-option>
+                    <mat-option [value]=false>No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 20%;">
+            <p>Address Line 1</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="addressLine1" [(ngModel)]="customerDetails.addressLine1">
+            </mat-form-field>
+        </div>
+        <div style="width: 20%;">
+            <p>Address Line 2</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="addressLine2" [(ngModel)]="customerDetails.addressLine2">
+            </mat-form-field>
+        </div>
+        <div style="width: 30%;">
+            <p>Check this box if this customer is flagged due to special circumstances for billing purposes:
+                <mat-checkbox name="billingPurposeflag" [(ngModel)]="customerDetails.billingPurposeflag">
+                </mat-checkbox>
+            </p>
+
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 20%;">
+            <p>City</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="city" [(ngModel)]="customerDetails.city">
+            </mat-form-field>
+
+            <p>Phone</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="contactNo" [(ngModel)]="customerDetails.contactNo">
+            </mat-form-field>
+        </div>
+        <div style="width: 20%;">
+            <p>State</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="county" [(ngModel)]="customerDetails.state">
+            </mat-form-field>
+
+            <p>Contact</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="contactName" [(ngModel)]="customerDetails.contactName">
+            </mat-form-field>
+        </div>
+        <div style="width: 20%;">
+            <p>Zip Code</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="zipCode" [(ngModel)]="customerDetails.zipCode">
+            </mat-form-field>
+
+            <p>Email Address</p>
+            <mat-form-field appearance="outline" style="width:140px">
+                <input matInput placeholder="UAT-100" name="emailId" [(ngModel)]="customerDetails.emailId">
+            </mat-form-field>
+
+        </div>
+
+        <div style="width: 40%;">
+            <p>
+                If applicable, enter billing information related to this employer
+            </p>
+            <mat-form-field appearance="outline" style="width: 390px;height: 200px;">
+
+                <textarea matInput placeholder="" name="billingNote"
+                    [(ngModel)]="customerDetails.billingNote"> </textarea>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="cdetail1">
+        <div style="width: 20%;">
+            <div class="marginset">Brand : <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Assign the company the correct brand. If there is
+                        only one Brand selection in the drop-down menu, then that is the brand you should select.
+                    </span>
+                </div>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-select name="brandName" [(ngModel)]="customerDetails.brandName">
+                    <mat-option *ngFor="let data of brand" [value]=data>{{data}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="width: 20%;">
+            <div class="marginset">License Type <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Select ‘Single Company’ if applicable. If this
+                        company is part of a Controlled Group of companies, then one of them needs to be assigned as
+                        the Parent Company, in which case you should select ‘Multi-company Parent Company’, while
+                        the other companies within the Controlled Group should be set to ‘Multi-company Child
+                        Company’. Do not select any of the additional License Types unless you are so advised to.
+                    </span>
+                </div>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-select value="{{customerDetails.licenseType}}" name="licenseType"
+                    [(ngModel)]="customerDetails.licenseType">
+                    <mat-option *ngFor="let data of licenseType" [value]=data>{{data}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="width: 40%;">
+            <p>Group Type:</p>
+            <mat-form-field appearance="outline">
+                <mat-select name="groupType" [(ngModel)]="customerDetails.groupType">
+                    <mat-option [value]=1>N/A</mat-option>
+                    <mat-option [value]=2>Consolidated Group</mat-option>
+                    <mat-option [value]=3>Controlled Group</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 20%;">
+            <div class="marginset">Control Group Parent?
+                <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">If the company you are setting up is part of a
+                        Controlled Group and is being identified as the Parent Company for the group, then select
+                        ‘Yes’. *Note that the terms Parent and Child company are not legal terms, they are
+                        systematic terms used to create a relationship within the system.
+                    </span>
+                </div>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="isControlGroupParent"
+                    [(ngModel)]="customerDetails.isControlGroupParent">
+
+                    <mat-option [value]=true>Yes</mat-option>
+                    <mat-option [value]=false>No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="width: 20%;">
+            <div class="marginset">Parent Customer <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Select ‘Single Company’ if applicable. If this
+                        company is part of a Controlled Group of companies, then one of them needs to be assigned as
+                        the Parent Company, in which case you should select ‘Multi-company Parent Company’, while
+                        the other companies within the Controlled Group should be set to ‘Multi-company Child
+                        Company’. Do not select any of the additional License Types unless you are so advised to.
+                    </span>
+                </div>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No">
+
+                    <mat-option value="true">Yes</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="width: 40%;">
+            <p>Retail Partner</p>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="retailPartner" [(ngModel)]="customerDetails.retailPartner">
+                    <mat-option [value]="'Gibson'">Gibson</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 20%;">
+            <div class="marginset">Subscription Starts<div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">This is not a required field. You can choose to enter
+                        the date that the subscription for a user license starts in this field.
+                    </span>
+                </div>
+
+
+                <mat-form-field appearance="outline" style="width:150px;">
+                    <input matInput placeholder="6/13/2017" [matDatepicker]="picker1" name="subscriptionStarted"
+                        [(ngModel)]="customerDetails.subscriptionStarted">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div style="width: 20%;">
+            <div class="marginset">Subscription Ends<div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">This is not a required field. You can choose to enter
+                        the date that the subscription for a user license ends in this field.
+                    </span>
+
+                </div>
+
+
+                <mat-form-field appearance="outline" style="width:150px;">
+                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker" name="subscriptionEnds"
+                        [(ngModel)]="customerDetails.subscriptionEnds">
+                    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div style="width: 40%;">
+            <div class="marginset">Auto Lock Setup
+                <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Select ‘Yes’ in this drop-down menu if you want the
+                        Measurement, Administrative, and Stability Period setup page to be administratively locked
+                        after a customer configures the system with their selections. *Note that system Admins can
+                        unlock this for customers if necessary. If ‘No’ is selected then a customer can continue to
+                        change their configuration, which could cause compliance issues as calculated data is based
+                        on this configuration. The default for this field selection is ‘Yes’.
+                    </span>
+                </div>
+
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="autoLockSetup" [(ngModel)]="customerDetails.autoLockSetup">
+                    <mat-option [value]="'N/A'">N/A</mat-option>
+                    <mat-option [value]=true>Yes</mat-option>
+                    <mat-option [value]=false>No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div>
+        <div class="cust-row ">
+            <div class="customer-col cust-col producttype_main">
+                <div>
+                    <p class="ptype">Product Type</p>
+                </div>
+                <div class="product_type">
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox [checked]="ACANonIntegrated === true"> </mat-checkbox> ACA Tracking and Reporting – Non - Integrated
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox [checked]="ACApayrollintegrtion === true"> </mat-checkbox> ACA Tracking and Reporting – Payroll Integrated
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check2.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox [checked]="ACAreportingintergrated === true"> </mat-checkbox> ACA Tracking and Reporting – Reporting Integrated
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check3.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox [checked]="ACAfulltergrated === true"> </mat-checkbox> ACA Tracking and Reporting – Fully Integrated
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check4.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="EssentialsOnlyNonIntegrated === true"> </mat-checkbox> Reporting Essentials Only – Non - Integrated
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check5.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker1">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker2">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker2></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox [checked]="EssentialsOnlyIntegrated === true"> </mat-checkbox> Reporting Essentials Only - Integrated
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check6.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="EEOCReporting === true"> </mat-checkbox> E-File Complete
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check7.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="EEOCReporting === true"> </mat-checkbox> EEOC Reporting
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check8.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker3">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker3"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker3></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker4">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker4"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker4></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox [checked]="WorkNumber === true"> </mat-checkbox> Work Number
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check9.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="ACAAudit === true"> </mat-checkbox> ACA Audit
+                        </p>
+                         <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check10.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker5">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker5"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker5></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker6">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker6"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker6></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="EEOCComponent2Only === true"> </mat-checkbox> EEOC Component 2 Only
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check11.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="FullService === true"> </mat-checkbox> Full Service</p>
+                            <div class="cdetail1">
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2015)">2015</mat-checkbox>
+                                </span>
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2016)">2016</mat-checkbox>
+                                </span>
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2017)">2017</mat-checkbox>
+                                </span>
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2018)">2018</mat-checkbox>
+                                </span>
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2019)">2019</mat-checkbox>
+                                </span>
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2020)">2020</mat-checkbox>
+                                </span>
+                            </div>
+                            <div class="cdetail1">
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2021)">2021</mat-checkbox>
+                                </span>
+                                <span class="pdetailalign">
+                                    <mat-checkbox [checked]="check12.includes(2022)">  2022</mat-checkbox>
+                                </span>
+    
+                            </div>
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker7">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker7"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker7></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker8">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker8"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker8></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="NewJerseyEfiling === true"> </mat-checkbox> New Jersey E-filing
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check13.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker9">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker9"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker9></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker10">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker10"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker10></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="WashingtonDCFiling === true"> </mat-checkbox> Washington DC Filing
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2015)">2015</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2016)">2016</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2017)">2017</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2018)">2018</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2020)">2020</mat-checkbox>
+                            </span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox [checked]="check14.includes(2022)">  2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker11">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker11"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker11></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker12">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker12"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker12></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="CaliforniaEFiling === true"> </mat-checkbox> California EFiling
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check15.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check15.includes(2020)">2020</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check15.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check15.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker13">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker13"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker13></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker14">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker14"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker14></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="customer-row">
+                        <p>
+                            <mat-checkbox  [checked]="RhodeIslandEFiling === true"> </mat-checkbox> Rhode Island EFiling
+                        </p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check16.includes(2019)">2019</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check16.includes(2020)">2020</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check16.includes(2021)">2021</mat-checkbox>
+                            </span>
+                            <span class="pdetailalign">
+                                <mat-checkbox  [checked]="check16.includes(2022)">2022</mat-checkbox>
+                            </span>
+
+                        </div>
+                        <div style="display: flex;margin-top: 10px;">
+                            <div>
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker15">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker15"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker15></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div style="margin-left: 1%;">
+                                <mat-form-field appearance="outline" style="width:150px;">
+                                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker16">
+                                    <mat-datepicker-toggle matSuffix [for]="datepicker16"></mat-datepicker-toggle>
+                                    <mat-datepicker #datepicker16></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customer_part">
+                <div class="cust-col1" [hidden]="isaddEstablisHide === true">
+                    <div class="cdetail1">
+                        <p>Does the employer have multiple establishments?
+                        <p>
+                            <mat-form-field appearance="outline" style="width:75%;float:right;">
+                                <mat-select>
+                                    <mat-option *ngFor="let data of opt" value={{data}}>{{data}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                    </div>
+                    <div style="display: flex;justify-content:flex-end">
+                        <button mat-raised-button class="btn1" (click)="openDialog1()">Add Establishment</button>
+                    </div>
+
+                    <div>
+                        <p>List of Associated Establishments:</p>
+                    </div>
+                    <div class=" cdetail1 cdetail2">
+                        <p *ngFor="let data of establishments">{{data.customername}}</p>
+                    </div>
+                </div>
+
+                <div class="cust-col2">
+                    <div class="ulist">
+                        <h2>Assign User List : </h2>
+                        <div>
+                            <button mat-raised-button class="btn3">Get Assign Users</button>
+
+                        </div>
+
+                    </div>
+                    <div style="width:100% ;background-color:#dadadaa3;padding: 5%;">
+                        <p style="font-size: 12px; margin: 0;">
+                            * Click on button to load data
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="custpart3">
+        <div class="cdetail1">
+            <div class="marginset">Rate in Employee Data is W2 Wages <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Check this box if the payroll data field that is
+                        being provided by the customer or on behalf of the customer is W-2 Wages instead of a Rate
+                        of Pay. By checking this box, the system will run business logic associated with the W-2
+                        Affordability Safe Harbor rather than the Rate of Pay Affordability Safe Harbor Method.
+                    </span>
+                </div>
+            </div>
+            <mat-checkbox name="rateIsW2Wages" [(ngModel)]="customerDetails.rateIsW2Wages"></mat-checkbox>
+        </div>
+        <div class="cdetail1">
+            <div class="marginset"> Show Employee ID in Lists <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Check this box if the customer wants to see the
+                        Employee ID that is associated with Employees in each table in the Dashboard. If not
+                        checked, the Employee ID will not appear.
+                    </span>
+                </div>
+            </div>
+            <mat-checkbox name="showEmpldInLists" [(ngModel)]="customerDetails.showEmpldInLists"></mat-checkbox>
+        </div>
+        <div class="cdetail3">
+            <div>
+                <div class="marginset">Show max number of hours to maintain non-full time status column <div
+                        class="arrowpopup">
+                        <mat-icon style="font-size: 12px;">help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">The system default is that this box is checked.
+                            This is a column specifically located in the ‘Tracked Employees’ table in the Dashboard.
+                            The column identifies the number of hours that a tracked employee can work each week
+                            throughout the remainder of a measurement period and keep their total average hours per
+                            week under 30. To hide this column of information you would simply uncheck this box.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <mat-checkbox name="showMaxHoursFT" [(ngModel)]="customerDetails.showMaxHoursFT"></mat-checkbox>
+            </div>
+
+        </div>
+
+        <div class="cdetail1">
+            <div style="width: 50%;">
+                <div class="marginset">Monthly Measurement <div class="arrowpopup">
+                        <mat-icon style="font-size: 12px;">help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">If the customer indicates that they would like to
+                            use the Monthly Measurement Method, rather than the Look-Back Measurement Method to
+                            track the full-time status of their employees, then select ‘Yes’ in this drop-down menu.
+                            *Note That the customer must provide their payroll data broken down by month for this
+                            tracking method to be accurate in the system. Failure to do so will lead to inaccurate
+                            tracking results.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 20%;">
+                <mat-form-field appearance="outline">
+                    <mat-select>
+                        <mat-select placeholder="No" name="monthlyMeasurement"
+                            [(ngModel)]="customerDetails.monthlyMeasurement">
+                            <mat-option [value]=true>Yes</mat-option>
+                            <mat-option [value]=false>No</mat-option>
+                        </mat-select>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="cdetail1">
+            <div style="width: 50%;">
+                <div class="marginset">This is a Demo/Test Customer <div class="arrowpopup">
+                        <mat-icon style="font-size: 12px;">help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">Only select ‘Yes’ in this drop-down menu if this
+                            customer is being created as a Demo or Test account used for sales and demo purposes.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 20%;">
+                <mat-form-field appearance="outline">
+
+                    <mat-select placeholder="No" name="isDemoCustomer" [(ngModel)]="customerDetails.isDemoCustomer">
+                        <mat-option [value]=true>Yes</mat-option>
+                        <mat-option [value]=false>No</mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p class="marginset">Notes</p>
+        <mat-form-field appearance="outline" style="width: 50%">
+
+            <textarea matInput placeholder="" name="Notes" [(ngModel)]="customerDetails.Notes"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 18%;">
+            <div class="marginset">Customer is a school? <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Select ‘Yes’ if the customer that is being created is
+                        a school or educational organization. *Note there is additional business logic that runs in
+                        the system related to schools, and if this is not selected when applicable then calculations
+                        in the system may be inaccurate.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="width: 20%;">
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="isSchool" [(ngModel)]="customerDetails.isSchool">
+                    <mat-option [value]=true>Yes</mat-option>
+                    <mat-option [value]=false>No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div *ngIf="customerDetails.isSchool === true">
+        <button mat-raised-button class="btn3" (click)="goTobreakeinservice()">Edit Breaks In Service</button>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 18%;">
+            <div class="marginset">Benefit Admin License <div class="arrowpopup">
+                    <mat-icon style="font-size: 12px;">help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">This field should always be set to ‘Internal’ unless
+                        otherwise advised by a senior system administrator.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="width: 20%;">
+            <mat-form-field appearance="outline">
+                <mat-select name="benAdminType" [(ngModel)]="customerDetails.benAdminType">
+                    <mat-option *ngFor="let data of adminlicese" [value]=data>{{data}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="cdetail1">
+        <div style="width: 18%;">
+            <p class="marginset">Reporting Essentials Only</p>
+        </div>
+        <div style="width: 20%;">
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="No" name="REOnly" [(ngModel)]="customerDetails.REOnly">
+                    <mat-option [value]=true>Yes</mat-option>
+                    <mat-option [value]=false>No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <button mat-raised-button class="btn1">Save</button>
+    </div>
+    <div>
+        <button mat-raised-button class="btn4">Unlock Setup</button>
+    </div>
+
+
+</div>
+
+<!-- <h1 class="header">Maintain Customers</h1>
+
+<div class="data-section" >
+   
+        <div>
+            <div class="selectcustomer" style="padding-top: 3vmin;">Select A Customer</div>
+            <div style="float:left;margin-top: 0px;" class="selectbtn">
+               
+                <app-customer-drop-down  (login)="onLogin($event)"></app-customer-drop-down>
+            </div>
+            <div style="float:left;padding-top: 3vmin;">
+                <button mat-raised-button class="btn1">Advance Search...</button>
+            </div>
+            <div style="padding-top: 3vmin;">
+                <button mat-raised-button class="btn2" >New Customer</button>
+            </div>
+        </div>
+        <h1 class="heading2">Customer Details</h1>
+        <hr style="height:2px; width:99%; border-width:0; color:#6CA6D9; background-color:#6CA6D9">
+    
+        <div>
+    
+    
+            <div class="cdetail1">
+                <div style="width: 15%;">Company Id   <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">This is the internal number assigned to this customer.
+                    </span>
+                </div></div>
+                <div style="width: 20%;"> {{customerDetails.customerId}}</div>
+            </div>
+            <div class="cdetail1">
+                <div style="width: 15%;">Company Name <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">This is the name that will be displayed in the system after a User logs in.
+                    </span>
+                </div>
+                </div>
+                <div style="width: 20%">
+                    <mat-form-field appearance="outline" style="width:500px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.customerName}}">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="cdetail1">
+                <div style="width: 15%;">Legal Name <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">If the Company Name is the same as the Legal Name, then simply leave this field blank. If the Company Name is a D.B.A., then enter the companies Legal Name.
+                    </span>
+                </div></div>
+                <div style="width: 20%;">
+                    <mat-form-field appearance="outline" style="width:500px">
+                        <input matInput placeholder="UAT-100" value=" {{customerdata.legalName}}">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <p>EIN</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value=" {{customerdata.EIN}}">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <div class="marginset">Active
+                        <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">Make sure to set this to ‘Yes’ otherwise the company is considered Inactive and will encounter a message stating as such when they login.
+                        </span>
+                        </div>
+                    </div>
+                    <mat-form-field appearance="outline" >
+                        <mat-select placeholder="No"  value="{{customerdata.isActive}}">
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 40%;">
+                    <p>Allow Temporary Access:</p>
+                    <mat-form-field appearance="outline">
+                        <mat-select placeholder="No"   value="{{customerdata.tempAccessStatus}}">
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <p>Address Line 1</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100"  value="{{customerdata.addressLine1}}">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p>Address Line 2</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100"  value="{{customerdata.addressLine2}}">
+                    </mat-form-field>
+                </div>
+                <div style="width: 30%;">
+                    <p>Check this box if this customer is flagged due to special circumstances for billing purposes: <mat-checkbox checked="customerdata1.billingPurposeflag"></mat-checkbox> </p>
+                    
+                </div>
+            </div>
+        
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <p>City</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.city}}">
+                    </mat-form-field>
+        
+                    <p>Phone</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.contactNo}}">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p>State</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.county}}">
+                    </mat-form-field>
+        
+                    <p>Contact</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.contactName}}">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p>Zip Code</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.zipCode}}">
+                    </mat-form-field>
+        
+                    <p>Email Address</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="UAT-100" value="{{customerdata.emailId}}">
+                    </mat-form-field>
+                    
+                </div>
+        
+                <div style="width: 40%;">
+                <p>
+                    If applicable, enter billing information related to this employer
+                </p>
+                <mat-form-field appearance="outline" style="width: 390px;height: 200px;">
+                       
+                    <textarea matInput placeholder="" value="{{customerdata.billingNote
+                    }}"> </textarea>
+                  </mat-form-field>
+                </div>
+        
+            </div>
+        
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <div class="marginset">Brand : <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">Assign the company the correct brand. If there is only one Brand selection in the drop-down menu, then that is the brand you should select.
+                        </span>
+                        </div></div>
+                    <mat-form-field appearance="outline"  >
+                        <mat-select value="{{customerdata.brandName}}">
+                            <mat-option *ngFor="let data of brand" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <div class="marginset">License Type <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">Select ‘Single Company’ if applicable. If this company is part of a Controlled Group of companies, then one of them needs to be assigned as the Parent Company, in which case you should select ‘Multi-company Parent Company’, while the other companies within the Controlled Group should be set to ‘Multi-company Child Company’. Do not select any of the additional License Types unless you are so advised to.
+                        </span>
+                        </div> </div>
+                    <mat-form-field appearance="outline" >
+                        <mat-select value="{{customerdata.licenseType}}">
+                            <mat-option *ngFor="let data of licenseType" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 40%;">
+                    <p>Group Type:</p>
+                    <mat-form-field appearance="outline" >
+                        <mat-select >
+                            <mat-option *ngFor="let data of group" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <div class="marginset">Control Group Parent?  <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">If the company you are setting up is part of a Controlled Group and is being identified as the Parent Company for the group, then select ‘Yes’. *Note that the terms Parent and Child company are not legal terms, they are systematic terms used to create a relationship within the system.
+                        </span>
+                        </div></div>
+                    <mat-form-field appearance="outline" >
+                        <mat-select placeholder="No"   value="{{customerdata.isControlGroupParent
+                        }}">
+                            <mat-option value="na">N/A</mat-option>
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="marginset">Subscription Starts<div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">This is not a required field. You can choose to enter the date that the subscription for a user license starts in this field.
+                        </span>
+                        </div></div>
+                    <div class="select-month">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                [matDatepicker]="picker1" value="{{customerdata.subscriptionStarted
+                                }}">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 20%;">
+                    <div class="marginset">Parent Customer <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">If the company you are setting up is part of a Controlled Group and is being identified as the Child Company, then select the company within the Controlled Group that has been designated the Parent Company.  *Note that the Parent Company must be created first and identified as such to be a selection in this drop-down menu.
+                        </span>
+                        </div></div>
+                    <mat-form-field appearance="outline" >
+                        <mat-select placeholder="No"   >
+                            <mat-option value="na">N/A</mat-option>
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="marginset">Subscription Ends <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">This is not a required field.  You can choose to enter the date that the subscription for a user license ends in this field.
+                        </span>
+                        </div></div>
+                    <div class="select-month">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                [matDatepicker]="picker1"  value="{{customerdata.subscriptionEnds
+                                }}">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div style="width: 40%;">
+                    <p>Retail Partner</p>
+                    <mat-form-field appearance="outline" >
+                        <mat-select placeholder="No"  >
+                            <mat-option value="na">N/A</mat-option>
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="marginset">Auto Lock Setup <div class="arrowpopup" >
+                        <mat-icon style="font-size: 12px;"  
+                    >help</mat-icon>
+                        <span class="tooltiptext" id="tooltipdemo">Select ‘Yes’ in this drop-down menu if you want the Measurement, Administrative, and Stability Period setup page to be administratively locked after a customer configures the system with their selections.  *Note that system Admins can unlock this for customers if necessary.  If ‘No’ is selected then a customer can continue to change their configuration, which could cause compliance issues as calculated data is based on this configuration.  The default for this field selection is ‘Yes’.
+                        </span>
+                        </div></div>
+                    <mat-form-field appearance="outline" >
+                        <mat-select placeholder="No"   value="{{customerdata.autoLockSetup
+                        }}">
+                            <mat-option value="na">N/A</mat-option>
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        <div>
+            <p class="ptype">Product Type</p>
+        </div>
+           
+        <div class="cust-row">
+                <div class="customer-col cust-col" >
+                    <div class="customer-row">
+                    <p><mat-checkbox > </mat-checkbox> ACA Tracking and Reporting – Non - Integrated</p>
+                    <div class="cdetail1">
+                        <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                        <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                        <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                        <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                        <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                        <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                    </div>
+                    <div class="cdetail1">
+                        <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                        <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                        
+                    </div>
+                    </div>
+                    
+                    <div class="customer-row">
+                        <p><mat-checkbox > </mat-checkbox> ACA Tracking and Reporting – Payroll Integrated</p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                        </div>
+                        <div class="cdetail1">
+                            <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                            
+                        </div>
+                    </div>
+            
+                    <div class="customer-row">
+                            <p><mat-checkbox > </mat-checkbox> ACA Tracking and Reporting – Reporting Integrated</p>
+                            <div class="cdetail1">
+                                <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                            </div>
+                            <div class="cdetail1">
+                                <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                
+                            </div>
+                    </div>
+            
+                    <div class="customer-row">
+                                <p><mat-checkbox > </mat-checkbox> ACA Tracking and Reporting – Fully Integrated</p>
+                                <div class="cdetail1">
+                                    <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                    <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                    <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                    <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                    <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                    <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                </div>
+                                <div class="cdetail1">
+                                    <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                    <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                    
+                                </div>
+                    </div>
+            
+                    <div class="customer-row">
+                                    <p><mat-checkbox > </mat-checkbox> Reporting Essentials Only – Non - Integrated</p>
+                                    <div class="cdetail1">
+                                        <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                        <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                        <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                        <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                        <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                        <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                    </div>
+                                    <div class="cdetail1">
+                                        <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                        <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                        
+                                    </div>
+                                    <div style="display: flex;margin-top: 10px;">
+                                        <div class="select-month" style="width: 40%;">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                    [matDatepicker]="picker1">
+                                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker1></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="select-month" style="width: 40%;">
+                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                    [matDatepicker]="picker1">
+                                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker1></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                   
+                    </div>
+            
+                    <div class="customer-row">
+                                        <p><mat-checkbox > </mat-checkbox> Reporting Essentials Only - Integrated</p>
+                                        <div class="cdetail1">
+                                            <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                            <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                            <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                            <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                            <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                            <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                        </div>
+                                        <div class="cdetail1">
+                                            <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                            <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                            
+                                        </div>
+                    </div>
+            
+                    <div class="customer-row">
+                                            <p><mat-checkbox > </mat-checkbox> E-File Complete</p>
+                                            <div class="cdetail1">
+                                                <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                            </div>
+                                            <div class="cdetail1">
+                                                <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                
+                                            </div>
+                    </div>
+            
+                    <div class="customer-row">
+                                                <p><mat-checkbox > </mat-checkbox> EEOC Reporting</p>
+                                                <div class="cdetail1">
+                                                    <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                    <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                    <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                    <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                    <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                    <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                                </div>
+                                                <div class="cdetail1">
+                                                    <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                    <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                    
+                                                </div>
+            
+                                                <div style="display: flex;margin-top: 10px;">
+                                                    <div class="select-month" style="width: 40%;">
+                                                        <mat-form-field class="example-full-width" appearance="fill">
+                                                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                [matDatepicker]="picker1">
+                                                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                            <mat-datepicker #picker1></mat-datepicker>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="select-month" style="width: 40%;">
+                                                        <mat-form-field class="example-full-width" appearance="fill">
+                                                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                [matDatepicker]="picker1">
+                                                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                            <mat-datepicker #picker1></mat-datepicker>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                    </div>
+                 
+            
+                    <div class="customer-row">
+                                                        <p><mat-checkbox > </mat-checkbox> ACA Audit</p>
+                                                        <div class="cdetail1">
+                                                            <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                            <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                            <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                            <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                            <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                            <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                                        </div>
+                                                        <div class="cdetail1">
+                                                            <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                            <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                            
+                                                        </div>
+                                                        <div style="display: flex;margin-top: 10px;">
+                                                            <div class="select-month" style="width: 40%;">
+                                                                <mat-form-field class="example-full-width" appearance="fill">
+                                                                    <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                        [matDatepicker]="picker1">
+                                                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                    <mat-datepicker #picker1></mat-datepicker>
+                                                                </mat-form-field>
+                                                            </div>
+                                                            <div class="select-month" style="width: 40%;">
+                                                                <mat-form-field class="example-full-width" appearance="fill">
+                                                                    <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                        [matDatepicker]="picker1">
+                                                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                    <mat-datepicker #picker1></mat-datepicker>
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                    </div>
+            
+                    <div class="customer-row">
+                                                            <p><mat-checkbox > </mat-checkbox> EEOC Component 2 Only</p>
+                                                            <div class="cdetail1">
+                                                                <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                                <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                                <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                                <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                                <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                                <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                                            </div>
+                                                            <div class="cdetail1">
+                                                                <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                                <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                                
+                                                            </div>
+                     </div>
+            
+                    <div class="customer-row">
+                                                                <p><mat-checkbox > </mat-checkbox> Full Service</p>
+                                                                <div class="cdetail1">
+                                                                    <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                                    <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                                    <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                                    <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                                    <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                                    <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                                                </div>
+                                                                <div class="cdetail1">
+                                                                    <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                                    <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                                    
+                                                                </div>
+                                                                <div style="display: flex;margin-top: 10px;">
+                                                                    <div class="select-month" style="width: 40%;">
+                                                                        <mat-form-field class="example-full-width" appearance="fill">
+                                                                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                [matDatepicker]="picker1">
+                                                                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                            <mat-datepicker #picker1></mat-datepicker>
+                                                                        </mat-form-field>
+                                                                    </div>
+                                                                    <div class="select-month" style="width: 40%;">
+                                                                        <mat-form-field class="example-full-width" appearance="fill">
+                                                                            <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                [matDatepicker]="picker1">
+                                                                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                            <mat-datepicker #picker1></mat-datepicker>
+                                                                        </mat-form-field>
+                                                                    </div>
+                                                                </div>
+                    </div>
+            
+                    <div class="customer-row">
+                                                                    <p><mat-checkbox > </mat-checkbox> New Jersey E-filing</p>
+                                                                    <div class="cdetail1">
+                                                                        <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                                        <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                                        <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                                        <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                                        <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                                        <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                                                    </div>
+                                                                    <div class="cdetail1">
+                                                                        <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                                        <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                                        
+                                                                    </div>
+                                                                    <div style="display: flex;margin-top: 10px;">
+                                                                        <div class="select-month" style="width: 40%;">
+                                                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                                                <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                    [matDatepicker]="picker1">
+                                                                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                                <mat-datepicker #picker1></mat-datepicker>
+                                                                            </mat-form-field>
+                                                                        </div>
+                                                                        <div class="select-month" style="width: 40%;">
+                                                                            <mat-form-field class="example-full-width" appearance="fill">
+                                                                                <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                    [matDatepicker]="picker1">
+                                                                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                                <mat-datepicker #picker1></mat-datepicker>
+                                                                            </mat-form-field>
+                                                                        </div>
+                                                                    </div>
+                     </div>
+            
+                    <div class="customer-row">
+                                                                        <p><mat-checkbox > </mat-checkbox> Washington DC Filing</p>
+                                                                        <div class="cdetail1">
+                                                                            <span class="pdetailalign"><mat-checkbox >2015</mat-checkbox></span> 
+                                                                            <span class="pdetailalign"><mat-checkbox >2016</mat-checkbox></span> 
+                                                                            <span class="pdetailalign"><mat-checkbox >2017</mat-checkbox></span> 
+                                                                            <span class="pdetailalign"><mat-checkbox >2018</mat-checkbox></span> 
+                                                                            <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                                            <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span>
+                                                                        </div>
+                                                                        <div class="cdetail1">
+                                                                            <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                                            <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                                            
+                                                                        </div>
+                                                                        <div style="display: flex;margin-top: 10px;">
+                                                                            <div class="select-month" style="width: 40%;">
+                                                                                <mat-form-field class="example-full-width" appearance="fill">
+                                                                                    <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                        [matDatepicker]="picker1">
+                                                                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                                    <mat-datepicker #picker1></mat-datepicker>
+                                                                                </mat-form-field>
+                                                                            </div>
+                                                                            <div class="select-month" style="width: 40%;">
+                                                                                <mat-form-field class="example-full-width" appearance="fill">
+                                                                                    <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                        [matDatepicker]="picker1">
+                                                                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                                    <mat-datepicker #picker1></mat-datepicker>
+                                                                                </mat-form-field>
+                                                                            </div>
+                                                                        </div>
+                     </div>
+            
+                    <div class="customer-row">
+                                                                            <p><mat-checkbox > </mat-checkbox>   California EFiling</p>
+                                                                            <div class="cdetail1">
+                                                                                <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                                                                                <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span> 
+                                                                                <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                                                                                <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                                                                                
+                                                                            </div>
+                                                                           
+                                                                            <div style="display: flex;margin-top: 10px;">
+                                                                                <div class="select-month" style="width: 40%;">
+                                                                                    <mat-form-field class="example-full-width" appearance="fill">
+                                                                                        <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                            [matDatepicker]="picker1">
+                                                                                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                                        <mat-datepicker #picker1></mat-datepicker>
+                                                                                    </mat-form-field>
+                                                                                </div>
+                                                                                <div class="select-month" style="width: 40%;">
+                                                                                    <mat-form-field class="example-full-width" appearance="fill">
+                                                                                        <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                                                                            [matDatepicker]="picker1">
+                                                                                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                                                        <mat-datepicker #picker1></mat-datepicker>
+                                                                                    </mat-form-field>
+                                                                                </div>
+                                                                            </div>
+                    </div>
+            
+                    <div class="customer-row">
+                        <p><mat-checkbox > </mat-checkbox> Rhode Island EFiling</p>
+                        <div class="cdetail1">
+                            <span class="pdetailalign"><mat-checkbox >2019</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2020</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2021</mat-checkbox></span> 
+                            <span class="pdetailalign"><mat-checkbox >2022</mat-checkbox></span> 
+                            
+                        </div>
+                       
+                        <div style="display: flex;margin-top: 10px;">
+                            <div class="select-month" style="width: 40%;">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                        [matDatepicker]="picker1">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="select-month" style="width: 40%;">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput placeholder="6/13/2017" [(ngModel)]="currentDate1"
+                                        [matDatepicker]="picker1">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+            </div>
+                </div>
+          <div class="cust-col1">
+            <div class="cdetail1">
+                <p>Does the employer have multiple establishments?<p>
+                <mat-form-field appearance="outline" style="width:75%;float:right;">
+                    <mat-select >
+                        <mat-option *ngFor="let data of opt" value={{data}}>{{data}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div style="display: flex;justify-content:flex-end">
+                <button mat-raised-button class="btn1" (click)="openDialog1()">Add Establishment</button>
+            </div>
+        
+            <div>
+                <p>List of Associated Establishments:</p>
+            </div>
+            <div class=" cdetail1 cdetail2">
+                <p *ngFor="let data of establishments">{{data}}</p>
+            </div>
+          </div>
+        
+          <div class="cust-col2">
+            <div class="ulist">
+                <h2>Assign User List : </h2>
+                <div >
+                    <button mat-raised-button class="btn3" >Get Assign Users</button>
+                  
+                </div>
+                
+            </div>
+            <div style="width:100% ;height:5%;background-color:#dadadaa3;padding: 5%;">
+            <p>
+                * Click on button to load data
+            </p>
+            </div>
+          </div>
+        </div> 
+        
+        <div class="custpart3">
+            <div class="cdetail1">
+                <div class="marginset">Rate in Employee Data is W2 Wages <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Check this box if the payroll data field that is being provided by the customer or on behalf of the customer is W-2 Wages instead of a Rate of Pay.  By checking this box, the system will run business logic associated with the W-2 Affordability Safe Harbor rather than the Rate of Pay Affordability Safe Harbor Method.
+                    </span>
+                    </div></div>    <mat-checkbox checked="customerdata1.rateIsW2Wages"></mat-checkbox>
+             </div>
+             <div class="cdetail1">
+                <div  class="marginset"> Show Employee ID in Lists <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Check this box if the customer wants to see the Employee ID that is associated with Employees in each table in the Dashboard. If not checked, the Employee ID will not appear.
+                    </span>
+                    </div></div>
+                 <mat-checkbox checked="customerdata1.showEmpldInLists"></mat-checkbox>
+             </div>
+             <div class="cdetail3">
+               <div> <div  class="marginset">Show max number of hours to maintain non-full time status column <div class="arrowpopup" >
+                <mat-icon style="font-size: 12px;"  
+            >help</mat-icon>
+                <span class="tooltiptext" id="tooltipdemo">The system default is that this box is checked. This is a column specifically located in the ‘Tracked Employees’ table in the Dashboard. The column identifies the number of hours that a tracked employee can work each week throughout the remainder of a measurement period and keep their total average hours per week under 30. To hide this column of information you would simply uncheck this box.
+                </span>
+                </div></div></div>
+                <div> <mat-checkbox checked="customerdata1.showMaxHoursFT"></mat-checkbox></div>
+                
+             </div>
+             
+             <div class="cdetail1">
+                <div style="width: 50%;"><div  class="marginset">Monthly Measurement  <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">If the customer indicates that they would like to use the Monthly Measurement Method, rather than the Look-Back Measurement Method to track the full-time status of their employees, then select ‘Yes’ in this drop-down menu. *Note That the customer must provide their payroll data broken down by month for this tracking method to be accurate in the system. Failure to do so will lead to inaccurate tracking results.
+                    </span>
+                    </div></div></div>
+                <div style="width: 20%;"><mat-form-field appearance="outline" >
+                    <mat-select >
+                        <mat-select placeholder="No"  value="{{customerdata.monthlyMeasurement
+                        }}">
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-select>
+                </mat-form-field></div>
+            </div>
+             <div class="cdetail1">
+                <div style="width: 50%;"><div  class="marginset">This is a Demo/Test Customer <div class="arrowpopup" >
+                    <mat-icon style="font-size: 12px;"  
+                >help</mat-icon>
+                    <span class="tooltiptext" id="tooltipdemo">Only select ‘Yes’ in this drop-down menu if this customer is being created as a Demo or Test account used for sales and demo purposes.
+                    </span>
+                    </div></div></div>
+                <div style="width: 20%;"><mat-form-field appearance="outline" >
+                    <mat-select >
+                        <mat-select placeholder="No"  value="{{customerdata.isDemoCustomer}}">
+                            <mat-option value="true">Yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-select>
+                </mat-form-field></div>
+            </div>
+        </div>
+        
+        <div>
+            <p class="marginset">Notes</p>
+            <mat-form-field appearance="outline" style="width: 50%">
+                       
+                <textarea matInput placeholder=""  value="{{customerdata.Notes
+                }}"></textarea>
+              </mat-form-field>
+        </div>
+        <div class="cdetail1">
+            <div style="width: 18%;"><div class="marginset">Customer is a school? <div class="arrowpopup" >
+                <mat-icon style="font-size: 12px;"  
+            >help</mat-icon>
+                <span class="tooltiptext" id="tooltipdemo">Select ‘Yes’ if the customer that is being created is a school or educational organization. *Note there is additional business logic that runs in the system related to schools, and if this is not selected when applicable then calculations in the system may be inaccurate.
+                </span>
+                </div></div></div>
+            <div style="width: 20%;"><mat-form-field appearance="outline" >
+                <mat-select placeholder="No"  value="{{customerdata.isSchool}}">
+                    <mat-option value="true">Yes</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
+            </mat-form-field></div>
+        </div>
+        <div>
+            <button mat-raised-button class="btn3">Edit Breaks In Service</button>
+        </div>
+        <div class="cdetail1">
+            <div style="width: 18%;"><div class="marginset">Benefit Admin License  <div class="arrowpopup" >
+                <mat-icon style="font-size: 12px;"  
+            >help</mat-icon>
+                <span class="tooltiptext" id="tooltipdemo">This field should always be set to ‘Internal’ unless otherwise advised by a senior system administrator.
+                </span>
+                </div></div></div>
+            <div style="width: 20%;"><mat-form-field appearance="outline" >
+                <mat-select value="{{customerdata.benAdminType}}">
+                    <mat-option *ngFor="let data of adminlicese" value={{data}}>{{data}}</mat-option>
+                </mat-select>
+            </mat-form-field></div>
+        </div>
+        <div class="cdetail1">
+            <div style="width: 18%;"><p class="marginset">Reporting Essentials Only</p></div>
+            <div style="width: 20%;"><mat-form-field appearance="outline" >
+                <mat-select placeholder="No"  value="{{customerdata.REOnly}}">
+                    <mat-option value="true">Yes</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
+            </mat-form-field></div>
+        </div>
+        <div>
+            <button mat-raised-button class="btn1">Save</button>
+        </div>
+        <div>
+            <button mat-raised-button class="btn4">Unlock Setup</button>
+        </div>
+    
+    
+        </div>
+    
+   
+
+    
+</div>  -->

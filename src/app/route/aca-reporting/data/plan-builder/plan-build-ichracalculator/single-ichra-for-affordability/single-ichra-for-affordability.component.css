@@ -1,0 +1,102 @@
+.single_calculator {
+    width: 1200px;
+    padding: 10px 25px 25px;
+    box-sizing: border-box;
+    background-color: #3891ef0f;
+}
+@media(max-width:1265px){
+    .single_calculator{
+        width: 100%;
+    }
+}
+
+.close_icons {
+    text-align: end;
+}
+
+#d7e8fa .close_icons .icons {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.single_calculator h5 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #8f8d8d;
+    margin-bottom: 40px;
+}
+.spinner
+{
+    padding-top: 0.5vh;
+    margin-left: 0.5vh;
+    transform: translateY(5px);
+}
+.start_date {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.start_date span {
+    color: black;
+    font-weight: 500;
+    font-size: 12px;
+    width: 192px;
+    text-align: end;
+}
+
+.input_box {
+    width: auto;
+    margin-left: 20px;
+    background: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    width: 110px;
+    border: 2px solid #dfdfdf;
+    height: 23px;
+}
+
+.box_input {
+    margin-left: 10px !important;
+}
+
+.button_close {
+    margin: 25px 0 20px 25%;
+}
+
+.button_close button:first-child {
+    background-color: rgb(8, 82, 125);
+    width: 90px;
+    padding: 0 !important;
+    font-size: 17px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.button_close button:nth-child(2) {
+    background: #bf0707 !important;
+    color: #fff !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    width: 70px;
+    font-size: 17px;
+    color: #fff;
+}
+.button_close .mat-button:last-child{
+    background-color: red !important;
+    color: white!important;
+}
+.dollar {
+    width: 35% !important;
+}
+
+.dollar_input {
+    background-color: #f9f8f8 !important;
+}
+.error12 {
+    width: 100% !important;
+    order: 3 !important;
+    text-align: start !important;
+    color: red !important;
+  }

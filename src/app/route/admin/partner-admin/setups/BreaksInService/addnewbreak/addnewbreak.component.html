@@ -1,0 +1,44 @@
+<div class="calculator_main">
+    <div class="close_icons">
+        <h5>Add New School Break</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <div class="break_form">
+        <div class="year">
+            <span>year</span>
+           <div class="break_input">
+            <input type="text"class="year_input" matInput placeholder="2022" [(ngModel)]="taxYear">
+           </div>
+        </div>
+        <div class="year">
+            <span>break Name </span>
+            <div class="break_input">
+                <input type="email"class="year_input" matInput placeholder="undefined" [(ngModel)]="breakName">
+            </div>
+        </div>
+        <div class="year">
+            <span>Start Date</span>
+            <div class="break_input">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="6/13/2017" [matDatepicker]="picker2" placeholder="7/24/2022" [(ngModel)]="breakStartDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="year">
+            <span>End Date</span>
+            <div class="break_input">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="6/13/2017" [matDatepicker]="picker3" placeholder="7/24/2022" [(ngModel)]="breakEndDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="button_grp">
+        <button mat-raised-button class="remove" [mat-dialog-close]="true">Cancel</button>
+        <button mat-button class="select_button" (click)="Savebreaklist()" >Save</button>
+    </div>
+</div>

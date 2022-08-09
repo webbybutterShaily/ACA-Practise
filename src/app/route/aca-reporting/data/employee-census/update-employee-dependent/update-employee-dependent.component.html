@@ -1,0 +1,55 @@
+<div class="dependent_deatils">
+    <div class="close_icons">
+        <h5>Dependent Details</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+
+    <div class="dependent_form">
+        <div class="input_aseli">
+            <span class="dependent_name">Dependent Name </span>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput [(ngModel)]="dependentName" placeholder="Anelsi de la pena">
+            </mat-form-field>
+        </div>
+        <div class="depen_name">
+            <mat-form-field class="example-full-width" appearance="fill" >
+                <input matInput [(ngModel)]="dependentFirstName" placeholder="Dependent FirstName">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput [(ngModel)]="dependentMiddleName" placeholder="Dependent Middle name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput [(ngModel)]="dependentLastName" placeholder="Dependent Last name">
+            </mat-form-field>
+        </div>
+        <div class="input_ssn">
+            <span class="dependent_name">Dependent SSN </span>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput [(ngModel)]="dependentSSN" placeholder="926-64-6029">
+            </mat-form-field>
+        </div>
+        <div class="input_ssn input_select">
+            <span class="dependent_name">Relationship to Employee</span>
+            <mat-form-field appearance="fill">
+                <select matNativeControl required [(ngModel)]="relationship">
+                    <option >Self</option>
+                    <option>Dependent</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="input_ssn input_date">
+            <span class="dependent_name">Date of Birth</span>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput placeholder="1/1/1990 12:00:00" [(ngModel)]="dateOfBirth">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="self_btn">
+        <button mat-button update (click)="upadateDependent()">Save Dependent</button>
+    </div>
+
+
+
+
+</div>

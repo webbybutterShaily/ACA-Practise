@@ -1,0 +1,8 @@
+<div class="row">
+  <!-- <div class="col-sm-12 links">&nbsp;</div>
+</div> -->
+<div class="row" *ngIf="isLoggedIn | async as isLoggedIn ">
+  <div class="">
+    &#169; <span class="year">{{ now.getFullYear() }}</span> &dash; <a href="https://sync-stream.com/" target="_blank">SyncStream Solutions</a>
+  </div>
+</div>

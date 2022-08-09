@@ -1,0 +1,24 @@
+<div class="second_part_main">
+  <div class="select_main select_btn">
+    <span style="border: 2px solid #d2d0d0; border-radius: 4px">
+      <mat-select
+        style="width: 120px; padding: 6px 10px"
+        (selectionChange)="onItemSelect($event.value)"
+        [(value)]="selected"
+      >
+        <mat-select-filter
+          [array]="dropdownList"
+          [displayMember]="'customername'"
+          (filteredReturn)="filteredList5 = $event"
+        ></mat-select-filter>
+
+        <mat-option
+          *ngFor="let name of filteredList5"
+          [value]="name.customername"
+        >
+          {{ name.customername }}
+        </mat-option>
+      </mat-select>
+    </span>
+  </div>
+</div>

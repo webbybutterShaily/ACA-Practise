@@ -1,0 +1,170 @@
+mat-grid-tile {
+    background: lightblue;
+}
+
+.main-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.employer-content{
+  /* background-color: white; */
+  color: #1591b8;
+  text-align: center;
+}
+.column1{
+  width: 30%;
+  padding: 10px;
+}
+.column2{
+  width: 35%;
+  padding: 10px;
+}
+.column3{
+  width: 35%;
+  padding: 10px;
+}
+.mrgn-btm-20{
+  margin-bottom: 20px;
+}
+.mrgn-btm-40{
+  margin-bottom: 40px;
+}
+::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+  line-height: 30px;
+}
+/* .column
+{
+    display: inline-block;
+    margin-left: 23px;
+    vertical-align: top;
+
+} */
+/* .column + .column{
+margin-left:160px;
+} */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+   
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 6px 0px;
+  border-top: 4px solid transparent;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+  transform: translateY(0%) !important;
+}
+.employer-data{
+  
+  background-color: lightblue; 
+  border-top-style: solid;
+  border-top-color: rgba(12, 141, 240, 0.596);
+  border-bottom-color: rgba(12, 141, 240, 0.596); 
+  border-bottom-style: solid
+}
+div[class^="column"] mat-form-field{
+  width: 78%;
+}
+.column3 ol li{
+  margin-bottom: 20px;
+}
+.save-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.save-btn button {
+  margin: 0px 30px 30px 0px;
+  background: green;
+  color:white;
+}
+.establishment-btn{
+  background: green;
+  color:white;
+}
+.data-section{
+  width: 80%;
+  margin: 10px auto;
+}
+::ng-deep .mat-form-field-flex{
+border:0px;
+}
+
+/* ::ng-deep .material-tooltip:after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+} */
+
+::ng-deep .material-tooltip {
+  background-color: #ffffff !important;
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.87) !important;
+  margin: 0 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 6px;
+  overflow: visible !important;
+  box-shadow: 0px 1px 2px #00000029, 0px 2px 4px #0000001f,
+    0px 1px 8px #0000001a;
+}
+
+::ng-deep.material-tooltip:before {
+  border-right-color: white !important;
+}
+
+::ng-deep .material-tooltip:after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+.arrowpopup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 1;
+  }
+  .arrowpopup .tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  background-color: rgb(12, 12, 12);
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 9px ;
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  margin-left: -85px;
+  }
+  .arrowpopup .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 19%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(12, 12, 12) transparent transparent transparent;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .arrowpopup:hover .tooltiptext  {
+  visibility: visible;
+  }

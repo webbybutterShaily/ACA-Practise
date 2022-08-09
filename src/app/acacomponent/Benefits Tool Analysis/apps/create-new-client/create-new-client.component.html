@@ -1,0 +1,72 @@
+
+<!--  from -->
+
+
+<div class="from_design">
+
+
+<button class="list_btn" mat-button [routerLink]="'/Apps'">
+    Return to list
+</button>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+
+    <div class="main_from">
+
+        <mat-grid-tile colspan="1" style="width: 100%;">
+            <div class="from_main">
+                <h3 class="client">
+                    client
+                </h3>
+                
+                <form>
+                    <div class="input_name">
+                        <span>Client Name: <b>*</b></span>
+                        <input matInput >
+                    </div>
+
+                    <div class="input_name">
+                        <span>Address Line 1:</span>
+                        <input matInput >
+                    </div>
+                    <div class="input_name">
+                        <span>Address Line 2:</span>
+                        <input matInput >
+                    </div>
+                    <div class="input_name">
+                        <span>City / State / Zip:</span>
+                     <div class="city">
+                        <input matInput ><b class="dash">-</b>
+                        <input matInput ><b class="dash">-</b>
+                        <input matInput >
+                     </div>
+                    </div>
+                    <div class="input_name">
+                        <span>Phone Number:</span>
+                        <input matInput >
+                    </div>
+                    <div class="input_name">
+                        <span>Email Address:</span>
+                        <input matInput >
+                    </div>
+                </form>
+                <button class="save_btn" mat-button>
+                    Save
+                </button>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile style="width: 100%;">
+            <div class="from_main2">
+              <div class="notes_updates">
+                <img src="../../../../../assets/i.png" alt="">
+                  <span> <b> Created </b>  5/29/2022  <b>at</b> 11:16 PM  <b>by</b></span>
+                  <span> <b> Updated</b>  5/29/2022  <b>at</b> 11:16 PM  <b>by</b></span>
+                <button class="list_btn" style="text-align: center; margin-top: 15px;" mat-button>
+                    Notes
+                </button>
+              </div>
+            </div>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>
+</div>

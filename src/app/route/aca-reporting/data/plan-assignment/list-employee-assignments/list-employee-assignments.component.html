@@ -1,0 +1,123 @@
+
+
+<div class="heading">
+    <h1>Employee Offers Of Coverage list</h1>
+ </div>
+ 
+ <div class="selectCust">
+
+    <h2>{{customerName}}</h2>
+ </div>
+
+ <table>
+    <thead
+      style="
+        border-bottom: 2px solid rgb(41, 161, 194);
+        border-top: 3px solid rgb(41, 161, 194);
+      "
+    >
+    
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="employeeid" style="cursor: pointer;">
+            Employee Id
+          </div>
+        </div>
+         </th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="employeename" style="cursor: pointer;">
+            Employee Name
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="planname" style="cursor: pointer;">
+            Plan Name
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="planRenewalDate" style="cursor: pointer;">
+            Plan Renewal Date
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name=" " style="cursor: pointer;">
+            Plan End Date
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="dateOfOffer" style="cursor: pointer;">
+            Date Of Offer
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="outcomeofoffer" style="cursor: pointer;">
+            Offer OF Outcome
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="enrollmentDate" style="cursor: pointer;">
+            Enrollment Date 
+          </div>
+        </div></th>
+      <th>
+        <div>
+          <div [appSort]="list"
+          data-order="desc"
+          data-name="disenrollmentDate" style="cursor: pointer;">
+            Disenrollment Date 
+          </div>
+        </div> </th>
+      <th></th>
+ 
+    </thead>
+    <tbody  *ngIf="list.length == 0">
+        <tr>
+          <td colspan="12" style="  text-align: center;"> No Data Available</td>
+        </tr>
+      </tbody>
+     <tbody  *ngIf="list.length != 0">
+       <tr
+       style="border-top: 3px solid rgb(41, 161, 194)"
+       *ngFor="let member of list"
+       >
+       <td>{{member.employeeid}}</td>
+       <td>{{member.employeename}}</td>  
+       <td>{{member.planname}}</td>
+       <td>{{member.planRenewalDate}}</td>
+       <td></td>
+       <td>{{member.dateOfOffer}}</td>
+       <td>{{member.outcomeofoffer}}</td>
+       <td>{{member.enrollmentDate}}</td>
+       <td>{{member.disenrollmentDate}}</td>
+       
+       <td>
+         <button mat-raised-button style="color: white;background-color: rgb(159, 65, 65);border: 0; border-radius: 2px;padding: 3px;"  (click)="removebtn(member)">Remove</button>
+          <!-- (click)="removebtn(member)"     -->
+        </td>
+     </tr>
+    </tbody>
+
+  </table>

@@ -1,0 +1,90 @@
+
+    <h2 class="heading">Add New Establishment for {{custName}} <button class="close1" mat-button mat-dialog-close  >X</button></h2>
+    <hr>
+    <div class="dialogcontent">
+    <div mat-dialog-content >
+        <h1  style="text-align: center; color: #056993;"> Establishment Details</h1>
+        <form>
+            <p style="display:inline">Company Name:<mat-icon aria-hidden="false" aria-label="Example help icon" style="font-size: 14px;"
+                matTooltip= "This is the name that will be displayed in the system after a User logs in." 
+                [matTooltipPosition]="position.value!"
+                matTooltipHideDelay="100"
+                aria-label="Button that displays a tooltip that hides when scrolled out of the container">help</mat-icon>&nbsp;  <mat-form-field appearance="outline">
+                <input matInput placeholder="">
+            </mat-form-field></p>
+                <br>
+                <p style="display:inline ;margin-left:7px">Legal Name: <mat-icon aria-hidden="false" aria-label="Example help icon"  style="font-size: 14px;" matTooltip= "If the Company Name is the same as the Legal Name, then simply leave this field blank. If the Company Name is a D.B.A., then enter the companies Legal Name."
+                    [matTooltipPosition]="position.value!"
+                    matTooltipHideDelay="100"
+                    aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                    >help</mat-icon>&nbsp;&nbsp;
+                    <mat-form-field appearance="outline">
+                    <input matInput placeholder="">
+                </mat-form-field></p>
+            <div class="main-row">
+                <div class="column1">
+                    <div>EIN</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>Address Line 1</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>City</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>Phone</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                </div>
+                <div class="column2">
+                    <div>Active
+                        <mat-icon aria-hidden="false" aria-label="Example help icon"  style="font-size: 14px; " matTooltip="Make sure to set this to ‘Yes’ otherwise the company is considered Inactive and will encounter a message stating as such when they login. "
+                        [matTooltipPosition]="position.value!"
+                        matTooltipHideDelay="100"
+                        aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+              >
+                            help</mat-icon>
+                    </div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>Address 2</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>State</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>Contact</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                </div>
+                <div class="column3">
+                    <div style="margin-top:152px">
+                        <div>Zip Code</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    <div>Email Address</div>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="" style="color: white;">
+                    </mat-form-field>
+                    </div>
+                </div>
+            </div>    
+        </form>
+    </div>
+    <div mat-dialog-actions style=" display: flex;justify-content: flex-end;">
+
+      <button mat-button mat-dialog-close class="close">Close</button>
+      <button mat-button mat-dialog-close class="save">Save</button>
+    </div>
+
+</div>
+

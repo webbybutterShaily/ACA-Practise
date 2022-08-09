@@ -1,0 +1,48 @@
+<!-- <p>census-conformation works!</p> -->
+<div class="calculator_main" *ngIf="thirdremove === false && success ===false">
+    <div class="close_icons">
+        <h5>Confirmation of Employee Removal.</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <div class="check_section">
+        <h4>Please be advised that you are removing Employee. Click CANCLE if you do not wish to proceed. Click YES to
+            continue.</h4>
+    </div>
+    <div class="button_grp">
+        <button mat-raised-button class="remove" [mat-dialog-close]="true">CANCLE</button>
+        <button mat-button class="select_button" (click)="Checkrecords()">YES</button>
+    </div>
+</div>
+
+
+<div class="calculator_main" *ngIf="success===true && thirdremove === false">
+    <div class="close_icons">
+        <h5>SUCCESS</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <div class="check_section">
+        <h4>
+            Selected Employees have been removed.
+        </h4>
+    </div>
+    <div class="button_grp">
+        <button mat-raised-button class="remove" [mat-dialog-close]="true">Close</button>
+    </div>
+</div>
+
+<div class="calculator_main" *ngIf="thirdremove === true">
+    <div class="close_icons">
+        <h5>Confirmation of Employee Removal.</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <div class="check_section">
+        <!-- <h4>Below Employees has assoclated records with them and cannot be removed </h4> -->
+        <h4 class="below">{{errortext}}</h4>
+        <!-- <h4>2.Pallav Joshi has an uncompleted 1095c recods</h4> -->
+        <h4>Are you sure you want to remove Employee that was associated rewcods? </h4>
+    </div>
+    <div class="button_grp">
+        <button mat-raised-button class="remove" [mat-dialog-close]="true">CANCLE</button>
+        <button mat-button class="select_button" (click)="Deleterecor()">YES</button>
+    </div>
+</div>

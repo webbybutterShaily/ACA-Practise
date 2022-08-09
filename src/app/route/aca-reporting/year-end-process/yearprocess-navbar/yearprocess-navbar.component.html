@@ -1,0 +1,33 @@
+
+<div class="data-section">
+  <div class="wrapper">
+    <div class="arrow-steps clearfix">
+
+      <div class="step current"> <a [routerLink]="'/aca-reporting/year-end-process/Affordability'"
+          style="color: white;"><span>Affordability</span></a> </div>
+
+      <div class="step" ng-class="step:true" id="dnt" [style]="{'--color':col}" (click)="onClick()"><a
+          [routerLink]="'/aca-reporting/year-end-process/AffordabilityAssignment'"
+          style="color: white"><span>Affordability Assignment</span> </a></div>
+
+      <div class="step" [style]="{'--color1':col1}" id="dnt1" (click)="onClick1()"> <a
+          [routerLink]="'/aca-reporting/year-end-process/YearEndReview'" style="color: white;"><span> Year End
+            Review</span> </a></div>
+      <div class="step" id="dnt2" (click)="onClick2()"> <a [routerLink]="'/aca-reporting/year-end-process/PreviewForms'"
+          style="color: white;"><span>Preview Forms</span></a> </div>
+      <div class="step" id="dnt3" (click)="onClick3()"> <a [routerLink]="'/aca-reporting/year-end-process/Audit'"
+          style="color: white;"><span> Audit</span></a></div>
+      <div class="step" id="dnt4" (click)="onClick4()"> <a [routerLink]="'/aca-reporting/year-end-process/AdHocEdits'"
+          style="color: white;"><span> Ad Hoc Edits</span></a></div>
+      <div class="step" id="dnt5" (click)="onClick5()"> <a [routerLink]="'/aca-reporting/year-end-process/Delivery'"
+          style="color: white;"><span>1095 Delivery</span> </a></div>
+      <div class="step" id="dnt6" (click)="onClick6()"> <a [routerLink]="'/aca-reporting/year-end-process/EFile'"
+          style="color: white;"><span> E-File</span></a></div>
+      <div class="step" id="dnt7" (click)="onClick7()"> <a [routerLink]="'/aca-reporting/year-end-process/CloseTaxYear'"
+          style="color: white;"><span>Close Tax Year</span> </a></div>
+    </div>
+
+  </div>
+
+
+</div>

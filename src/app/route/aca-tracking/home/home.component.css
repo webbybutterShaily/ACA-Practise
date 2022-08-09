@@ -1,0 +1,272 @@
+.main_tracking {
+    padding: 0 100px;
+}
+
+.aca_tracking {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 40px 0 50px;
+}
+
+.select_main {
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 40px 0 20px 0;
+}
+
+.select_main span {
+    padding-right: 10px;
+    font-size: 15px;
+    font-style: italic;
+    padding-bottom: 5px;
+}
+
+.search_btn {
+    background-color: #0bad0b99;
+    padding: 0px 9px;
+    color: #fff;
+}
+
+.input_opation {
+
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 250px;
+    border: none;
+    outline: none;
+}
+
+.input_year {
+
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 15%;
+    border: none;
+    outline: none;
+}
+
+.input_opation select {
+    font-size: 15px;
+}
+
+
+
+.main_tracking h3 {
+    text-align: center;
+    color: #729fcf;
+    font-size: 35px;
+    /* width: 50%; */
+}
+
+.tracking_img {
+    width: 100%;
+}
+
+.tracking-group1 {
+    display: flex;
+    gap: 200px;
+    margin-top: 50px;
+}
+
+.trackingImgText img {
+    width: 160px;
+}
+
+.trackingImgText h4 {
+    text-align: center;
+    font-size: 19px;
+}
+
+.tracking-class>div {
+    display: flex;
+    width: 100%;
+}
+
+.mat-grid-tile {
+    overflow: visible;
+    padding-top: 0 !important;
+}
+
+.trackingImgMargin {
+    margin-left: -20px;
+}
+
+.Employee_breakdown {
+    width: 100%;
+}
+
+.Employee_breakdown h3 {
+    color: grey;
+    width: max-content;
+    margin: auto;
+}
+
+.account_profile {
+    height: 100%;
+    padding: 0 100px;
+    margin-top: 100px;
+}
+
+.full-time-emp {
+    width: 100%;
+}
+
+.full-time-img {
+    display: flex;
+    align-items: center;
+}
+
+.full-time-img img {
+    width: 100px;
+}
+
+.full-time-img span {
+    font-size: 20px;
+    margin-left: 15px;
+    color: grey;
+}
+
+.button-flex {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #729fcf;
+    border-bottom: 1px solid;
+    width: max-content;
+    height: 100%;
+}
+
+.button-flex button {
+    font-size: 20px;
+}
+
+.mat-button {
+    padding: 0 !important;
+}
+
+.average {
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.average h3 {
+    font-size: 20px;
+}
+
+.fill-margin {
+    margin-left: 20px;
+}
+
+.account_profile2 {
+    width: 100%;
+    justify-content: end;
+    display: flex;
+}
+
+.average h2 {
+    margin-top: 50px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user span {
+    color: grey;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.user a {
+    display: inline-block;
+    background: green;
+    color: white;
+    font-size: 22px;
+    margin-left: 20px;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.button-flex2 button {
+    font-size: 20px;
+}
+
+.button-flex2 {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border-bottom: 1px solid;
+    color: #729fcf;
+    width: max-content;
+    height: max-content;
+}
+
+.edit-profile {
+    color: #729fcf;
+    text-align: end;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.company-info span {
+    font-size: 20px;
+    color: grey;
+    display: block;
+    margin: 10px 0 0;
+}
+
+.breakLine {
+    padding: 0px 100px;
+}
+
+
+
+
+
+.input_main {
+    display: flex;
+    align-items: end;
+    margin: 10px 0 10px;
+}
+
+.input_main span {
+    padding-right: 10px;
+}
+
+.main_input span {
+    padding-bottom: 10px;
+}
+
+.main-input a {
+    background-color: green !important;
+    margin: 15px 10px 0 0;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+
+@media (max-width:1400px) {
+    .tracking-group1 {
+        gap: 100px;
+    }
+
+    .trackingImgText img {
+        width: 100px;
+    }
+
+    .trackingImgText h4 {
+        font-size: 14px;
+    }
+
+    .Employee_breakdown h3 {
+        font-size: 29px;
+    }
+}

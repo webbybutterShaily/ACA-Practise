@@ -1,0 +1,100 @@
+<!-- <p>single-ichra-for-affordability works!</p> -->
+
+<div class="single_calculator">
+    <div class="close_icons">
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <h5>Single ICHRA Affordability Calculator</h5>
+
+
+    <div class="start_date">
+        <span>Plan Start Date</span>
+        <!-- <input class="input_box" [(ngModel)]="planStartDate" matInput> -->
+        <mat-form-field appearance="fill" class="input_year">
+            <select matNativeControl [(ngModel)]="taxYear" required>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+        </mat-form-field>
+    </div>
+    <div class="start_date">
+        <span>Zip Code</span>
+        <input class="input_box" [(ngModel)]="ZipCode" matInput>
+    </div>
+    <div class="start_date">
+        <span>State Code</span>
+        <mat-form-field appearance="fill">
+            <select matNativeControl [(ngModel)]="SelectedSTateCode" (change)='onOptionsSelected($event)'>
+                <option value="" disabled>--Select state code--</option>
+                <option *ngFor="let  item of dropdownlist" [value]="item?.l_stateCode"> {{item?.l_stateCode}}</option>
+
+            </select>
+        </mat-form-field>
+        <div class="spinner">
+            <mat-spinner [diameter]="20" *ngIf="isLoading == true"></mat-spinner>
+        </div>
+    </div>
+    <div class="start_date">
+        <span>Country</span>
+        <mat-form-field appearance="fill">
+            <select matNativeControl [(ngModel)]="SelectedCountry">
+                <option value="" disabled>-- State Country-- </option>
+                <option *ngFor="let  item of dropdownlist1" [value]="item?.l_countyName"> {{item?.l_countyName}}
+                </option>
+
+
+            </select>
+        </mat-form-field>
+        <div class="spinner">
+            <mat-spinner [diameter]="20" *ngIf="isLoading1 == true"></mat-spinner>
+        </div>
+    </div>
+    <div class="start_date">
+        <span>Employee age at start of plan</span>
+        <mat-form-field appearance="fill">
+            <select matNativeControl [(ngModel)]="EmpAge" required>
+
+                <option *ngFor="let a of array1" [value]="a">{{a}}</option>
+
+            </select>
+        </mat-form-field>
+    </div>
+    <div class="start_date">
+        <span>Hourly OR Salary</span>
+        <mat-form-field appearance="fill">
+            <select matNativeControl [(ngModel)]="HourlyOrSalary" required>
+                <option value="Hourly">Hourly</option>
+                <option value="Salary">Salary</option>
+
+            </select>
+        </mat-form-field>
+        <input class="input_box box_input" [(ngModel)]="ratHourlyOrSalary" matInput>
+    </div>
+    <div class="start_date button_close">
+        <button mat-button color="accent" (click)="IcharCalculate()">Calculate</button>
+        <button mat-button color="accent">Close</button>
+        <span class="error12">{{error}}</span>
+    </div>
+    <div class="start_date">
+        <span class="dollar">Dollar Amt of Lowest Cost Silver plan </span>
+        <input class="input_box dollar_input" [(ngModel)]="silverPlanCost" matInput>
+    </div>
+    <div class="start_date">
+        <span class="dollar">Dollar amount of Minimum Employer Contribution based on RP or W2</span>
+        <input class="input_box dollar_input" [(ngModel)]="costOnW2ROP" matInput>
+    </div>
+    <div class="start_date">
+        <span class="dollar">Dollar amount of Minimum Employer Contribution based on FPL</span>
+        <input class="input_box dollar_input" [(ngModel)]="costOnFPL" matInput>
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="intialprint">
+    <div class="heading">
+       <span>Self Print</span> 
+
+    </div>
+    <div class="contain">
+        <p>
+            Upon clicking the button the files will be downloaded for printing. Once they are complete an email will be sent to the contact person on this account as well as the current users email address. <i>
+                *Check your spam filter if you believe you have not received the email. Please allow sufficient time for the forms to be downloaded
+            </i>
+        </p>
+    </div>
+<div class="print">
+    <button mat-button>1. Initial Print</button>
+</div>
+<div class="selfdownload">
+    <table mat-table [dataSource]="dataSource1" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="filedlink">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Company Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.companyname}} </td>
+        </ng-container>
+        <ng-container matColumnDef="printtype">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>1095 count to be delivered electronically</th>
+            <td mat-cell *matCellDef="let element"> {{element.printtype}} </td>
+        </ng-container>
+        <ng-container matColumnDef="timestamp">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>1095 count to be delivered print to mall</th>
+            <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
+        </ng-container>
+        <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>total Forms</th>
+            <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+        </ng-container>
+        <ng-container matColumnDef="totalforms">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>total Forms</th>
+            <td mat-cell *matCellDef="let element"> {{element.totalforms}} </td>
+        </ng-container>
+        <ng-container *ngIf="dataSource1">
+            <tr class="mat-row" *matNoDataRow>
+                <td style="border-top: 0px solid rgb(41, 161, 194); text-align: center;" class="mat-cell"
+                    colspan="12"> No
+                    Data Available</td>
+            </tr>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

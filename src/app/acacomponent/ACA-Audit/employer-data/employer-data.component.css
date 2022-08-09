@@ -1,0 +1,239 @@
+.employed_data{
+    margin: 50px 0 0 0 ;
+}
+
+
+.content_top{
+    text-align: center;
+}
+
+.content_top h5{
+    font-size: 28px;
+    color: #075486;
+}
+
+.content_top h6{
+    font-size: 18px;
+    padding-top: 20px;
+    color: #075486;
+    font-weight: 500;
+}
+
+.marked{
+    margin:  0 20px 10px;
+    font-size: 15px;
+    color: black;
+}
+
+.marked b{
+    color:red;
+}
+
+.pages_main{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:1399px){
+    .pages_main{
+        display: block;
+    }
+
+    .pages_main .mat-grid-tile.mat-grid-tile{
+        display: flex;
+        justify-content: center !important;
+        margin-bottom: 30px;
+    }
+}
+
+.date_pages{
+    background-color: lightblue;
+    border-top-style: solid;
+    border-top-color: rgba(12, 141, 240, 0.596);
+    border-bottom-color: rgba(12, 141, 240, 0.596);
+    border-bottom-style: solid;
+    margin: 0 20px;
+    padding: 20px 20px;
+}
+.emp_name{
+    display: flex;
+    margin-bottom: 30px;
+}
+.emp_name span
+{
+    width: 220px;
+    font-size: 15px;
+}
+.emp_name b{
+    color:red;
+}
+
+.emp_name input{
+    margin-left: 25px !important;
+    padding: 7px 20px 7px 10px;
+    font-size: 15px;
+    color: grey;
+    border: 2px solid #25252570;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/* part 02 */
+
+
+.table_from{
+    border: 1px solid rgba(12, 141, 240, 0.596);
+    width: 100%;
+    border-spacing: 0;
+}
+
+
+.table_from tr:nth-child(1){
+    background-color: #fff;
+} 
+
+
+.table_from tr td:nth-child(1) , td:nth-child(6){
+    width: 10%;
+    font-size: 10px;
+} 
+
+.table_from tr td{
+    border-bottom: 1.5px solid rgba(12, 141, 240, 0.596);
+    border-right: 1.5px solid rgba(12, 141, 240, 0.596);
+}
+
+.table_from tr  td{
+    position: relative;
+}
+
+.table_from tr  td:nth-child(2) .mat-checkbox , .table_from   td:nth-child(3) .mat-checkbox , td:nth-child(6) .mat-checkbox ,   td:nth-child(4) input ,    td:nth-child(5) input , td:nth-child(7) select
+{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.table_from tr td{
+    font-size: 10px;
+    text-align: center;
+    height: 50px;
+}
+
+.table_from tr:nth-child(2) td{
+    height: 40px;
+}
+
+.table_from tr:nth-child(1) td{
+    height: 100%;
+}
+.table_from tr:nth-child(2) td:nth-child(2){
+  width: 20%;
+  text-align: center;
+}
+
+.table_from   tr:nth-child(5) td ,  tr:nth-child(3) td , tr:nth-child(7) td , tr:nth-child(9) td , tr:nth-child(11) td , tr:nth-child(13) td , tr:nth-child(15) td , tr:nth-child(17) td {
+    background-color: #fff;
+}
+
+.table_from tr:nth-child(1) td:nth-child(1){
+    text-align: start;
+    padding-left: 15px;
+    height: 30px;
+}
+
+
+.table_from tr td input{
+    width: 50px;
+    padding: 5px 0px  5px 12px;
+    border: 2px solid #bbbbbb;
+    border-radius: 3px;
+}
+
+.table_from tr td:nth-child(4) , td:nth-child(7){
+    width: 20%;
+}
+
+.table_from tr td select{
+    width: 70px;
+    padding: 5px 0px  5px 12px;
+    border: 2px solid #bbbbbb;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+
+
+.table_from tr td:nth-child(7){
+    border-right: none !important;
+}
+
+/* part 03 */
+
+.pages_main .mat-grid-tile{
+    width: auto !important;
+    padding:  0 20px  !important;
+}
+
+
+.third_part{
+    margin-left: 30px;
+}
+
+.select_form{
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.select_form span{
+    width:230px
+}
+
+.input_main{
+    width: 300px;
+}
+
+.input_main select{
+    padding: 5px 20px 5px 10px;
+    font-size: 15px;
+    color: grey;
+    border: 2px solid #25252570;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 78%;
+}
+
+.input_main input{
+    padding: 5px 20px 5px 10px;
+    font-size: 15px;
+    color: grey;
+    border: 2px solid #25252570;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 78%;
+    box-sizing: border-box;
+}
+
+.main_input{
+    display: flex;
+    box-sizing: border-box;
+    width: 78%;
+
+}
+
+.main_input input:first-child{
+    margin-right: 20px;
+}
+
+
+.btn_save{
+    background: rgb(5, 77, 133);
+    color: #fff;
+    font-size: 16px;
+    line-height: 32px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    /* padding: 0 29px 0; */
+}

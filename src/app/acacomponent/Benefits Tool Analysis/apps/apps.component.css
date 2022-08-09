@@ -1,0 +1,45 @@
+
+/* app pages */
+
+
+.app_main{
+    padding: 20px 50px;
+    width: 100%;
+}
+
+.benefits{
+    color: #2a6099 ;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.Primary_Modules{
+    background-color: #2a6099;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.Primary_Modules h3{
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 15px;
+}
+
+.module{
+    background-color: #d6d6d6;
+    margin: 20px;
+    padding: 5px 0;
+    border-radius: 12px;
+    border: 1px solid grey;
+    width: 75%;
+}
+
+.module h4{
+    margin: 0;
+    font-weight: 500;
+    padding-left: 10px ;
+}

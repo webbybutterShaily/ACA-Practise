@@ -1,0 +1,15 @@
+.header{
+    /* background-color: white; */
+    color: #1591b8;
+    text-align: center;
+  }
+  .save-btn{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .save-btn button {
+    margin: 0px 30px 30px 0px;
+    background: green;
+    color:white;
+  }

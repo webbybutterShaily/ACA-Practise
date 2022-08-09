@@ -1,0 +1,31 @@
+
+<div>
+    <div class="p-relative">
+        <button> <img
+            style="margin-left: 2px"
+            class="filter"
+            src="../../../../../../assets/filter.png"
+            alt=""
+          /></button>
+        <div class="drop-menu">
+            <div class="employee_data">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+        </div>
+    </div>
+</div>
+

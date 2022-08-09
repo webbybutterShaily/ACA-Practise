@@ -1,0 +1,53 @@
+<h1 class="header">E-File Status Audit And Completion</h1>
+<h2  class="header">UAT - 100 - 2019</h2>
+<div class="data-section">
+    <div class="main-row">
+        <div style="width: 70%;">
+            <table>
+                <tr>
+                    <th class="tblcol"></th>
+                    <th  class="tblcol">Symmary</th>
+                </tr>
+                <tr>
+                    <td  class="tblcol">Year End Review</td>
+                    <td>Completed on <b>{{tDate1}}</b> by <b>{{username}}</b></td>
+                </tr>
+                <tr>
+                    <td class="tblcol">Preview Forms</td>
+                    <td>Initial Preview File Generated on <b>{{tDate1}}</b> by <b>{{username}}</b></td>
+                </tr>
+                <tr>
+                    <td class="tblcol">Ad Hoc Edits</td>
+                    <td>Number of Forms Edited: <b>{{formsEdited}}</b></td>
+                </tr>
+                <tr>
+                    <td class="tblcol">Print to Mail</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="tblcol">E-Filing</td>
+                    <td>
+                        <p>Attested on <b>{{tDate2}}</b> by <b>{{username}}</b></p>
+                        <p>Initially Submitted for E - File on <b>{{tDate3}}</b> by <b>{{userEmail}}</b></p>
+                        <p>IRS Status: <b>{{irsStatus}}</b></p>
+                        <p>Receipt ID: <b>{{receiptId}}</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tblcol">Close Tax Year</td>
+                    <td>Tax Year Closed on <b>{{tDate4}}</b> by <b>{{username}}</b></td>
+                </tr>
+            </table>
+        </div>
+        <div style="width:10%"></div>
+        <div style="width: 30%;">
+            <div class="cty-btn">
+                <button mat-raised-button >Complete Tax Year </button>
+            </div>
+            <div class="rty-btn">
+                <button mat-raised-button >Re-open Tax Year and Revert To Last Status</button>
+            </div>
+
+        </div>
+    </div>
+</div>

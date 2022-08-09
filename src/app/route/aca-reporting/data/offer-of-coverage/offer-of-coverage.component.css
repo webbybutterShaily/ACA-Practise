@@ -1,0 +1,430 @@
+.aca_tracking {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  
+  }
+  
+  .select_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0px 0px 30px;
+     width: 96%;
+  }
+  
+  /* .main_select {
+    padding: 0px 30px 40px 0 !important;
+  } */
+  
+/* .select_main span {
+  text-align: end;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px 0px 30px;
+} */
+  
+  .search_btn {
+    background-color: #0bad0b99;
+    padding: 0px 9px;
+    color: #fff;
+  }
+  
+  .input_opation {
+  
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 250px;
+    border: none;
+    outline: none;
+  }
+  
+  
+  
+  .input_year {
+  
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 110px;
+    border: none;
+    outline: none;
+  }
+  
+  .input_opation select {
+    font-size: 15px;
+  }
+  
+  
+  
+  
+  .data-section {
+    width: 96%;
+    margin: 10px auto;
+  }
+  
+  .main-row {
+    width: 100%;
+    /* display: flex;
+    justify-content: space-around; */
+  }
+  
+  .main-row1 {
+    width: 100%;
+    /* display: flex; */
+  
+  }
+  
+  .column1 {
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+  }
+
+  /* @media  (max-width:1400px){
+      .column1{
+          width: 75%;
+      }
+  }
+  @media  (max-width:1200px){
+    .column1{
+        width: 90%;
+    }
+} */
+
+  .column1 h2{
+    color: grey;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .column1 .offer_content{
+      padding-left: 0px;
+      padding-top: 10px;
+      font-weight: 400;
+  }
+
+  .column1 .offer_content i{
+      font-weight: 500;
+  }
+  
+  .column2 {
+    width: 40%;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  /* @media screen and (max-width: 900px) {
+  
+    .column1,
+    .column2,
+    .column3,
+    .column4,
+    .know_base {
+      width: 70%;
+    }
+  
+    .column3 {
+      margin-top: 10px;
+    }
+  }
+   */
+  .column3 {
+    width: 15%;
+    padding: 10px;
+  
+  }
+  
+  .column4 {
+    width: 75%;
+    padding: 10px;
+    margin-top: -11px;
+  }
+  
+  .calimg {
+    margin-top: 37px;
+  }
+  
+  .col4header {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bookimg {
+    margin-right: 10px;
+  }
+  
+  #col4txt {
+    display: flex;
+    justify-content: center;
+    max-width: 200px;
+    color: gray;
+    margin-left: 70px;
+    line-height: 25px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .main p {
+    max-width: 300px;
+    color: gray;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 500;
+    font-size: 15px;
+    margin:15px auto 15px;
+  }
+  
+  .base img {
+    width: 65px;
+    padding-right: 10px;
+    height: 50px;
+  }
+  
+  .main {
+    text-align: center;
+  }
+  
+  
+  .know_base {
+    font-size: 25px;
+    margin: 0;
+    color: grey;
+    margin-top: 7px;
+  
+  }
+  
+  .base {
+    display: flex;
+    justify-content: center;
+    margin-left: -28px;
+  }
+  
+  .save-btn {
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .save-btn button {
+    margin: 0px 30px 30px 0px;
+    background: rgba(17, 145, 17, 0.975);
+    color: white;
+  }
+  
+  .btn1 {
+    margin-left: 5px;
+    background: rgb(13 125 190);
+    color: white;
+  }
+  .editbtn{
+    background: rgba(17, 145, 17, 0.975);
+    color: white;
+    font-size: 12px;
+    padding: 0;
+  }
+  
+  .fullscreen-dialog {
+    max-width: 100% !important;
+  }
+  
+  @media screen and (max-width: 600px) {
+  
+    .btn1,
+    .btn2 {
+      margin-top: 9px;
+    }
+  
+  }
+
+  .emplyee_plan{
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+  }
+
+  .year_main{
+      display: flex;
+      align-items: end;
+  }
+  
+  .employee_data span{
+      padding-right: 5px;
+  }
+
+  .employee_data .input_year{
+      width: 235px;
+  }
+
+  @media (max-width:1400px){
+      .employee_data .input_year{
+          width: 200px ;
+      }
+      .employee_data .input_year{
+        width: 205px ;
+    }
+  }
+
+  .emplyee_plan .employee_data:nth-child(2){
+      padding-left: 10px;
+  }
+
+  .all_file{
+      margin-top: 50px;
+      max-width:800px;
+      /* margin-left: 25px; */
+  }
+  .all_file p{
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .upload_file{
+      margin-top: 25px;
+      
+  }
+  .upload_file span{
+      padding-right: 5px;
+      font-size: 12px;
+  }
+
+  .upload_button{
+      margin-top: 30px;
+  }
+
+  .upload_button button{
+    background: rgba(17, 145, 17, 0.975);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    width: 80px;
+    border: 1px solid grey;
+  }
+
+
+
+
+  .link{
+    margin-top: 40px;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+    color:  rgb(13 125 190);
+    width: 96%;
+  }
+
+  /* table {
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #7db8f468;
+  }
+  .display{
+    display: flex;
+    
+  } */
+
+
+  .demo-table {
+    width: 96%;
+    margin: 0 auto;
+    /* overflow-x: scroll; */
+    font-size: 12px;
+
+  }
+  .demo-table table{
+    font-size: 12px;
+
+  width: 100%;}
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    font-size: 12px;
+
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+    font-size: 12px;
+
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+    font-size: 12px;
+
+  }
+  .mat-header-cell {
+    border-left: none;
+    font-size: 12px;
+
+  }
+  th.mat-header-cell {
+    font-size: 16px;
+    color: black;
+    font-size: 12px;
+
+  }
+  
+  .table-header{
+    border-bottom: 2px solid rgb(41, 161, 194);
+    border-top: 3px solid rgb(41, 161, 194);
+    font-size: 12px;
+
+  }
+  
+  .table-row:nth-child(odd){
+    background-color: #7db8f468;
+    font-size: 12px;
+
+  }
+  td.mat-cell{
+    padding: 10px;
+    font-size: 12px;
+
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 3px solid rgb(41, 161, 194);
+    width: 96%;
+    margin: 0px auto;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+
+  /* top of the page  */
+
+  .top-head{
+    display: flex;
+  }
+
+  .header {
+    /* background-color: white; */
+    margin: 0;
+    padding-top: 6px;
+    padding-left: 15px;
+    color: #056993;
+    text-align: center;
+    font-size: 16px;
+    /* margin-right: 50%; */
+    line-height: 18px;
+    /* justify-content: flex-start; */
+  }

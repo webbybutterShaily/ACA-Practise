@@ -1,0 +1,22 @@
+.data-section{
+    width: 80%;
+    margin: 10px auto;
+  }
+  .main-row{
+    width: 100%;
+    display: flex;
+   
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #7db8f468;
+  }

@@ -1,0 +1,135 @@
+<div class="select_main">
+    <div class="year_main select_employer">
+        <div class="emplabel">
+            <span>Select Employee </span>
+        </div>
+
+
+        <span style="border: 2px solid #d2d0d0; border-radius: 4px">
+            <mat-select
+              style="width: 120px; padding: 6px 10px"
+              (selectionChange)="onItemSelect($event.value)"
+              
+            >
+              <mat-select-filter
+                [array]="EmployeeDetails"
+                [displayMember]="'employeename'"
+                (filteredReturn)="filteredList5 = $event"
+              ></mat-select-filter>
+      
+              <mat-option
+                *ngFor="let name of filteredList5"
+                [value]="name.employeename"
+              >
+                {{ name.employeename }}
+              </mat-option>
+            </mat-select>
+          </span>
+
+        <!-- <div class="select_dropdown">        
+            <ng-multiselect-dropdown [data]="EmployeeDetails" [(ngModel)]="selectedItems"  (onSelect)="onItemSelect($event)" 
+            [settings]="dropdownSettings" >
+        </ng-multiselect-dropdown>
+    </div> -->
+
+
+
+
+
+        <app-customer-drop-down></app-customer-drop-down>
+    </div>
+    <div class="heading">
+        <p class="details_empo">Employee Details</p>
+        <div class="employee_main">
+            <div class="main_employee">
+                <div class="employee_profile">
+                    <div class="profile_main">
+                        <h3>Employess profile</h3>
+                        <span><b>Employee id :</b> {{EMPid}}</span>
+                        <span><b>Name :</b> {{employeeName}}</span>
+                        <span><b>SSN:</b>{{SSN}}</span>
+                        <span><b>Address :</b> {{addressLine1}}{{addressLine2}}</span>
+                        <span><b>status :</b> </span>
+                        <span><b>Hire date :</b> {{hireDate}}</span>
+                        <span><b>Termination date :</b> {{terminationDate}}</span>
+                        <span><b>Payroll Designation :</b> {{employeeType}}</span>
+                    </div>
+                </div>
+                <div class="employee_profile">
+                    <div class="profile_main">
+                        <div class="current_plan">
+                            <h3>Current Offers and Enrollments</h3>
+                            <i>click on plan to edit</i>
+
+                        </div>
+                        <div class="main01">
+
+                            <div class="menu_btn">
+                                <button class="border" mat-raised-button>Add Offer</button>
+
+                            </div>
+
+                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 employee-table">
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="planName" class="paln" style="display: grid;">
+                                    <th mat-header-cell *matHeaderCellDef>Plan Name</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.planName}} </td>
+                                </ng-container>
+
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="Status" style="display: grid;">
+                                    <th mat-header-cell *matHeaderCellDef>status</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.outcomeOfOffer}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="offers">
+                                    <th mat-header-cell *matHeaderCellDef>Offer</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.outcomeOfOffer}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="enrollmentDate">
+                                    <th mat-header-cell *matHeaderCellDef>Enrollment Date</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.enrollmentDate}} </td>
+                                </ng-container>
+
+                                <!-- <ng-container *ngIf="dataSource">
+                                    <tr class="mat-row" *matNoDataRow>
+                                        <td class="mat-cell" colspan="4"> No
+                                            Data Available</td>
+                                    </tr>
+                                </ng-container> -->
+
+
+
+
+                                <tr class="table_main" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;">                               display
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="employee_profile">
+                    <div class="profile_main">
+                        <div class="Affordability">
+                            <h3>Affordability Measures</h3>
+                        </div>
+                        <div class="rate_of_pay">
+                            <mat-icon class="close">close</mat-icon>
+                            <h2>W2</h2>
+                        </div>
+                        <div class="rate_of_pay">
+
+                            <mat-icon class="close">close</mat-icon>
+                            <h2>Rate of Pay</h2>
+                        </div>
+                        <div class="rate_of_pay">
+                            <mat-icon class="close">close</mat-icon>
+                            <h2>
+                                Federal Poverty Line
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

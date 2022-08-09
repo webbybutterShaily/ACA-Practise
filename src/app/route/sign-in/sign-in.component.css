@@ -1,0 +1,11 @@
+form.sign-in-form mat-card { max-width: 400px; margin: 15em auto; text-align: center; }
+form.sign-in-form mat-form-field { display: block; }
+form.sign-in-form mat-card-actions { text-align: end; }
+.nxt-btn{
+    display: flex;
+    justify-content: right;
+}
+.btn1{
+    background: rgb(8, 82, 125);
+  color: white;
+}

@@ -1,0 +1,139 @@
+.table_view_main{
+    padding: 30px;
+}
+
+.table_view_main h2{
+    color: #1591b8 ;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.current_data{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.current_data h6{
+    font-size: 16px;
+    color: #999999;
+    font-weight: 600;
+    margin: 0;
+}
+
+.current_data span{
+    font-size: 20px;
+    font-weight: 500;
+    color: #2a6099;
+    cursor: pointer;
+}
+.current_data span .rotate{
+    padding-right: 5px;
+    font-size: 20px;
+}
+.export_btn{
+    background: #078cd3;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.table_view_main .data_icons{
+    padding-right: 5px;
+}
+
+.current_form1095{
+    overflow-x: scroll;
+}
+
+.current_form1095 table tr th{
+    min-width: 75px;
+    font-size: 14px;
+    color: black;
+}
+.current_form1095 table tr:nth-child(2) th:nth-child(1) , tr:nth-child(2) th:nth-child(2){
+    min-width: 100px;
+}
+
+.current_form1095 table tr th{
+    padding-left: 5px;
+    border-right: 2px solid rgb(177 177 177);
+    border-left: none;
+}
+
+.current_form1095 table tr:nth-child(2) th:nth-child(1){
+    border-right: none;
+}
+
+.current_form1095 table tr th:first-child{
+    position: sticky;
+    min-width: 120px  !important;
+    left: 0;
+    z-index: 9999;
+    padding-left: 10px;
+}
+.current_form1095 table tr:nth-child(1) th:first-child{
+    background: #c8e2f9;
+}
+.current_form1095 table tr:nth-child(2) th:first-child{
+    background: #fff;
+    border-right: 2px solid rgb(177 177 177);
+}
+.current_form1095 table tr:nth-child(2) th:nth-child(2){
+    position: sticky;
+    min-width: 120px  !important;
+    left: 132px;
+    background: #fff;
+    z-index: 9999;
+    padding-left: 10px;
+
+}
+.current_form1095 table tr td:first-child{
+    position: sticky;
+    min-width: 120px;
+    left: 0px;
+    background: #fff;
+    z-index: 9999;
+    padding-left: 10px;
+
+}
+.current_form1095 table tr td:nth-child(2){
+    position: sticky;
+    min-width: 100px;
+    left: 132px;
+    background: #fff;
+    z-index: 9999;
+    padding-left: 10px;
+
+}
+
+.current_form1095 table tr:nth-child(even) th{
+    border-bottom: 3px solid rgb(41, 161, 194);
+}
+.current_form1095 table tr:nth-child(odd) th{
+    background-color:  #c8e2f9;
+    border-top: 3px solid rgb(41, 161, 194);
+}
+
+.current_form1095 table tr:nth-child(odd) td{
+    background-color:  #c8e2f9;
+}
+
+.current_form1095 table tr:last-child td{
+    border-bottom: 3px solid rgb(41, 161, 194);
+}
+
+.current_form1095 table tr:first-child th{
+    text-align: center;
+}
+
+
+.pagination{
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+
+
+
+

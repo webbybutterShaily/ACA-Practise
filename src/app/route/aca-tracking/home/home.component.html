@@ -1,0 +1,184 @@
+<!-- <p>home works!</p> -->
+
+<app-customer-drop-down></app-customer-drop-down>
+<div class="main_tracking">
+    <h3>ACA Tracking</h3>
+    <mat-grid-list cols="6" rowHeight="2:1" class="">
+
+        <div style="display: flex;">
+            <mat-grid-tile colspan="4">
+                <div>
+                    <div class="Employee_breakdown">
+                        <h3>Tracking Reports</h3>
+                    </div>
+                    <div class="tracking_img">
+                        <div class="tracking-group1">
+                            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+                                matTooltip="All Employees tracking report">
+                                <img src=".././../../../assets/profile.png" alt="">
+                                <h4>All Employees</h4>
+                            </div>
+                            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+                                matTooltip="The All Tracked Employees report reflects the current, in progress, measurement period. Here, the User will find all employees that are currently being tracked, along with the potential ACA status. This report will include the number of hours that need to be maintained for the remainder of the measurement period in order for an employee to stay at a Calculated Non-Full-Time status. The User will be able to see both ongoing tracked employees, and any employees in a new variable hour measurement period. This report does not include any Designated Full-Time employees.">
+                                <img src=".././../../../assets/task.png" alt="">
+                                <h4>All Tracked Employees</h4>
+                            </div>
+                            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+                                matTooltip="The Measured Employees report reflects the most recently COMPLETED measurement period. It will show the final ACA status of any employee whether Calculated Full Time or Calculated Non-Full-Time. This report will also show the user the administrative period and stability period for each tracked employee. Upon clicking an employee name, the User will see all the payroll information for the most recently completed measurement period for the employee selected. This report does not include any Designated Full-Time employees.">
+                                <img src=".././../../../assets/cal.png" alt="">
+                                <h4>Measured Employees Report</h4>
+                            </div>
+                        </div>
+                        <div class="tracking-group1">
+                            <div class="trackingImgText" matTooltipClass="example-tooltip-black"
+                                matTooltip="Designated Full time Employees Report">
+                                <img src=".././../../../assets/time.png" alt="">
+                                <h4>Designated Full Time</h4>
+                            </div>
+                            <div class="trackingImgText trackingImgMargin" matTooltipClass="example-tooltip-black"
+                                matTooltip="The Measurement Data Archive report shows details for each employee for every measurement period completed since hire date. This report shows both tracked employees and designated full time employees and is intended for historical use when researching past measurement periods.">
+                                <img src=".././../../../assets/document.png" alt="">
+                                <h4>Measurement Data Archive</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="Employee_breakdown">
+                    <h3>Employee Breakdown</h3>
+                </div>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>
+
+<hr class="breakLine" />
+
+<div class="account_profile">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <div style="display: flex;">
+            <mat-grid-tile class="account-align">
+                <div class="full-time-emp">
+                    <div class="full-time-img">
+                        <img src="../../../../assets/progress.png" alt="">
+                        <span>Full Time Equivalent Employees</span>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                        <div class="example-button-row button-flex">
+                            <button (click)=" toggel1()" mat-button>Show / Hide</button>
+                        </div>
+                        <div *ngIf="isshown1" class="average">
+                            <h3>Average FTE: 0</h3>
+                            <div class="" style="display: flex; align-items: center;">
+                                <h3>Year:</h3>
+                                <mat-form-field appearance="fill" class="fill-margin">
+                                    <select matNativeControl required>
+                                        <option value="volvo">2018</option>
+                                    </select>
+                                </mat-form-field>
+                            </div>
+                            <h2>Div expanded and visible</h2>
+                        </div>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="account_profile2">
+                    <div>
+                        <div class="user">
+                            <img src="../../../../assets/account.png" alt="">
+                            <span>Account Profile</span>
+                            <a href="#">Knowledge Base</a>
+                        </div>
+                        <div class="example-button-row button-flex2">
+                            <button (click)="toggel2()" mat-button>Show / Hide</button>
+                        </div>
+                        <h2 class="edit-profile" (click)="edit()">edit</h2>
+                        <div *ngIf="isshown2" class="company-info">
+                            <div class="input_main">
+                                <span>CompanyId:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="229" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="main-input">
+                                <span>Employer Name:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="EECO Demo" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>Legal Name:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="2666" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>EIN:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="15-45641322" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>Address:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="15-45641322" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>City:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="Concord" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>state:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="NH" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>Zip:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="03301" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>Contact Number:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="123-568-2578" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>Primary Number:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="Linda toulises" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="input_main">
+                                <span>Email Address:</span>
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                    <input matInput value="xyz@gmail.com" [disabled]="isDisabled">
+                                </mat-form-field>
+                            </div>
+                            <div class="main-input">
+                                <span>Measurement Email Notification:</span>
+                                <mat-form-field appearance="fill">
+                                    <select matNativeControl required [disabled]="isDisabled">
+                                        <option value="no">No</option>
+
+                                    </select>
+                                </mat-form-field>
+                            </div>
+                            <div class="main-input">
+                                <a mat-button>Save</a>
+                                <a mat-button>Cancle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,46 @@
+
+
+<div style="display: flex; align-items: center;">
+  <span class="reporting_year">Select Reporting Year </span>
+  <div class="second_part_main">
+    <div class="select_main setectY select_btn">
+      <span style="border: 2px solid #d2d0d0; border-radius: 4px;">
+
+        <!-- <ng-multiselect-dropdown [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
+          [settings]="dropdownSettings">
+        </ng-multiselect-dropdown> -->
+
+        <mat-select
+        style=" padding: 6px 0px 6px 8px; width: 60px;"
+        (selectionChange)="onItemSelect($event.value)"
+        [(value)]="selected"
+      >
+        <mat-select-filter
+          [array]="dropdownList"
+          
+          (filteredReturn)="filteredList5 = $event"
+        ></mat-select-filter>
+
+        <mat-option
+          *ngFor="let name of filteredList5"
+          [value]="name"
+        >
+          {{ name }}
+        </mat-option>
+      </mat-select>
+
+
+
+
+
+      </span>
+      <!-- <div class="example-button-row">
+        <button class="search_btn" mat-flat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+        </button>
+      </div> -->
+    </div>
+  </div>
+  <app-customer-drop-down></app-customer-drop-down>
+
+</div>

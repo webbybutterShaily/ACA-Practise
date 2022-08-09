@@ -1,0 +1,348 @@
+<h1 class="header">Electronic Filling Status</h1>
+
+<div class="data-section">
+
+<p class="warn-text">
+    <strong>WARNING TO USERS:</strong> Please be advised that if any source data (payroll, offers of coverage add/edits, plan add/edits, employee hire dates, employee termination dates, employee type changes, etc.) has been changed by either upload of files or manual edits, then the 1094-C Part III Column b and c number may no longer be accurate. If you have made any changes listed, please reach out to your system administrator to have the 1094-C form regenerated.
+</p>
+
+<h2 class="cname">(0060) SERVICE SOLUTIONS</h2>
+
+<div class="mainrow-efile">
+    <div class="col col1-efile">
+        <button mat-raised-button class="btn2-efile">Edit 1094</button>
+        <button mat-raised-button class="btn1-efile">Print 1094 </button>
+        <button mat-raised-button class="btn3-efile">Attest  </button>
+        <button mat-raised-button class="btn1-efile">Reset Attestation  </button>
+        <button mat-raised-button class="btn1-efile">Submit for E-Filing </button>
+        <button mat-raised-button class="btn1-efile">View E-File Result</button>
+        <p class="attest">garth@copacpayroll.com attested on {{datetime}}</p>
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <button mat-raised-button class="btn1-efile">Indicator Code Matrix</button>
+            </div>
+            <div class="col innercol" >
+                <p style="text-align: left;"><strong>IRS Status<mat-icon
+                    style="font-size: 12px;">help</mat-icon>:</strong>{{msg1}}</p>
+                <p style="text-align: left;"><strong>Receipt Id: </strong><br>{{msg2}}</p>
+            </div>
+        </div>
+   </div>
+</div>
+
+<div class="efileForm">
+    <div class="efileRegenerate">
+        <button mat-raised-button class="btn3-efile">Re-Generate 1094 </button>
+        <a class="terms" href="#" target="_blank" [routerLink]="'/aca-reporting/year-end-process/Efile-Terms'">Click here to open up a list of terms in a new window</a>
+    </div>
+    <div class="efile-data-section">
+        <strong><span style="background-color: black;color:white">Part I </span>Applicable Large Employer Member (ALE Member)</strong>
+        <table>
+            <tr>
+                <td rowspan='3' colspan='3' >Form <span style="font-weight:bold;font-size:xx-large;">1094-C </span><br>Department of the<br> Treasury Internal <br>Revenue Service<br></td>
+
+                <td rowspan='3' colspan='5' >
+                    <div class="row">
+                        <div class="col">
+                            <span style="margin-left: 40px;font-weight:bold;font-size:medium;text-align: center;">Transmittal of Employer-Provided Health Insurance Offer and<br> Coverage Information Returns</span>
+                            <p >▶ Information about Form 1094-C and its separate instructions is<a style="color: #1b8ebd;text-decoration:none;margin-left: 2px;font-weight: bold;">www.irs.gov/form1095c</a></p>
+                        </div>
+                    <div class="col">
+                        <span style="display: flex;justify-content:flex-end"><mat-checkbox class="example-margin">CORRECTED</mat-checkbox></span><br>
+                    </div>
+                   
+                      
+                        
+                    </div>
+                   
+    </td>
+                <td rowspan='2' colspan='2' style="height: 18px;"> OMB No. 1545-2251  </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' ><span style="font-weight: bold;font-size:x-large;" class="txt-align">2019</span></td>
+            </tr>
+            <!-- <tr>
+                <td rowspan='3' colspan='2' >
+                    <p>Form <strong>1094-C</strong></p>
+                    <p>Department of the <br>Treasury Internal<br> Revenue Service</p>
+                </td>
+                <td rowspan='3' colspan='6' >row1 column3</td>
+                <td rowspan='3' colspan='2' >row1 column9</td>
+            </tr> -->
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='7' ><strong>1</strong>  Name of ALE Member (Employer) <strong>{{name}}</strong> </td>
+                <td rowspan='1' colspan='3' ><strong>2</strong> Employer identification number (EIN) <strong>{{ein}}</strong>  </td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' ><strong>3</strong> Street address (including room or suite no.) <strong> {{address}}</strong>  </td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='4' ><strong>4</strong> City or town <strong> {{city}}</strong> </td>
+                <td rowspan='1' colspan='3' ><strong>5</strong> State or province <strong> {{state}}</strong>  </td>
+                <td rowspan='1' colspan='3' ><strong>6</strong> Country and ZIP or foreign postal code  <strong> {{zip}}</strong>  </td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='7' ><strong>7</strong> Name of person to contact <strong> {{cperson}}</strong> </td>
+                <td rowspan='1' colspan='3' ><strong>8</strong> Contact telephone number  <strong> {{cnumber}}</strong> </td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='7' ><strong>9</strong> Name of Designated Government Entity (only if applicable)</td>
+                <td rowspan='1' colspan='3' ><strong>10</strong> Employer identification number (EIN)</td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' ><strong>11</strong> Street address (including room or suite no.)</td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='4' ><strong>12</strong> City or town</td>
+                <td rowspan='1' colspan='3' ><strong>13</strong> State or province</td>
+                <td rowspan='1' colspan='3' ><strong>14</strong> Country and ZIP or foreign postal code</td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='7' ><strong>15</strong> Name of person to contact</td>
+                <td rowspan='1' colspan='3' ><strong>16</strong> Contact telephone number</td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' class="diffRow"><strong>17</strong> Reserved <input type="text" class="dotbox diffRow"></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' ><strong>18</strong> Total number of Forms 1095-C submitted with this transmittal <input type="text" class="dotbox">▶ <strong>37</strong></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' ><strong>19</strong> Is this the authoritative transmittal for this ALE Member? If “Yes,” check the box and continue. If “No,” see instructions <input type="text" class="dotbox"><span style="margin-left: 10px;"><mat-checkbox class="example-margin"></mat-checkbox> </span></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' > <strong><span style="background-color: black;color:white">Part II </span> ALE Member Information</strong></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' ><strong>20</strong> Total number of Forms 1095-C filed by and/or on behalf of ALE Member <input type="text" class="dotbox">▶ <strong>37</strong> </td>
+            </tr>
+            <tr>
+                <td rowspan='2' colspan='10' ><div><strong>21</strong> Is ALE Member a member of an Aggregated ALE Group?
+                    <input type="text" class="dotbox"> <span style="margin-left: 10px;"><mat-checkbox class="example-margin"> Yes</mat-checkbox> </span> <span  style="margin-left: 10px;"><mat-checkbox class="example-margin" >  No </mat-checkbox></span> </div>
+                    <div class="text-IV">
+                        
+                            If “No,” do not complete Part IV.
+                        
+                    </div>
+                    ​​​​​​​​​​​​​​​​​​​​​​
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='2' colspan='10' ><strong>22</strong> Certifications of Eligibility (select all that apply):
+                   <div style="width: 100%;display: flex;">
+                     <div style="display: flex;width:20%">
+                        <mat-checkbox class="example-margin">  A Qualifying Offer Method</mat-checkbox>  
+                     </div>
+                     <div style="display: flex;width:20%">
+                        <mat-checkbox class="example-margin">B Reserved  </mat-checkbox> 
+                    </div>
+                    <div style="display: flex;width:20%">
+                        <mat-checkbox class="example-margin">  C Reserved </mat-checkbox>
+                    </div>
+                    <div style="display: flex;width:20%">
+                        <mat-checkbox class="example-margin"> D 98% Offer Method</mat-checkbox> 
+                       
+                    </div>
+                   </div>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10' > <strong><span style="background-color: black;color:white">Part III</span> ALE Member Information - Monthly</strong></td>
+            </tr>
+            <tr>
+                <td rowspan='2' colspan='2' >            </td>
+                <td rowspan='1' colspan='2' class="txt-align"><span ><strong>(a) </strong>  Minimum Essential Coverage Offer Indicator</span></td>
+                <td rowspan='2' colspan='2' class="txt-align">
+                    <strong>(b) </strong>Full-Time Employee Count for ALE Member
+                    </td>
+                <td rowspan='2' colspan='1' class="txt-align">
+                    <strong>(c)</strong> Total Employee Count for ALE Member
+                    </td>
+                <td rowspan='2' colspan='1' class="txt-align">
+                   <strong>(d) </strong> Aggregated Group Indicator
+                    </td>
+                <td rowspan='2' colspan='2' class="txt-align"><strong>(e)</strong> Section 4980H Transition Relief Indicator</td>
+            </tr>
+            <tr>
+                <td><span class="check-align"><strong>Yes</strong></span></td>
+                <td><span class="check-align"><strong>No</strong></span></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height" ><span class="set-margin"><strong>23</strong></span> All 12 Months</td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+                <td></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height" >
+    <strong>24</strong>	
+                    Jan
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Jan}}</span></td>
+                <td><span class="member-count">{{totalCount.Jan}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong> 25	</strong>
+                    Feb
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Feb}}</span></td>
+                <td><span class="member-count">{{totalCount.Feb}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong> 26	</strong>
+                    Mar
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Mar}}</span></td>
+                <td><span class="member-count">{{totalCount.Mar}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong> 27	</strong>
+                    Apr
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Apr}}</span></td>
+                <td><span class="member-count">{{totalCount.Apr}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>  28	</strong>
+                    May
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.May}}</span></td>
+                <td><span class="member-count">{{totalCount.May}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>  29	</strong>
+                    Jun
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Jun}}</span></td>
+                <td><span class="member-count">{{totalCount.Jun}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>   30	</strong>
+                    Jul
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Jul}}</span></td>
+                <td><span class="member-count">{{totalCount.Jul}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>  31</strong>
+                    Aug
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Aug}}</span></td>
+                <td><span class="member-count">{{totalCount.Aug}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>  32	</strong>
+                    Sep
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Sep}}</span></td>
+                <td><span class="member-count">{{totalCount.Sep}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>   33	</strong>
+                    Oct
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Oct}}</span></td>
+                <td><span class="member-count">{{totalCount.Oct}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong>  34	</strong>
+                    Nov
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Nov}}</span></td>
+                <td><span class="member-count">{{totalCount.Nov}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='2' class="row-height">
+                    <strong> 35	</strong>
+                    Dec
+                    </td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ><span class="member-count">{{fulltimeCount.Dec}}</span></td>
+                <td><span class="member-count">{{totalCount.Dec}}</span></td>
+                <td><span class="check-align"><mat-checkbox class="example-margin"></mat-checkbox></span></td>
+                <td rowspan='1' colspan='2' ></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10'><strong><span style="background-color: black;color:white">Part IV </span>Other ALE Members of Aggregated ALE Group</strong></td>
+            </tr>
+            <tr>
+                <td rowspan='1' colspan='10'>Enter the names and EINs of Other ALE Members of the Aggregated ALE Group (who were members at any time during the calendar year).</td>
+            </tr>
+            
+            </table>
+           
+    </div>
+   
+</div>
+</div>

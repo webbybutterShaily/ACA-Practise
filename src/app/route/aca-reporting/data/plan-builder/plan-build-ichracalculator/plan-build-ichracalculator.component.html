@@ -1,0 +1,19 @@
+<!-- <p>plan-build-ichracalculator works!</p> -->
+
+
+<div class="calculator_main">
+    <div class="close_icons">
+        <h5>Choose from below options.</h5>
+        <mat-icon class="icons" mat-dialog-close>close</mat-icon>
+    </div>
+    <div class="check_section">
+        <h4>are you want to check a single ICHRA for affordability or upload a bulk file?</h4>
+        <div class="check_box">
+            <mat-radio-button (change)="selectValue('1')" class="example-margin"  >Single ICHRA for affordability</mat-radio-button>
+            <mat-radio-button (change)="selectValue('2')" class="example-margin bulk" >Upload a bulk file</mat-radio-button>
+        </div>
+    </div>
+    <div class="select_button">
+        <button mat-button  (click)=" openDialog1()">select</button>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+.calculator_main {
+    width: 800px;
+}
+
+
+.close_icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 20px 17px;
+    border-bottom: 2px solid #d5d5d5;
+}
+
+.close_icons h5 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #959494;
+    letter-spacing: 1px;
+}
+
+.close_icons .icons {
+    color: #d3d0d0;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.check_section {
+    padding: 20px 20px;
+}
+.below{
+    max-width: 650px;
+}
+.check_section h4 {
+    margin: 0;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.check_box {
+    padding: 12px 0;
+}
+
+.bulk {
+    padding-left: 10px;
+}
+
+.select_button {
+    text-align: end;
+    background-color: whitesmoke;
+    padding: 20px 20px;
+    border-top: 2px solid lightgrey;
+}
+.button_grp{
+    text-align: end;
+    background-color: whitesmoke;
+    padding: 20px 20px;
+    border-top: 2px solid lightgrey;
+}
+
+.remove{
+    background: #fff !important;
+    font-size: 18px;
+    padding: 2px 17px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.remove:hover{
+    background: #fff !important;
+}
+
+.select_button{
+    background: red;
+    color: #fff;
+    font-size: 18px;
+    padding: 2px 17px;
+    text-transform: capitalize;
+    margin-left: 10px;
+}

@@ -1,0 +1,484 @@
+<div class="main">
+    <div class="main-row">
+        <div class="column1" style="color: #8b8c8d ;">
+            <h2 mat-dialog-title>Add New Establishment for UAT-100</h2>
+        </div>
+        <div class="column2">
+            <mat-dialog-actions>
+                <div class="close_icons">
+                    <mat-icon mat-dialog-close>close</mat-icon>
+                </div>
+            </mat-dialog-actions>
+
+        </div>
+
+    </div>
+    <hr style="height:2px; width:100%; border-width:0;  background-color:#187506">
+
+    <mat-dialog-content class="mat-typography">
+        <div class="dialog-content">
+
+            <h1 class="header"><strong>Establishment Details</strong> </h1>
+
+            <div class="cdetail1">
+                <div style="width: 15%;">Company Name <mat-icon style="font-size: 12px;">help</mat-icon>
+                </div>
+                <div style="width: 20%">
+                    <mat-form-field appearance="outline" style="width:500px">
+                        <input matInput [(ngModel)]="CompanyName" placeholder="UAT-100" disabled>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="cdetail1">
+                <div style="width: 15%;">Legal Name <mat-icon style="font-size: 12px;">help</mat-icon>
+                </div>
+                <div style="width: 20%;">
+                    <mat-form-field appearance="outline" style="width:500px">
+                        <input matInput [(ngModel)]="legalName" placeholder="UAT-100">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <p>EIN</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="EIN" placeholder="45-4546611" disabled>
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p class="marginset">Active <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <mat-select [(ngModel)]="IsActive" disabled>
+                            <mat-option [value]="true">Yes</mat-option>
+                            <mat-option [value]="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <p>Address Line 1</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="Addressline1" placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p>Address Line 2</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="Addressline2" placeholder="">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+
+            <div class="cdetail1">
+                <div style="width: 20%;">
+                    <p>City</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="city" placeholder="">
+                    </mat-form-field>
+
+                    <p>Phone</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="phone" placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p>State</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="state" placeholder="">
+                    </mat-form-field>
+
+                    <p>Contact</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="contact" placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 20%;">
+                    <p>Zip Code</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="zipcode" placeholder="">
+                    </mat-form-field>
+
+                    <p>Email Address</p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="Emailadd" placeholder="abc@xyz.com">
+                    </mat-form-field>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="cdetail1">
+                <div style="width: 25%;">
+                    <p class="marginset">Brand :<mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="brandname">
+                            <mat-option *ngFor="let data of brand" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">Customer Type <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="Customertype">
+                            <mat-option *ngFor="let data of licenseType" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">License Type:<mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="Licensetype">
+                            <mat-option *ngFor="let data of group" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p>Group Type:</p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="Gouptype">
+                            <mat-option value="1">1</mat-option>
+                            <mat-option value="2">2</mat-option>
+                            <mat-option value="3">3</mat-option>
+                            <mat-option value="4">4</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cdetail1">
+                <div style="width: 25%;">
+                    <p class="marginset">Self Insured :<mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="selfinused">
+                            <mat-option value="true">yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">Control Group Parent? <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="conntrolparent">
+                            <mat-option value="true">yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">Parent Customer <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="parentCustomer">
+                            <mat-option *ngFor="let data of group" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="cdetail1">
+                <div style="width: 25%;">
+                    <p>Retail Partner</p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="retailpartner">
+                            <mat-option *ngFor="let data of brand" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">License Empl Count <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">Subscription Starts <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">Subscription Ends <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput placeholder="">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cdetail1">
+                <div style="width: 25%;">
+                    <p>Lowest Plan Contribution </p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="lowestPlanContribution" placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p>Waiting Period Days </p>
+                    <mat-form-field appearance="outline" style="width:140px">
+                        <input matInput [(ngModel)]="waitingPeriodDays" placeholder="">
+                    </mat-form-field>
+                </div>
+                <div style="width: 25%;">
+                    <p class="marginset">Auto Lock Setup <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-form-field appearance="outline" style="width:90%">
+                        <mat-select [(ngModel)]="autoLockSetup">
+                            <mat-option value="true">yes</mat-option>
+                            <mat-option value="false">No</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="customer-col cust-col">
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> ACA Tracking and Reporting – Non - Integrated
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> ACA Tracking and Reporting – Payroll Integrated
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> ACA Tracking and Reporting – Reporting Integrated
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> ACA Tracking and Reporting – Fully Integrated
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> Reporting Essentials Only – Non - Integrated
+                    </p>
+
+
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> Reporting Essentials Only - Integrated
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> E-File Complete
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox checked> </mat-checkbox> EEOC Reporting
+                    </p>
+                    <div style="display: flex">
+
+                        <mat-form-field appearance="outline" style="width:140px;margin-left: 5%;" >
+                            <input matInput [(ngModel)]="Eeoc_start_Date" placeholder="6/16/2022" disabled>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" style="width:140px;margin-left: 5%;">
+                            <input matInput [(ngModel)]="EEoc_End_date" placeholder="6/16/2023">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="customer-row">
+
+                    <p>
+                        <mat-checkbox> </mat-checkbox>  Work Number
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> ACA Audit
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> EEOC Component 2 Only
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> Full Service
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> New Jersey E-filing
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> Washington DC Filing
+                    </p>
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> California EFiling
+                    </p>
+
+                </div>
+
+                <div class="customer-row">
+                    <p>
+                        <mat-checkbox> </mat-checkbox> Rhode Island EFiling
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="custpart3">
+                <div class="cdetail1">
+                    <p>Rate in Employee Data is W2 Wages <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-checkbox [(ngModel)]="rateIsW2Wages"></mat-checkbox>
+                </div>
+                <div class="cdetail1">
+                    <p> Show Employee ID in Lists <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                    <mat-checkbox [(ngModel)]="showEmpldInLists"></mat-checkbox>
+                </div>
+                <div class="cdetail3">
+                    <div>
+                        <p>Show max number of hours to maintain non-full time status column<mat-icon
+                                style="font-size: 12px;">help</mat-icon>
+                        </p>
+                    </div>
+                    <div>
+                        <mat-checkbox checked></mat-checkbox>
+                    </div>
+
+                </div>
+
+                <div class="cdetail1">
+                    <div style="width: 50%;">
+                        <p>Monthly Measurement <mat-icon style="font-size: 12px;">help</mat-icon>
+                        </p>
+                    </div>
+                    <div style="width: 20%;">
+                        <mat-form-field appearance="outline">
+                            <mat-select [(ngModel)]="monthlyMeasurement">
+                                <mat-option *ngFor="let data of opt" value={{data}}>{{data}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="cdetail1">
+                    <div style="width: 50%;">
+                        <p>This is a Demo/Test Customer <mat-icon style="font-size: 12px;">help</mat-icon>
+                        </p>
+                    </div>
+                    <div style="width: 20%;">
+                        <mat-form-field appearance="outline">
+                            <mat-select [(ngModel)]="isDemoCustomer">
+                                <mat-option *ngFor="let data of opt" value={{data}}>{{data}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p>Notes</p>
+                <mat-form-field appearance="outline" style="width: 50%">
+
+                    <textarea matInput placeholder="" [(ngModel)]="note"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="cdetail1">
+                <div style="width: 18%;">
+                    <p>Customer is a school? <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                </div>
+                <div style="width: 20%;">
+                    <mat-form-field appearance="outline">
+                        <mat-select [(ngModel)]="isSchool">
+                            <mat-option *ngFor="let data of opt" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cdetail1">
+                <div style="width: 18%;">
+                    <p>Benefit Admin License <mat-icon style="font-size: 12px;">help</mat-icon>
+                    </p>
+                </div>
+                <div style="width: 20%;">
+                    <mat-form-field appearance="outline">
+                        <mat-select [(ngModel)]="benAdminType">
+                            <mat-option *ngFor="let data of adminlicese" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="cdetail1">
+                <div style="width: 18%;">
+                    <p>Reporting Essentials Only</p>
+                </div>
+                <div style="width: 20%;">
+                    <mat-form-field appearance="outline">
+                        <mat-select>
+                            <mat-option *ngFor="let data of opt" value={{data}}>{{data}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="cust-save-btn">
+                <button mat-raised-button class="btn1" (click)="SaveEstablishmentDetailss()">Save</button>
+            </div>
+
+
+        </div>
+    </mat-dialog-content>
+    <div mat-dialog-actions class="cust-close">
+        <button mat-button mat-dialog-close class="close-btn">Close</button>
+    </div>
+</div>

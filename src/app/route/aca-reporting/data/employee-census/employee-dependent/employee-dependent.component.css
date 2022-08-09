@@ -1,0 +1,262 @@
+.list{
+    padding: 50px 15px 0;
+}
+
+.list h5{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px ;
+    color: #07779b;
+}
+
+.list h3{
+    color: grey;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.list .check_click{
+    text-align: end;
+}
+
+.list .check_click a{
+    color: #18b3fd;
+    padding-left: 15px;
+}
+
+.employee_data_forms {
+    border-top: 4px solid #5b9de3;
+    margin: 15px;
+    -webkit-overflow-scrolling: scroll !important;
+    overflow-x: scroll;
+}
+
+.employee_data_forms table tr td {
+    line-height: 25px;
+    padding: 10px 20px 10px;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+
+
+.employee_data_forms table  td:nth-child(1)  , td:nth-child(3) , td:nth-child(4) , td:nth-child(5) , td:nth-child(6) , td:nth-child(7) , td:nth-child(8) , td:nth-child(9) , td:nth-child(10){
+    min-width: 151px;
+}
+
+.employee_data_forms table {
+    border-spacing: 0 !important;
+}
+
+.employee_data_forms table tr {
+    vertical-align: top;
+}
+
+.employee_data_forms table tr:nth-child(1) td {
+    display: none;
+}
+
+.employee_data_forms table tr:nth-child(2) td {
+    font-weight: 700;
+    color: #07779b;
+}
+.checkbox_main{
+    display: flex;
+}
+
+
+.remove_btn
+{
+    background-color: #ea4747;
+    color: #fff;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.edit_btn{
+    background-color: rgba(17, 145, 17, 0.975);
+    color: #fff;
+    font-size: 17px;
+}
+.employee_data_forms table tr:nth-child(odd) {
+    background-color: #d7e8fa;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.employee_data_forms table tr:nth-child(8) td {
+    display: flex;
+}
+.employee_data_forms table tr:nth-child(3) td,
+tr:nth-child(5) td,
+tr:nth-child(6) td,
+tr:nth-child(7) td {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.button_click {
+    text-align: end;
+    background-color: #eeeeee;
+    padding: 20px 15px 10px 0;
+}
+
+.button_click button:first-child {
+    background-color: green;
+    font-size: 15px;
+    padding: 19px 19px;
+    color: #fff;
+    line-height: 0px;
+
+}
+
+.button_click button:last-child {
+    background-color: #ea4747;
+    font-size: 15px;
+    padding: 19px 19px;
+    color: #fff;
+    line-height: 0px;
+    margin-left: 15px;
+}
+
+.employee_data_forms table td img {
+    width: 20px;
+}
+
+
+
+.e_id {
+    display: flex;
+    width: 100%;
+    align-items: start;
+
+}
+
+.e_id span {
+    padding-right: 10px;
+}
+
+
+.showing{
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 4px solid #5b9de3 !important; */
+}
+
+.showing h3{
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    width: 38%;
+      border-bottom: 4px solid #5b9de3 !important;
+}
+.showing span{
+    color: #07779b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36%;
+    text-align: center;
+    border-bottom: 4px solid #5b9de3 !important;
+
+}
+.showing h6{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+
+}
+
+.pages{
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #5b9de3 !important;
+}
+.check_remove{
+    color: #5b9de3;
+    text-decoration: underline;
+    display: flex;
+}
+
+@media (max-width:1400px){
+    .showing h3{
+        width: 28%;
+    }
+    .showing span{
+        width: 30%;
+    }
+}
+
+
+
+/* material table  */
+.demo-table {
+    width: 96%;
+    margin:  auto;
+    font-size: 12px;
+    overflow-x: scroll;
+    
+  }
+  .demo-table table{
+    font-size: 12px;
+  
+  width: 100%;}
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    font-size: 12px;
+  
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+    font-size: 12px;
+  
+    font-size: 12px;
+  
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+    font-size: 12px;
+  
+  }
+  .mat-header-cell {
+    font-size: 12px;
+  
+    border-left: none;
+  }
+  th.mat-header-cell {
+    font-size: 16px;
+    color: black;
+    font-size: 12px;
+  
+  }
+  
+  .table-header{
+    border-bottom: 2px solid rgb(41, 161, 194);
+    border-top: 3px solid rgb(41, 161, 194);
+    /* font-size: 12px; */
+  
+  }
+  
+  .table-row:nth-child(odd){
+    background-color: #7db8f468;
+    font-size: 12px;
+  
+  }
+  td.mat-cell{
+    font-size: 12px;
+  
+    padding: 10px;
+  }
+  .editbtn{
+    background: rgba(17, 145, 17, 0.975);
+    color: white;
+    font-size: 12px;
+    padding: 0;
+  }

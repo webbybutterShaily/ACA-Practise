@@ -1,0 +1,103 @@
+
+
+.bulk_calculator{
+    background-color: #3891ef26;
+    width: 1365px;
+}
+
+@media (max-width:1600px){
+    .bulk_calculator{
+        width: auto;
+    }
+}
+
+.bulk_calculator .bulk_ichara{
+    color: grey;
+    text-align: center;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+}
+
+.ichara_bulk_main{
+    padding: 0px 150px 40px 40px;
+}
+@media (max-width:1200px){
+    .ichara_bulk_main{
+        padding: 0px 100px 40px 40px;
+    }
+}
+
+.close_icon{
+    text-align: end;
+    padding: 40px 34px 0 0;
+}
+
+.close_icon .mat-icon{
+    font-size: 18px;
+    color: grey;
+    font-weight: 700;
+}
+
+.ichara_calculator{
+    display: flex;
+    align-items: end;
+}
+
+.select_content{
+    padding-left: 35px;
+}
+
+.select_content p{
+    color: grey;
+    font-size: 16px;
+    margin-bottom: 18px;
+    padding-right: 20px;
+}
+
+.select_content span{
+    color: grey;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.select_content span input{
+    font-size: 16px;
+    color: grey;
+    font-weight: 500;
+}
+
+.select_content span input::placeholder{
+    color: red;
+}
+
+.all_button{
+    margin: 15px 0px 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload_btn button{
+    background-color: #48b15f ;
+    padding: 1px 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid grey;
+    letter-spacing: 1px;
+}
+.basic_btn button:first-child{
+    background: #398db7;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 12px;
+}
+   
+.basic_btn button:last-child{
+    background: #2eaad1;
+    color: #fff;
+    font-size: 16px;
+}
+

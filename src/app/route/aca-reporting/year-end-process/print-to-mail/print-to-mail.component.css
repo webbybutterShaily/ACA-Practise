@@ -1,0 +1,73 @@
+.print_mail{
+    width: 90%;
+    margin: auto;
+}
+
+
+.heading{
+    text-align: center;
+    font-size: 16px;
+    color: #39a3ee;
+    font-weight: 600;
+    margin: 0;
+}
+.company_name h2{
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+    font-weight: 600;
+    margin: 0;
+}
+.delivery_table{
+  margin-top: 20px;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+.delivery_table table{
+    width: 100%;
+    border-bottom: 2px solid rgb(41, 161, 194);
+    border-top: 2px solid rgb(41, 161, 194);
+  }
+  
+  .delivery_table table tr th{
+    width: auto !important;
+    border-bottom: 2px solid rgb(41, 161, 194);
+    border-left: none;
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .delivery_table table tr td{
+    font-size: 12px;
+  }
+  
+  .delivery_table table tr:nth-child(odd) td{
+    background-color: #c8e2f9;
+  }
+  .delivery_table table tr:nth-child(even) td{
+    background-color: #fff;
+  }
+
+
+.btn_indicator{
+    text-align: end;
+}
+
+.indicator{
+  margin-right: 30px;
+  background: rgb(8, 82, 125);
+  color: white;
+}
+.altest{
+    margin-top: 20px;
+}
+.altest button{
+    background-color: rgb(39 167 28);
+    margin-left: 15px;
+}
+
+.altest span{
+    color: gray;
+    font-weight: 500;
+    font-size: 14px;
+}

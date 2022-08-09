@@ -1,0 +1,75 @@
+<div class="dialogcontent">
+    <div style="display: flex;
+    justify-content: center;">  <h1 mat-dialog-title style="text-align: center;color:rgb(9, 130, 211);"><img src="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219__480.png" style="float:left;height:40px;border-radius: 20px;"> &nbsp;  Report Selector</h1></div>
+  
+<div mat-dialog-content>
+    <div>
+        <p style="display:inline">Are there additional location/establishments to report for? 
+            <mat-form-field appearance="outline" >
+                <mat-select [(value)]="selectedvalue">
+                    <mat-option value=""></mat-option>
+                    <mat-option value="yes">Yes</mat-option>
+                    <mat-option value="no">No</mat-option>
+                </mat-select>
+            
+        </mat-form-field></p>
+        <div *ngIf="selectedvalue=='no'" style="margin-top:2px">
+            <div >
+                <p style="display:inline"><span style="color:blue">Location#1:</span>Does the location/establishment employ 100 or more employee as the Workforce Snapshot date selected? 
+            <mat-form-field appearance="outline" >
+                    <mat-select  [(value)]="selectedvalue1">
+                     
+                        <mat-option value="Yes">Yes</mat-option>
+                        <mat-option value="No">No</mat-option>
+                    </mat-select>
+                
+            </mat-form-field> </p>
+            <div *ngIf="selectedvalue1=='No'" style="margin-top:2px">
+                <div class="main-row">
+                    <div class="col1"><p >Do you need to file? <span style="color:green"> No</span></p></div>
+                    <div class="col2"><p>Report Type : <span style="color:green"> None</span></p></div>
+                    
+                </div>
+
+            </div>
+            <div *ngIf="selectedvalue1=='Yes'" style="margin-top:2px">
+                <div class="main-row">
+                    <div class="col1"><p >Do you need to file? <span style="color:green"> No</span></p></div>
+                    <div class="col2"><p>Report Type : <span style="color:green"> Single Establishment Report</span></p></div>
+                    
+                </div>
+
+            </div>
+             
+            </div>
+
+            
+        </div>
+        <div *ngIf="selectedvalue=='yes'" style="margin-top:2px">
+           
+            <p style="display:inline">Number Of Locations?
+               
+                    <mat-form-field appearance="outline">
+                        <input type="number" matInput placeholder=""  [(ngModel)]="n">
+                    </mat-form-field>
+                    
+            </p>
+            <div *ngFor="let jn of [].constructor(n);let indexOfelement=index;">
+
+
+               
+
+                
+             <app-locations i={{indexOfelement+1}}></app-locations>
+                   
+
+                    
+            </div>
+               
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions style=" display: flex;justify-content: flex-end;">
+    <button mat-button mat-dialog-close class="close">Close</button>
+</div>
+</div>

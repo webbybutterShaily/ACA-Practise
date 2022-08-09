@@ -1,0 +1,28 @@
+<div class="heading">
+    <h2>Year End Forms - Print</h2>
+</div>
+<div class="btn_indicator">
+    <button class="indicator" mat-button (click)="openindicatormatix()">
+        <fa-icon [icon]="circlecheck"></fa-icon> Indicator Code Matrix
+    </button>
+</div>
+<div class="company_name">
+    <h2>UAT - 100</h2>
+</div>
+<div class="data-section">
+    <div class="wrapper">
+      <div class="arrow-steps clearfix" *ngFor="let item of taxyear"> 
+        <div class="step current"> <a [routerLink]="'/aca-reporting/year-end-process/deliver-navabar-process/print-to-mail'"
+            style="color: white;"><span>Attest</span></a> </div>
+        <div class="step" ng-class="step:true" id="dnt50" [style]="{'--color':col}" (click)="onClick()" ><a
+            [routerLink]="['/aca-reporting/year-end-process/print-to-mail-process/Initial-print',item.taxyear]"
+            style="color: white"><span>Initial Print</span> </a></div>
+        <div class="step" [style]="{'--color1':col1}" id="dnt51" (click)="onClick1()"> <a
+            [routerLink]="['/aca-reporting/year-end-process/print-to-mail-process/correction-print',item.taxyear]" style="color: white;"><span> Correction Print</span> </a></div>
+        <div class="step" id="dnt52" (click)="onClick2()"> <a [routerLink]="['/aca-reporting/year-end-process/print-to-mail-process/duplicate-print',item.taxyear]"
+            style="color: white;"><span>Duplicate Print</span></a> </div>
+       
+    </div>
+  
+  
+  </div>

@@ -1,0 +1,71 @@
+<form #saveData="ngForm">
+    <div class="responsive-popup employee-save-data">
+
+        <div class="main-row">
+            <div class="column1" style="color: #056993;padding-left: 24px;">
+                <h2 mat-dialog-title>Are you sure you want to save below data?</h2>
+            </div>
+
+        </div>
+        <hr style="border: 0;border-top: 1px solid #d0c6c6;">
+        <mat-dialog-content class="mat-typography" style="margin: 13px 0px; line-height: 23px;">
+
+            
+
+                <div class="label">
+                    Selected Plan : <span  style="margin-left: 84px;">{{planData.planName}}</span> 
+                </div>
+            
+            <div class="label">
+              Plan End Date :  <span  style="margin-left: 84px;">{{planData.planEndDate}}</span>
+            </div>
+            <div class="label" style="margin-bottom: 10px;">
+              Plan Renewal Date : <span style="margin-left: 54px;">{{planData.planRenewalDate}}</span>  
+            </div>
+
+
+
+            <div class="field-data">
+                <div class="label">Select Date of Offer</div>
+                <mat-form-field appearance="outline" style="width: 150px; margin-left: 10px;">
+                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker1" name="dateOfOffer" ngModel>
+                    <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="field-data employee_data">
+                <div class="label">Select OutCome of Offer</div>
+                <mat-form-field appearance="fill" class="input-year" style="width: 150px; margin-left: 10px;">
+                    <select [(ngModel)]='ngSelect' matNativeControl required name="outcomeOfOffer" ngModel>
+                        <option value='Offered'>Offered</option>
+                        <option value='Elected'>Elected</option>
+                        <option value='Union'>Union</option>
+                        <option value='Waived'>Waived</option>
+                    </select>
+                </mat-form-field>
+            </div>
+            <div class="field-data">
+                <div class="label">Enrollment Date</div>
+                <mat-form-field appearance="outline" style="width: 150px; margin-left: 10px;">
+                    <input matInput placeholder="6/13/2017" [matDatepicker]="datepicker2" name="enrollmentDate" ngModel
+                        (ngModelChange)="funs1(saveData.value)">
+                    <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div style="color: red;" *ngIf="validationMsg!=''">{{validationMsg}}</div>
+
+        </mat-dialog-content>
+        <hr style="border: 0;border-top: 1px solid #d0c6c6;">
+        <div class="column2" style="padding-right: 24px">
+
+            <mat-dialog-actions>
+                <button mat-button mat-dialog-close cdkFocusInitial (click)="saveoffer(saveData.value)"
+                    class="btn2">Save</button>
+                <button mat-button mat-dialog-close (click)="skipOffer(saveData.value)"  class="btn1">Skip</button>
+
+            </mat-dialog-actions>
+        </div>
+    </div>
+</form>

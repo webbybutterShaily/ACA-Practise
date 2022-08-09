@@ -1,0 +1,1014 @@
+<div class="plan_ass">
+  <div class="select_main main_select">
+    <div> <h1 class="header" >Assign  Plans</h1></div>
+   
+    <div style="display: flex;">
+
+      <app-tax-year-drop-down></app-tax-year-drop-down>
+    </div>
+  </div>
+</div>
+
+<!-- <h1 class="header">Assign Plans</h1> -->
+
+<div class="data-section">
+  <h2 style="text-align: center ;" class="">{{custNamee}}</h2>
+
+  <div class="main-row1">
+    <div class="column1">
+
+      
+      <!-- <div>
+      <button
+        mat-raised-button
+        style="
+=======
+      <button mat-raised-button style="
+>>>>>>> Stashed changes
+          background: rgb(8, 82, 125);
+
+          color: white;
+          border: 0;
+          border-radius: 2px;
+        " (click)="list()">
+        List All Plan Assignments
+      </button>
+    </div> -->
+
+    <div><app-knowledge-base-button></app-knowledge-base-button></div>
+    </div>
+ 
+  </div>
+
+  <!-- <div class="column4">
+          <div class="main">
+            <div class="base">
+              <img src="../../../../../assets/book.png" alt="" />
+              <h5 class="know_base">Knowledge Base</h5>
+            </div>
+            <p>
+              The Learning Center can guide you step by step through the process.
+              Additional resources are avaiable to further assist you, such as
+              videos and webinars.
+            </p>
+            <div class="save-btn">
+              <button mat-raised-button class="save-btn">Knowledge Base</button>
+            </div>
+          </div>
+        </div> -->
+</div>
+
+<div class="mat-elevation-z8 demo-table">
+
+  <table mat-table [dataSource]="planDataSource" matSort #planTbSort="matSort">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <label class="container">
+          <input type="radio" name="radio" (change)="getPlanDet(row)" />
+          <span class="checkmark"></span>
+        </label>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="planName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.planName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="planSponsor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Sponser</th>
+      <td mat-cell *matCellDef="let element">{{ element.planSponsor }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="planRenewalDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan Renewal Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.planRenewalDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="planEndDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan End Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.planEndDate }}</td>
+    </ng-container>
+
+    <tr class="table-header" mat-header-row *matHeaderRowDef="displayedPlanColumns"></tr>
+    <tr class="table-row" mat-row *matRowDef="let row; columns: displayedPlanColumns"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td style="border-top: 3px solid rgb(41, 161, 194);background-color: #7db8f468 ; text-align: center;"
+        class="mat-cell" colspan="12"> No Data Available</td>
+    </tr>
+
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons aria-label="Select Plans ">
+  </mat-paginator>
+
+
+</div>
+
+<!-- <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls> -->
+
+<div style="
+    display: flex;
+    justify-content: flex-start;
+    width: calc(100% - 40px);
+    padding-left: 40px;
+    margin-top: 5%;
+  ">
+  <p style="display: inline; margin-right: 10px; padding: 6px">List Type</p>
+  <mat-form-field appearance="outline" style="width: 45%">
+    <select #mySelect matNativeControl required (change)="onOptionsSelected(mySelect.value)">
+      <option value="All_Employees">All Employees</option>
+
+      <option value="Active_emp">All Active Employees</option>
+
+      <option value="emp_not">Employees Not Assigned To Selected Plans</option>
+
+      <option value="emp_without">Employees Without Any Plans</option>
+    </select>
+  </mat-form-field>
+</div>
+
+
+<div>
+  <button mat-raised-button class="btn33" style="margin-left: 39px" (click)="showConfirmationModal()">
+    Assign checked Plans To Selected Employee
+  </button>
+
+  <button mat-raised-button class="btn34" style="margin-left: 10px" (click)="showRemoveModal()">
+    Remove Checked Plans From Selected Employee
+  </button>
+</div>
+
+<div class="mat-elevation-z8 demo-table">
+  <table mat-table [dataSource]="dataSource" matSort #empTbSort="matSort" class="">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? toggleAllRows() : null" [checked]="selection.hasValue() && isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="getSelectedEmpId($event, row)"
+          [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="employeeid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.employeeid }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="employeename">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.employeename }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="hireDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Hire Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.hireDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="terminationDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Term Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.terminationDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="employeestatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Empl Status</th>
+      <td mat-cell *matCellDef="let element">{{ element.employeestatus }}</td>
+    </ng-container>
+    <ng-container matColumnDef="employeetype">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Empl Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.employeetype }}</td>
+    </ng-container>
+    <ng-container matColumnDef="FullTimeStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Full Time Status
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.FullTimeStatus }}</td>
+    </ng-container>
+    <ng-container matColumnDef="paytype">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Pay Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.paytype }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="homedepartment">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Home Department</th>
+      <td mat-cell *matCellDef="let element">{{ element.homedepartment }}</td>
+    </ng-container>
+    <ng-container matColumnDef="homelocation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Home Location</th>
+      <td mat-cell *matCellDef="let element">{{ element.homelocation }}</td>
+    </ng-container>
+    <ng-container matColumnDef="dateOfBirth">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
+      <td mat-cell *matCellDef="let element">{{ element.dateOfBirth }}</td>
+    </ng-container>
+    <tr class="table-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr class="table-row" mat-row *matRowDef="let row; columns: displayedColumns" (click)="selection.toggle(row)"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td style="border-top: 3px solid rgb(41, 161, 194);background-color: #7db8f468 ; text-align: center;"
+        class="mat-cell" colspan="12"> No Data Available</td>
+    </tr>
+  </table>
+
+  <mat-paginator #e_page="matPaginator" [pageSizeOptions]="[5, 10]" showFirstLastButtons [pageSize]="5"
+    aria-label="Select Plans ">
+  </mat-paginator>
+
+  <!-- <table>
+    <thead
+      style="
+        border-bottom: 2px solid rgb(41, 161, 194);
+
+        border-top: 3px solid rgb(41, 161, 194);
+      "
+    >
+      <th><input type="checkbox" /></th>
+
+      <th>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="employeeid"
+          >
+            Employee Id
+          </div>
+
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpIdFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpIdFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpIdFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="employeename"
+          >
+            Employee Name
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpNameFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpNameFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpNameFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="hireDate"
+          >
+            Hire Date
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpHireDateFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpHireDateFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpHireDateFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Select">--Select one--</option>
+                    <option value="Full">Full Time</option>
+                    <option value="Part">Part Time</option>
+                    <option value="Seasonal">Seasonal</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <mat-calendar></mat-calendar>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="terminationDate"
+          >
+            Term Date
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpTermDateFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpTermDateFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpTermDateFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Select">--Select one--</option>
+                    <option value="Full">Full Time</option>
+                    <option value="Part">Part Time</option>
+                    <option value="Seasonal">Seasonal</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <mat-calendar></mat-calendar>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="employeestatus"
+          >
+            Empl Status
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpStatusFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpStatusFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpStatusFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="employeetype"
+          >
+            Empl Type
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpTypeFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpTypeFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpTypeFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="FullTimeStatus"
+          >
+            Full Time Status
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpfullTimeStatusFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpfullTimeStatusFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpfullTimeStatusFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="paytype"
+          >
+            Pay Type
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpPayTypeFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpPayTypeFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpPayTypeFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="homedepartment"
+          >
+            Home Department
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmphomeDeptFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmphomeDeptFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmphomeDeptFilter')"
+              style="left: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="homelocation"
+          >
+            Home Location
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmphomeLocationFilter')"
+            (focusout)="close('toggleEmphomeLocationFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmphomeLocationFilter">
+            <div class="pop" style="left: 0px">
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Contains">Contains</option>
+                    <option value="Equals">Equals</option>
+                    <option value="notEquals">Not Equals</option>
+                    <option value="Starts ">Starts with</option>
+                    <option value="Ends ">Ends with</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Value</div>
+
+                <mat-form-field appearance="fill" class="input-year">
+                  <input type="text" matInput placeholder="" />
+                </mat-form-field>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+      <th scope="col">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+          "
+        >
+          <div
+            class="sort"
+            style="display: inline-block"
+            [appSort]="allActive"
+            data-order="desc"
+            data-name="dateOfBirth"
+          >
+            Date of Birth
+          </div>
+          <button
+            style="background-color: white; border: 0"
+            (click)="showFilter('toggleEmpDOBFilter')"
+          >
+            <img
+              style="margin-left: 2px"
+              class="filter"
+              src="../../../../../../assets/filter.png"
+              alt=""
+            />
+          </button>
+          <ng-template class="a" [ngIf]="toggleEmpDOBFilter">
+            <div
+              class="pop"
+              (focusout)="close('toggleEmpDOBFilter')"
+              style="right: 0px"
+            >
+              <div class="employee_data" style="margin-bottom: 10px">
+                <div style="margin-bottom: 5px">Type :</div>
+                <mat-form-field appearance="fill" class="input-year">
+                  <select
+                    matNativeControl
+                    required
+                    name="outcomeOfOffer"
+                    ngModel
+                  >
+                    <option value="Select">--Select one--</option>
+                    <option value="Full">Full Time</option>
+                    <option value="Part">Part Time</option>
+                    <option value="Seasonal">Seasonal</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="employee_data" style="margin-bottom: 10px">
+                <mat-calendar></mat-calendar>
+              </div>
+              <button
+                mat-raised-button
+                style="background: rgb(8, 82, 125); color: white; border: 0"
+              >
+                Apply
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </th>
+    </thead>
+    <tbody *ngIf="allActive.length == 0">
+      <tr>
+        <td colspan="12" style="text-align: center">No Data Available</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="allActive.length != 0">
+      <tr *ngFor="let item of allActive">
+        <td>
+          <input type="checkbox" >
+        </td>
+
+        <td>{{ item.employeeid }}</td>
+        <td>{{ item.employeename }}</td>
+
+        <td>{{ item.hireDate }}</td>
+
+        <td>{{ item.terminationDate }}</td>
+
+        <td>{{ item.employeestatus }}</td>
+
+        <td>{{ item.employeetype }}</td>
+
+        <td>{{ item.FullTimeStatus }}</td>
+
+        <td>{{ item.paytype }}</td>
+
+        <td>{{ item.homedepartment }}</td>
+
+        <td>{{ item.homelocation }}</td>
+
+        <td>{{ item.dateOfBirth }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>

@@ -1,0 +1,89 @@
+.form-main{
+    display: flex;
+}
+.from{
+    justify-content: center;
+    display: flex;
+    padding-top: 20px; 
+}
+.heading h3{
+    font-size: 24px;
+    color: #5077a1;
+    text-align: center;
+}
+.p-text{
+    padding: 0px 20px;
+    color: grey;
+    font-weight: 500;
+}
+.heading-two h4{
+    text-align: center;
+    color: #729fcf;
+    font-size: 18px;
+    padding-top: 20px;   
+}
+.box-parent{
+    padding: 20px;
+}
+.eeo-box{
+    border: 1px solid #729fcf;
+    border-radius: 20px;
+    padding: 20px 0px;
+}
+.box-title h4{
+    color: #729fcf;
+    font-size: 18px;
+    padding: 10px 140px;
+}
+.input{
+    padding: 0px 20px;
+}
+.input span{
+    color: red;
+}
+.file{
+    display: flex;
+}
+.choose-file{
+    padding-left: 40px;
+}
+.name{
+    display: flex;
+    gap: 10px;
+}
+.name-box{
+    padding: 5px;
+    width: 235px;
+    outline: none;
+}
+.Description{
+    display: flex;
+    padding-top: 10px;
+}
+.Description-input{
+    padding-left: 35px;
+}
+.Description h4{
+    width: 100px;
+}
+.Description-box{
+    outline: none;
+    padding: 35px;
+}
+.last-text{
+    text-align: end;
+}
+.btn{
+    justify-content: center;
+    display: flex;
+}
+.btn-them{
+    background-color: rgb(0, 184, 0);
+    color: #fff;
+}
+.part-two{
+    width: 100%;
+    border-top: 4px solid #729fcf;
+    margin-right: 20px;
+    margin-top: 20px;
+}

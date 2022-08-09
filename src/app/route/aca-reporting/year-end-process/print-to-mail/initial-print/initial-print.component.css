@@ -1,0 +1,59 @@
+.selfdownload{
+  margin-top: 50px;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+.selfdownload table{
+    width: 100%;
+    border-bottom: 2px solid rgb(41, 161, 194);
+    border-top: 2px solid rgb(41, 161, 194);
+  }
+  
+  .selfdownload table tr th{
+    width: auto !important;
+    border-bottom: 2px solid rgb(41, 161, 194);
+    border-left: none;
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .selfdownload table tr td{
+    font-size: 12px;
+  }
+  
+  .selfdownload table tr:nth-child(odd) td{
+    background-color: #c8e2f9;
+  }
+  .selfdownload table tr:nth-child(even) td{
+    background-color: #fff;
+  }
+  .print button{
+    margin-right: 30px;
+    background: rgb(8, 82, 125);
+    color: white;
+    width: 140px;
+    padding: 0 20px 0 10px;
+  }
+  .intialprint{
+    width: 90%;
+    margin: auto;
+  }
+
+  .heading{
+      margin-top: 20px;
+  }
+  .heading span{
+    font-size: 20px;
+    color: gray;
+    font-weight: 600;
+  }
+
+  .contain{
+      margin-top: 20px;
+  }
+
+  .contain p{
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 16px;
+    line-height: 25px;
+  }

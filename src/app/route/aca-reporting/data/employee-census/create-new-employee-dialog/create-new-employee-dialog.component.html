@@ -1,0 +1,220 @@
+<!-- <p>create-new-employee-dialog works!</p> -->
+
+<div class="new_employee_data">
+    <div class="details_data">
+        <h3 class="employye_details"> Employee Details</h3>
+        <mat-icon mat-dialog-close>close</mat-icon>
+
+    </div>
+    <mat-grid-list cols="1" rowHeight="2:1">
+        <mat-grid-tile>
+            <div class="employees_details">
+                <div class="data_form">
+                    <span>
+                        Enter a unique identifier for this employee.
+                    </span>
+                    <div class="input_field">
+                        <input matInput placeholder="000201" [(ngModel)]="employeeId">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Name
+                    </span>
+                    <div class="name_main">
+                        <div class="input_field">
+                            <input matInput value="" [(ngModel)]="employeeName">
+                        </div>
+                        <span class="input_name">
+                            <input matInput placeholder="First Name" [(ngModel)]="firstName">
+                            <input matInput placeholder="Middle Name" [(ngModel)]="middleName">
+                            <input matInput placeholder="Last Name" [(ngModel)]="lastName">
+                        </span>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Social Security Number
+                    </span>
+                    <div class="input_field">
+                        <input matInput value="" [(ngModel)]="SSN">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Effective Date
+                    </span>
+                    <div class="select-month date_input">
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="effectiveDate"
+                                [matDatepicker]="picker1">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Hire Date
+                    </span>
+                    <div class="select-month date_input">
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="hireDate" [matDatepicker]="picker2">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Termination Date
+                    </span>
+                    <div class="select-month date_input">
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="terminationDate"
+                                [matDatepicker]="picker3">
+                            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                            <mat-datepicker #picker3></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Employee Status
+                    </span>
+                    <div class="input_field">
+                        <select matNativeControl required [(ngModel)]="employeeStatus">
+                            <option value="s">--Select an Item--</option>
+                            <option value="Active">Active</option>
+                            <option value="FMLA">FMLA</option>
+                            <option value="IFMLA">IFMLA</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="Military">Military Leave</option>
+                            <option value="Terminated">Terminated</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Employee Type
+                    </span>
+                    <div class="input_field">
+                        <select matNativeControl required [(ngModel)]="employeeType">
+                            <option value="s">--Select an Item--</option>
+                            <option value="Full-Time">Full-Time</option>
+                            <option value="Part">Part Time</option>
+                            <option value="Seasonal">Seasonal</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Pay Type
+                    </span>
+                    <div class="input_field">
+                        <select matNativeControl required [(ngModel)]="payType">
+                            <option value="s">--Select an Item--</option>
+                            <option value="Hourly">Hourly</option>
+                            <option value="Salary">Salary</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Home Address
+                    </span>
+                    <div class="name_main">
+                        <div class="input_field">
+                            <input matInput value="" [(ngModel)]="addressLine1">
+                        </div>
+                        <div class="input_field">
+                            <input matInput [(ngModel)]="addressLine2">
+                        </div>
+                        <span class="input_name">
+                            <input matInput placeholder="Enter city" [(ngModel)]="city">
+                            <input matInput placeholder="Enter StateCode" [(ngModel)]="StateCode">
+                            <input matInput placeholder="Enter Zipcode" [(ngModel)]="ZipCode">
+                        </span>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Home Department
+                    </span>
+                    <div class="input_field">
+                        <input matInput [(ngModel)]="homeDepartment">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Home Location
+                    </span>
+                    <div class="input_field">
+                        <input matInput [(ngModel)]="homeLocation">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Date Of Birth
+                    </span>
+                    <div class="input_field date_birth">
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <input matInput placeholder="6/13/2017" [(ngModel)]="dateOfBirth" [matDatepicker]="picker4">
+                            <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                            <mat-datepicker #picker4></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Employee Email
+                    </span>
+                    <div class="input_field">
+                        <input matInput [(ngModel)]="employeeEmail" placeholder="abc1@gmail.com">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        Primary Worksite ZipCode
+                    </span>
+                    <div class="input_field">
+                        <input matInput [(ngModel)]="primaryWorksiteZipCode" placeholder="142145">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        County of Worksite
+                    </span>
+                    <div class="input_field">
+                        <input matInput [(ngModel)]="countyofWorksite" placeholder="748547">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                        CountyofResidence
+                    </span>
+                    <div class="input_field">
+                        <input matInput [(ngModel)]="countyofResidence" placeholder="456987">
+                    </div>
+                </div>
+                <div class="data_form">
+                    <span>
+                    </span>
+                    <div class="input_field">
+                        <button class="save_btn" mat-button (click)="SaveEmployeeData()">Save</button>
+                        <button class="close_btn save_btn" mat-button>Close</button>
+                    </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <div class="edit_button">
+        <button class="basic-btn" mat-button>Edit Foreign Address</button>
+    </div>
+</div>

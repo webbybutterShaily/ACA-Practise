@@ -1,0 +1,268 @@
+<div class="navbar_main">
+  <div [ngClass]=group>
+    <div class="toolbar mat-elevation-z4" *ngIf="isLoggedIn | async as isLoggedIn ">
+
+      <mat-toolbar color="primary" class="navigation">
+        <mat-toolbar-row style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; padding-top: 8px;">
+            <a  [routerLink]="'/Home'"> <img src="../../../assets/image_2022_05_13T05_11_48_188Z.png" height="50px" alt=""></a>
+            <div style="display: flex; padding-top: 15px;">
+              <a mat-button [mat-menu-trigger-for]="menuAcaTracking">ACA Tracking</a>
+    
+              <mat-menu #menuAcaTracking="matMenu" class="custom-menu">
+                <a mat-menu-item [style]="{'--agcol':col}"   [routerLink]="'/aca-tracking/ACATrackingHome'">ACA Tracking Home</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-tracking/setup'">Tracking Setup</a>
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuAcaReporting">ACA Reporting</a>
+    
+              <mat-menu #menuAcaReporting="matMenu" class="custom-menu">
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/home'">Reporting Home</a>
+                <a mat-menu-item  [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAcaReportingData">Reporting Data</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/year-end-process'">Year End Process</a>
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/tax-document-repository'">Tax Doc Repository</a>
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/tax-data-archive'">Tax Data Archive</a>
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/e-file-complete-import'">E-File Complete Import</a>
+    
+                <mat-menu #menuAcaReportingData="matMenu" class="custom-menu">
+                  <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/data/employee-details'">Employee Details</a>
+                  <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/data/plan-builder'">Plan Builder</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/data/plan-assignment'">Plan Assignment</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/data/offer-of-coverage'">Offer Of Coverage</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/data/employee-census'">Employee Census</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-reporting/data/electronic-consent'">Electronic Consent</a>
+                </mat-menu>
+    
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuIsync" class="nav-italic">iSync</a>
+    
+              <mat-menu #menuIsync="matMenu" class="custom-menu">
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/isync/intelligent-import'" class="nav-italic2">Intelligent Import</a>
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuEeocReporting">EEOC Reporting</a>
+    
+              <mat-menu #menuEeocReporting="matMenu" class="custom-menu">
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/eeoc-reporting/home'">Home Page</a>
+                <a mat-menu-item [style]="{'--agcol':col}" (click)="navigateTo('/eeoc-reporting/emoloyer-data')">Employer Data</a>
+                <a mat-menu-item  [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuEeocReportingEmployeeData">Employee Data</a>
+    
+                <mat-menu #menuEeocReportingEmployeeData="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/eeoc-reporting/employee-data/data-management'">Data Management</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/eeoc-reporting/employee-data/survey-management'">Survey Management</a>
+                </mat-menu>
+    
+                <a mat-menu-item [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuEeocReportingEeo1Form">EEO-1 Form</a>
+    
+                <mat-menu #menuEeocReportingEeo1Form="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/eeoc-reporting/eeo-1-form/download-component-1-form'">Download Component-1
+                    Form</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/Form-Respository'">Form Repository</a>
+                </mat-menu>
+    
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/eeoc-reporting/remove-eeoc-data'">Remove EEOC Data</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/eeoc-reporting/workforce-analytics'">Workforce Analytics</a>
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuBenefitsAnalysisToolkit">Benefits Analysis Toolkit</a>
+    
+              <mat-menu #menuBenefitsAnalysisToolkit="matMenu" class="custom-menu">
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/benefits-analysis-toolkit/home'">Home</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/Apps'">Apps</a>
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuAcaAudit">ACA Audit</a>
+    
+              <mat-menu #menuAcaAudit="matMenu" class="custom-menu">
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/SingleFormAssessment'">Single Form Assessment</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/Employer-Data'">Employer Data</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/aca-audit/data-review'">Data Review</a>
+                <a mat-menu-item [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAcaAuditReports">Reports</a>
+    
+                <mat-menu #menuAcaAuditReports="matMenu" class="custom-menu">
+                  <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-audit/reports/assessment-summary-report'">Assessment Summary Report</a>
+                  <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/aca-audit/reports/Employer Response Report'">Employer Response Report</a>
+                </mat-menu>
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuLabiTracker">LABI Tracker</a>
+    
+              <mat-menu #menuLabiTracker="matMenu" class="custom-menu">
+    
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuSupport">Support</a>
+    
+              <mat-menu #menuSupport="matMenu" class="custom-menu">
+                <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/support/ticket-creation'">Ticket Creation</a>
+                <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/support/contact'">Contact Us</a>
+              </mat-menu>
+    
+              <a mat-button [mat-menu-trigger-for]="menuAdmin">Admin</a>
+    
+              <mat-menu #menuAdmin="matMenu" class="custom-menu">
+                <a mat-menu-item  [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAdminPartnerAdmin">Partner Admin</a>
+    
+                <mat-menu #menuAdminPartnerAdmin="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/dashboard'">Admin Dashboard</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAdminPartnerAdminSetups">Setups</a>
+    
+                  <mat-menu #menuAdminPartnerAdminSetups="matMenu" class="custom-menu">
+                    <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/setups/customers'">Customers</a>
+                    <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/setups/security'">Security</a>
+                    <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/setups/users'">Users</a>
+                    <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/setups/import-and-create-customer'">Import &amp;
+                      Create Customer</a>
+                  </mat-menu>
+    
+                  <a mat-menu-item [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAdminGeneralAdminDataManagement">Data Management</a>
+                  <a mat-menu-item  [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/site-alerts'">Maintain Site Alerts</a>
+                </mat-menu>
+    
+                <a mat-menu-item  [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAdminGeneralAdmin">General Admin</a>
+    
+                <mat-menu #menuAdminGeneralAdmin="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminGeneralAdminSetups">Setups</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminGeneralAdminDataManagement">Data Management</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAdminGeneralAdminReports">Reports</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [mat-menu-trigger-for]="menuAdminGeneralAdminImports">Imports</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/site-alerts'">Site Alerts</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/miscellaneous'">Miscellaneous</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Billing</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminGeneralAdminSetups="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/partner-admin/setups/customers'">Customers</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/data-management'">Security</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/reports'">Users</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/imports'">Add & Remove Roles by Brand</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/site-alerts'">Current User Activity</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/miscellaneous'">Customer Year End Settings</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">iSync Admin</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Import and Create Customers</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Partners</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Manage Brand/Partner Assignments</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Customer Reactivation</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Product Reactivation</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">Add & Remove Product by Brand</a>
+                  <a mat-menu-item [style]="{'--agcol':col}" [routerLink]="'/admin/general-admin/billing'">User License Aggrement</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminGeneralAdminDataManagement="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminDataManagementRemoveData">Remove Data</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminDataManagementCheckDataIssues">Check Data Issues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminDataManagementMeasurementCalc">Measurement Calculation</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminDataManagementProcessQueues">Process Queues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [mat-menu-trigger-for]="menuAdminDataManagementDownloads">Downloads</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Recalculate Affordability for Current Year</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Edit Brands</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Manage Import Notifications</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">App Server Defaults</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">App Server Management</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Revert E-File Status</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Measurement Email Management</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminGeneralAdminReports="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Define and Edit Reports</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Customer Audit Report</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Customer True-Up Report</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Brand Wise Reports</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Plan Statistics Report</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Monthly Compliance Emails</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminGeneralAdminImports="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Data Mappings</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Copy Import Mapping</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Import Results</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">List Pay Data Import Mappings</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Setup Reporting Essentials File Mappings</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">List Reporting Essentials Import Mappings</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminDataManagementRemoveData="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Remove Payroll Data</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Remove Reposting Essentials Data</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminDataManagementCheckDataIssues="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Check EmployeeID Issues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Check Dependent Duplicate Issues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Common Data Issues</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminDataManagementMeasurementCalc="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Run Measurement for Company</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Run Measurement for Controlled Group</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Full Reset for Company</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Full Reset for Controlled Group</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Measurement Archive for Company</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Schedule Measurement</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminDataManagementProcessQueues="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Measurement Process Queues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">E-File Process Queues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Historical Print Queues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Preview/Print Queues</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Historical Preview/Print Queues</a>
+                </mat-menu>
+
+                <mat-menu #menuAdminDataManagementDownloads="matMenu" class="custom-menu">
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Client XML Download</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Client NJ XML Download</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Client Washington DC Tax Download</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Client California Tax Download</a>
+                  <a mat-menu-item [style]="{'--agcol':col}"  [routerLink]="'/admin/general-admin/site-alerts'">Client Rhode Island Tax Download</a>
+                </mat-menu>
+              </mat-menu>
+            </div>
+          </div>
+    
+    
+    
+          <div style="display: flex; align-items: center;">
+    
+            <mat-icon>add_alert</mat-icon>
+            <mat-icon style="margin-left: 16px;">message</mat-icon>
+            <mat-toolbar color="primary">
+              <span class="fill-remaining-space">
+                <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger"
+                  (mouseover)="menuTrigger.openMenu()">
+                  <mat-icon>account_circle</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" [overlapTrigger]="false" class="custom-menu">
+                  <span (mouseleave)="menuTrigger.closeMenu()">
+                    <button class="hover_text" [routerLink]="'/profile'" mat-menu-item  [style]="{'--agcol':col}">
+                      <span>Profile</span>
+                    </button>
+                    <button class="hover_text" mat-menu-item  [style]="{'--agcol':col}">
+                      <span>Settings</span>
+                    </button>
+                    <button class="hover_text" mat-menu-item  [style]="{'--agcol':col}">
+                      <span>Supports</span>
+                    </button>
+                    <hr/>
+                    <button class="hover_text" mat-menu-item  [style]="{'--agcol':col}">
+                      <span>Separator</span>
+                    </button>
+                    <button class="hover_text" (click)="signOut()" mat-menu-item  [style]="{'--agcol':col}">
+                      <span>Sign Out</span>
+                    </button>
+                  </span>
+                </mat-menu>
+              </span>
+            </mat-toolbar>
+    
+    
+          </div>
+    
+    
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+  </div>
+  
+</div>

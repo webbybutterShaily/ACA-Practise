@@ -1,0 +1,181 @@
+.d-flex {
+  display: flex;
+}
+.demo {
+  /* text-align: center; */
+  color: #056993;
+  font-size: 16px;
+  /* padding: 40px 0; */
+  /* margin: 0; */
+}
+
+.base {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
+.acc_profile {
+  padding-left: 10px;
+  color: grey;
+  font-size: 16px;
+}
+.hide_btn {
+  padding: 0 !important;
+  color: #729fcf;
+  text-decoration: underline;
+  display: block;
+}
+
+.main p {
+  max-width: 315px;
+  color: gray;
+  text-align: center;
+  line-height: 25px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.base img {
+  width: 65px;
+  padding-right: 20px;
+}
+
+.main {
+  text-align: center;
+}
+.main a {
+  text-decoration: none;
+  background-color: green;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.know_base {
+  font-size: 30px;
+  margin: 0;
+  color: grey;
+}
+
+.main01 {
+  text-align: center;
+  /* margin-top: 50px; */
+  width: 600px;
+}
+.display {
+  color: grey;
+  font-size: 16px;
+  border-bottom: 3px solid #729fcf;
+  display: block;
+  padding: 10px 0;
+  text-align: start;
+}
+
+.main01 h6 {
+  font-size: 16px;
+  border-bottom: 3px solid #729fcf;
+  display: block;
+  padding: 10px 0;
+  text-align: start;
+  padding: 10px 50px;
+}
+
+.main01 h6 span {
+  padding-left: 30px;
+}
+
+.mark_all {
+  list-style: none;
+  text-align: end;
+  justify-content: end;
+  display: flex;
+  border-bottom: 1px solid #729fcf;
+  border-width: 5px !important;
+
+  padding: 15px 0px 5px;
+}
+
+.mark_all .border {
+  border-right: 1px solid black;
+}
+
+.acc_img {
+  height: 60px;
+}
+
+.border {
+  border-right: 1px solid black;
+}
+
+.menu_btn {
+  width: 100%;
+  text-align: end;
+  border-bottom: 4px solid #729fcf !important;
+  padding-bottom: 5px;
+}
+
+.menu_btn button {
+  line-height: 1 !important;
+  color: #729fcf;
+}
+
+.select_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0px 0px 30px;
+  width: 96%;
+}
+
+.home1 {
+  display: flex;
+  margin: 20px 30px;
+}
+.col-1 {
+  margin: 0 40px;
+  width: 50%;
+}
+.col-2 {
+  width: 50%;
+}
+.profile1 {
+  display: flex;
+}
+.img_profile {
+  height: 16px;
+  width: 16px;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.linkA {
+  text-decoration: none;
+  color: #034f79;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 25px;
+}
+.linkA:hover{
+    color: #3882a1;
+}
+.e_btn{
+    text-decoration: none;
+  color: #034f79;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 60%;
+}
+.e_btn:hover{
+    color: #729fcf;
+}
+.editbtn{
+    display: flex;
+}

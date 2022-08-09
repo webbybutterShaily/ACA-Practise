@@ -1,0 +1,431 @@
+<div class="plan-builder">
+
+
+  <div class="select_main main_select">
+    <div>
+      <h1 class="header" >Offers Of Coverage</h1>
+    </div>
+    
+    
+      <div class="year_main">
+        <app-tax-year-drop-down
+        (change)="onYearChange()"
+        ></app-tax-year-drop-down>
+      
+      </div>
+      
+    
+  </div>
+
+
+  <div class="data-section">
+    <div class="main-row">
+      <div class="column1">
+        <h2 style="text-align: center ;">{{custNamee}}</h2>
+        <p class="offer_content" style="text-align: justify; font-size: 15px">
+          The Offers of Coverage module allows Users to capture the offers of
+          coverage that employers are making to employees. This information
+          Users provide is directly related to Affordable Care Act information
+          reporting and must be accurate. Employers must compile and input all
+          offers of coverage data related to the applicable reporting year. This
+          means that if an offer of coverage was made prior to the applicable
+          reporting year, but that coverage carried over into the applicable
+          reporting year, then it must be included in the data being provided by
+          the employer. Example: Employee is offered coverage November 15, 2014
+          and elects to enrol in the coverage. The coverage effective date is
+          January 1, 2015.This is included in the data. Example 2: Employee is
+          offered coverage June 1, 2014, and elects to enrol in the coverage.
+          Coverage is effective from July 1, 2014 through June 30th, 2015.This
+          is included in the data. Employers that have insured plans will use
+          the <i> Fully Insured Template</i>, and employers that have
+          self-insured plans will use the <i> Self-Insured Template</i>. Users
+          can download the appropriate template, which will include a list of
+          all employees for the applicable reporting year. They will then
+          compile all missing data elements and upload the file through iSync.
+        </p>
+        <div style="margin-top: 20px; display: flex; justify-content: space-between;" >
+          <div>
+            <button mat-raised-button class="btn1">
+              Export Fully-Insured Template
+            </button>
+            <button mat-raised-button class="btn1">
+              Export Self-Insured Template
+            </button>
+          </div>
+        <div> <app-knowledge-base-button></app-knowledge-base-button></div>
+        </div>
+        <div class="emplyee_plan">
+          <div class="employee_data">
+            <span>Employee</span>
+            <mat-form-field appearance="fill">
+              <select
+                matNativeControl
+                required
+                [(ngModel)]="selectedEmployee"
+                (change)="getEmployeeById()"
+              >
+                <option value="volvo">Please Choose a employee</option>
+
+                <option
+                  value="{{ employee.employeeId }}"
+                  *ngFor="let employee of employeeList"
+                >
+                  {{ employee.employeename }}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="employee_data">
+            <span>Plans</span>
+            <mat-form-field appearance="fill" class="input_year">
+              <select
+                matNativeControl
+                required
+                [(ngModel)]="planDetail"
+                (change)="getPlan()"
+              >
+                <option value="">please choose a plan</option>
+                <option
+                  value="{{ plans.p_planName }}"
+                  *ngFor="let plans of planList"
+                >
+                  {{ plans.p_planName }}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+          <button mat-raised-button class="btn1" (click)="openDialog1()">
+            Create New Offer
+          </button>
+        </div>
+        <div class="all_file">
+          <p>
+            *All files being imported through this portal must be formatted as 
+            <b>.C SV or .XL S file. </b> Files formatted as . <b>XL SX</b>  will
+            fail the import process. Please note that this import page is used
+            only to import Reporting Essentials Files including: Employee Census
+            Import, Plan Builder Import, and the Offers of Coverage Import.
+          </p>
+        </div>
+        <div class="upload_file">
+          <span>File to Upload</span>
+          <input type="file" />
+        </div>
+        <div class="upload_button">
+          <button mat-raised-button class="save-btn" (click)="uploadOffer()">
+            Upload
+          </button>
+        </div>
+      </div>
+      <!-- <div class="column2">
+        <div style="display: flex">
+          <div class="column3"></div>
+          <div class="column4">
+            <div class="main">
+              <div class="base">
+                <img src="../../../../../assets/book.png" alt="" />
+                <h5 class="know_base">Knowledge Base</h5>
+              </div>
+              <p>
+                The Learning Center can guide you step by step through the
+                process. Additional resources are avaiable to further assist
+                you, such as videos and webinars.
+              </p>
+              <div class="save-btn">
+                <button mat-raised-button class="save-btn">
+                  Knowledge Base
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  
+
+
+
+
+
+  
+  <!-- mat table -->
+  <div class="link">
+    <a
+      style="
+        font-size: 15px;
+        color: rgb(13 125 190);
+        text-decoration: underline rgb(13 125 190);
+        cursor: pointer;
+      "
+      (click)="navigatelist()"
+      >List Dependents</a
+    >
+  </div>
+
+
+  <div class="demo-table mat-elevation-z8">
+    
+    <table mat-table [dataSource]="dataSource" matSort  class="">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+            (change)="$event ? toggleAllRows() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()"
+            [aria-label]="checkboxLabel()"
+          >
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox
+            (click)="$event.stopPropagation()"
+            (change)="getSelectedEmpIdd($event, row)"
+            [checked]="selection.isSelected(row)"
+            [aria-label]="checkboxLabel(row)"
+          >
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="remove">
+        <th mat-header-cell *matHeaderCellDef>
+          <button mat-raised-button  style="color: white;
+          background-color: rgb(159, 65, 65); font-size: 12px; padding: 0;">Remove</button>
+        </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let row"><button mat-raised-button class="editbtn">Edit</button> </td>
+      </ng-container>
+     
+
+      <ng-container matColumnDef="employeeid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Id</th>
+        <td mat-cell *matCellDef="let element">{{element.employeeid}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeename">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</th>
+        <td mat-cell *matCellDef="let element">{{element.employeename}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ssn">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>SSN</th>
+        <td mat-cell *matCellDef="let element">{{element.ssn}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="hireDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Hire Date</th>
+        <td mat-cell *matCellDef="let element">{{element.hireDate}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="terminationDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Termination Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.terminationDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="planname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan Name</th>
+        <td mat-cell *matCellDef="let element">{{element.planname}}</td>
+      </ng-container>
+      <ng-container matColumnDef="planRenewalDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Plan Renewal Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.planRenewalDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="dateOfOffer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Of offer</th>
+        <td mat-cell *matCellDef="let element">{{element.dateOfOffer}}</td>
+      </ng-container>
+      <ng-container matColumnDef="outcomeofoffer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Outcome Of offer
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.outcomeofoffer}}</td>
+      </ng-container>
+      <ng-container matColumnDef="enrollmentDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Enroll Date</th>
+        <td mat-cell *matCellDef="let element">{{element.enrollmentDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="disenrollmentDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Disenroll Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.disenrollmentDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="dateOfBirth">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
+        <td mat-cell *matCellDef="let element">{{element.dateOfBirth}}</td>
+      </ng-container>
+
+      <tr  class="table-header"  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr  class="table-row" mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td
+          style="
+            border-top: 3px solid rgb(41, 161, 194);
+            background-color: #7db8f468;
+            text-align: center;
+          "
+          class="mat-cell"
+          colspan="15"
+        >
+          No Data Available
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- <table>
+            <thead
+              style="
+                border-bottom: 2px solid rgb(41, 161, 194);
+                border-top: 3px solid rgb(41, 161, 194);
+              "
+            >
+            <th>
+                <input type="checkbox">
+                <button>Remove</button>
+            </th>
+            <th></th>
+            <th> </th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="employeeid">
+                    Employee  Id  
+                     </div>
+                  </div>  </th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="employeename">
+                    Employee  Name  
+                     </div>
+                  </div> </th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="ssn">
+                    SSN    
+                     </div>
+                  </div></th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="hireDate">
+                    Hire   Date 
+                     </div>
+                  </div> </th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="terminationDate">
+                    Termination   Date 
+                     </div>
+                  </div> </th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="planname">
+                    Plan   Name 
+                     </div>
+                  </div> </th>
+            <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="planRenewalDate">
+                    Plan   Renewal Date
+                     </div>
+                  </div>     </th>
+              <th>
+                   <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="dateOfOffer">
+                    Date   Of offer
+                     </div>
+                  </div>
+                </th>
+              <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="outcomeofoffer">
+                    Outcome   Of offer
+                     </div>
+                  </div>   
+                </th>
+              <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="enrollmentDate">
+                    Enroll   Date 
+                     </div>
+                  </div>
+                  </th>
+              <th>
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="disenrollmentDate">
+                    Disenroll   Date 
+                     </div>
+                  </div>   
+                </th>
+              <th> 
+                <div>
+                    <div [appSort]="list"
+                    data-order="desc"
+                    data-name="terminationDate">
+                       Date of Birth
+                     </div>
+                  </div>  
+                 </th>
+            </thead>
+            <tbody  *ngIf="list.length == 0">
+                <tr>
+                  <td colspan="15" style="text-align: center;"> No Data Available</td>
+                </tr>
+              </tbody>
+            <tbody *ngIf="list.length !=0">
+              <tr
+                style="border-top: 3px solid rgb(41, 161, 194)"
+                *ngFor="let abc of list"
+              >
+                <td><input type="checkbox" /></td>
+                <td></td>
+                <td>
+                    <button mat-raised-button>Edit</button>
+                </td>
+                <td>{{abc.employeeid}}</td>
+                <td>{{abc.employeename}}</td>
+                <td>{{abc.ssn}}</td>
+                <td>{{abc.hireDate}}</td>
+                <td>{{abc.terminationDate}}</td>
+                <td>{{abc.planname}}</td>
+                <td>{{abc.planRenewalDate}}</td>
+                <td>{{abc.dateOfOffer}}</td>
+                <td>{{abc.outcomeofoffer}}</td>
+                <td>{{abc.enrollmentDate}}</td>
+                <td>{{abc.disenrollmentDate}}</td>
+                <td>{{abc.terminationDate}}</td>
+               
+              </tr>
+            </tbody>
+          </table> -->
+</div>

@@ -1,0 +1,40 @@
+<div class="afforad-section">
+    <div class="main">
+        <div class="header">
+            <h1 class="title">Affordability Safe Harbor Assignment</h1>
+            <p class="assignment">{{companyname}}</p>
+            <div class="description">
+                <p class="error">*Each Employee that was offered converage only needs to pass ONE safe Harbor.</p>
+            </div>
+        </div>
+        <div class="safe_harbor">
+            <div>
+                <button mat-raised-button class="assign">List All safe Harbor Assignment</button>
+            </div>
+            <div class="chech_harbor">
+                <div>
+                    <hr class="line">
+                    <p>Safe Harbor</p>
+                    <hr class="line">
+                </div>
+                <div>
+                    <p class="rate">
+                        <mat-checkbox [disabled]="istruew2safe == true">W-2 safe-harbor</mat-checkbox>
+                    </p>
+                    <p class="check_fpl">
+                        <mat-checkbox [disabled]="istruefplsafe == true">FPL safe-harbor</mat-checkbox>
+                    </p>
+                    <p class="rate">
+                        <mat-checkbox [disabled]="istrueopaysafe == true">Rate Of Pay safe-harbor</mat-checkbox>
+                    </p>
+                </div>
+                <hr class="line">
+            </div>
+        </div>
+        <div class="assign_button">
+            <button mat-raised-button class="check">Assign Checked Harbor to Checked Employees</button>
+            <button mat-raised-button class="remove">Remove Checked Harbor to Checked Employees</button>
+        </div>
+    </div>
+
+</div>

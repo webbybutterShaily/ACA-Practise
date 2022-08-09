@@ -1,0 +1,80 @@
+.header{
+    /* background-color: white; */
+    color: #1591b8;
+    text-align: center;
+  }
+  .data-section{
+    width: 90%;
+    margin: 10px auto;
+   
+  }
+  .form-btn{
+      margin-left: 6px;
+  }
+  .main-row{
+    width: 100%;
+    display: flex;
+   
+  }
+  .column1{
+    width: 40%;
+    padding: 10px;
+  }
+  .column2{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  .column3{
+    width: 40%;
+    padding: 10px;
+  }
+  .cl1{
+    width: 50%;
+    padding: 10px;
+  }
+  .cl2{
+    width: 50%;
+    padding: 10px;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid rgb(7, 7, 7);
+  }
+  
+  th, td,tr {
+  
+    padding: 10px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: rgba(217, 215, 215, 0.646);
+    border-radius: 5px;
+   
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 6px 0px;
+  border-top: 4px solid transparent;
+}
+.save-btn{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .save-btn button {
+    margin: 0px 30px 30px 0px;
+    background: green;
+    color:white;
+  }
+
+  .section-d{
+    border: 1px solid black;
+    border-collapse:collapse;
+  }

@@ -1,0 +1,160 @@
+<!-- <p>home-page works!</p> -->
+<div class="demo_eeco">
+  
+    <div class="select_main main_select">
+        <h3 class="demo">{{customerName}}</h3>
+        <app-customer-drop-down></app-customer-drop-down>
+    </div>
+    
+
+
+
+<div class="home1">
+    <div class="col-1">
+        <app-knowledge-base-button></app-knowledge-base-button>
+    </div>
+    <div class="col-2">
+        <div class="profile1">
+            <img class="img_profile" src="../../../assets/account.png" alt="">
+            <div class="acc_profile">Account profile</div>
+        </div>
+        <div style="margin-top: 10px;">
+            
+            <a class="linkA"   (click)="toggle()" >Show / Hide</a>
+            <!-- <button class="hide_btn" mat-button>Show / Hide</button> -->
+
+            <br>
+            
+           
+
+
+            <div style="margin-left: 24px;" *ngIf="tog" >
+                <div class="editbtn">
+                    <a class="e_btn" >Edit</a>
+                </div>
+                <div > <b>CompanyId :</b>  {{personData.customerId}}</div>
+                <div></div>
+                <div > <b>Employeer Name :</b> {{personData.customerName}}</div>
+                <div></div>
+                <div > <b>Legal Name :</b> {{personData.legalName}} </div>
+                <div></div>
+                <div > <b> EIN :</b>{{personData.EIN}}</div>
+                <div></div>
+                <div > <b> City :</b>{{personData.city}}</div>
+                <div></div>
+                <div > <b>State :</b>{{personData.stateCode}}</div>
+                <div></div>
+                <div > <b>Zip :</b> {{personData.zipCode}}</div>
+                <div></div>
+                <div> <b>Contact Number :</b> {{personData.contactNo}}</div>
+                <div></div>
+                <div> <b>Primary Contact :</b> {{personData.contactName}}</div>
+                <div></div>
+                <div > <b> Control Group Parent :</b></div>
+                <div></div>
+                <div > <b>Email Address :</b> {{personData.emailId}}</div>
+                <div></div>
+                <div > <b>Branding :</b> {{personData.brandName}}</div>
+                <div></div>
+                <div > <b>Product :</b>  {{personData.productType}}</div>
+                <div></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+  
+    <!-- <mat-grid-list cols="2" rowHeight="2:1">
+        <div class="d-flex">
+            <mat-grid-tile>
+                <div class="part01">
+                    <app-knowledge-base-button></app-knowledge-base-button>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="main">
+                    <div class="base">
+                        <img src="../../../assets/account.png" alt="">
+                        <h3 class="acc_profile">Account profile</h3>
+                    </div>
+                    <div class="example-button-row button-flex2">
+                        
+                        <button class="hide_btn" mat-button>Show / Hide</button>
+                        
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list> -->
+
+
+
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <div class="d-flex part2">
+            <mat-grid-tile>
+                <div class="main01">
+                    <div class="heading" >
+                        <img class="img_profile"  src="../../../assets/vdl5EkD-(1).png" alt="">
+                        <div class="acc_profile">My Message </div>
+                    </div>
+                    <div class="menu_btn">
+                        <button class="border" mat-raised-button>Mark as all read</button>
+                        <button class="border" mat-raised-button>Delete all</button>
+                        <button mat-raised-button>edit</button>
+                    </div>
+                        <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef>Start Date</th>
+                        <th mat-header-cell *matHeaderCellDef>Title</th>
+                        <td mat-cell *matCellDef="let element"> There are no items to display </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Title</th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">There are no items to display</tr>
+                    </table>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="main01">
+                    <div class="heading"  >
+                        <img class="img_profile"  src="../../../assets/tringle3.png" alt="">
+                        <div class="acc_profile">My Alerts </div>
+                    </div>
+                    <div class="menu_btn">
+                        <button class="border" mat-raised-button>Mark as all read</button>
+                        <button class="border" mat-raised-button>Delete all</button>
+                        <button mat-raised-button>edit</button>
+                    </div>
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef>Start Date</th>
+                        <th mat-header-cell *matHeaderCellDef>Title</th>
+                        <td mat-cell *matCellDef="let element"> There are no items to display </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Title</th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">There are no items to display</tr>
+                    </table>
+                </div>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>
